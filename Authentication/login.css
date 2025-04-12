@@ -6,20 +6,48 @@ body{
     background-color: antiquewhite;
     
 }
-div{
+#form-div{
     background-color: rgb(176, 183, 190);
     padding: 10px; 
     border: 1px solid;
     height: auto;
-    
+    border-radius: 10px;
+    font-size: large;
+    /* box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3); */
+    box-shadow: 4px 4px 10px 10px rgba(50, 148, 157, 0.3);
+
     
 }
+input{
+    height: 30px;
+    width: 300px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
 #submit-btn{
-    background-color: #ffcc00;
+    background-color: #ccff00;
     border : 2px solid;
     text-align: center;
+    margin-left: 90px;
+    height: 30px;
+    width: 90px;
+    font-size: medium;
+    border-radius: 4px;
+    margin-top: 5px;
 }
 h1{
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#sign-up-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    
+}
+#sign-up-div p{
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: blue;
 }
