@@ -13,7 +13,6 @@ body{
     height: auto;
     border-radius: 10px;
     font-size: large;
-    /* box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3); */
     box-shadow: 4px 4px 10px 10px rgba(50, 148, 157, 0.3);
 
     
@@ -34,6 +33,13 @@ input{
     font-size: medium;
     border-radius: 4px;
     margin-top: 5px;
+    transition: background-color 0.5s ease, color 0.5s ease; /**/
+}
+#submit-btn:hover{
+    background-color: brown;
+    color: aliceblue;
+    cursor: pointer;
+
 }
 h1{
     text-align: center;
@@ -50,4 +56,7 @@ h1{
     font-size: medium;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: blue;
+}
+a:hover{
+    color: brown;
 }
