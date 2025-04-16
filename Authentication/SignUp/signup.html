@@ -13,47 +13,47 @@
         <h1>Register</h1>
         <table>
             <tbody>
-                <form action="">
+                <form id="sign-up-form" action="" onsubmit="return handleSubmit()">
                     <tr>
                         <td>First Name</td>
                         <td>
-                            <input type="text" placeholder="enter your first name">
+                            <input id="first-name" type="text" placeholder="enter your first name">
                         </td>
                     </tr>
                     <tr>
                         <td>Last Name</td>
                         <td>
-                            <input type="text" placeholder="enter your Last name">
+                            <input id="last-name" type="text" placeholder="enter your Last name">
                         </td>
                     </tr>
                     <tr>
                         <td>Email</td>
                         <td>
-                            <input type="email" placeholder="enter your email">
+                            <input id="email" type="email" placeholder="enter your email">
                         </td>
                     </tr>
                     <tr>
                         <td>Phone</td>
                         <td>
-                            <input type="number" placeholder="enter your phone number">
+                            <input id="phone" type="number" placeholder="enter your phone number">
                         </td>
                     </tr>
                     <tr>
                         <td>Date of Birth</td>
                         <td>
-                            <input type="date">
+                            <input id="dob" type="date">
                         </td>
                     </tr>
                     <tr>
                         <td>Password</td>
                         <td>
-                            <input type="password" placeholder="enter passsword">
+                            <input id="password" type="password" placeholder="enter password">
                         </td>
                     </tr>
                     <tr>
                         <td>Confirm Password</td>
                         <td>
-                            <input type="password" placeholder="enter passsword">
+                            <input id="confirm-password" type="password" placeholder="enter password">
                         </td>
                     </tr>
                     <tr>
@@ -72,6 +72,9 @@
             <a href="../Login/login.html">Login</a>
         </div>
     </div>
+
+    <script src="./signup.js"></script>
+
 </body>
 
 </html>
