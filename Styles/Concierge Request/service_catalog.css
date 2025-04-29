@@ -1,0 +1,38 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.card{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 5px;
+}
+.inner-card{
+    border: 1px solid;
+    padding:10px;
+    border-radius: 10px;
+    
+}
+.inner-card:hover{
+    background-color: blanchedalmond;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px 10px rgba(50, 148, 157, 0.3);
+    transform: rotate(360deg);
+    transition: transform .6s ease;
+}
+h1{
+    text-align: center;
+}
+button{
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    color:blueviolet ;
+    
+}
+button:hover{
+    background-color:rgb(54, 105, 131) ;
+    color: aliceblue;
+    width: 100%;
+    transition: width .5s ease ;
+    
+}

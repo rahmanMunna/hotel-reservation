@@ -1,13 +1,15 @@
 main{
     height: 100vh;
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     align-items: center;
-    border : 1px solid;
+    
     
 }
 form{
     width: 50%;
+    margin-left: auto;
+    margin-right: auto;
     border: 1px solid;
     border-radius: 20px;
     padding: 20px;
@@ -21,12 +23,14 @@ input[type="submit"]{
     /* width: 100%; */
     background-color: rgba(102, 255, 0, 0.858);
     font-size: 30px;
+    padding-bottom: 10px;
+    font-size: 20px;
     
 }
 input,textarea{
     width: 100%;
     margin-bottom: 20px;
-    height: 40px;
+    height: 30px;
     
 }
 label{
@@ -40,4 +44,15 @@ input[type="submit"]:hover{
     background-color: beige;
     color: rgb(75, 65, 65);
     cursor: pointer;
+}
+p{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+   
+}
+h1{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
 }
