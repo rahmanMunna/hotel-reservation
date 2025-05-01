@@ -1,0 +1,35 @@
+a{
+    font-size: 25px;
+
+    
+}
+.order-card {
+    width: 80%;
+    margin: auto;
+    border: 1px solid;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(207, 246, 247);
+    border-radius: 10px;
+}
+
+.order-card:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    background-color: rgb(171, 176, 198);
+    transition: transform .5s ease, background-color .5s ease;
+
+}
+
+.price-status {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+button {
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(160, 33, 174);
+}
