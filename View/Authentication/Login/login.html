@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login form</title>
-  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="../../../Styles/Authentication/login.css" />
   
 </head>
 
@@ -14,29 +14,29 @@
     <h1>Login</h1>
     <table>
       <tbody>
-        <form action="" id="login-form">
+        <form method="post"  action="../../../php/loginValidation.php" id="login-form">
           <tr>
             <td>Email</td>
             <td>
-              <input id="email-input-field" type="email" placeholder="enter your email" />
+              <input name="email" id="email-input-field" type="email" placeholder="enter your email" />
             </td>
           </tr>
           <tr>
             <td>User Id</td>
             <td>
-              <input id="user-id-input-field" type="text" placeholder="enter your User id" />
+              <input name="userId" id="user-id-input-field" type="number" placeholder="enter your User id" />
             </td>
           </tr>
           <tr>
             <td>Password</td>
             <td>
-              <input id="passsword-input-field" type="password" placeholder="enter your passsword" />
+              <input name="password" id="passsword-input-field" type="password" placeholder="enter your password" />
             </td>
           </tr>
           <tr>
             <td></td>
             <td>
-              <input id="submit-btn" type="submit" value="Login" />
+              <input name="submit" id="submit-btn" type="submit" value="Login" />
             </td>
           </tr>
         </form>
@@ -48,7 +48,7 @@
     </div>
   </div>
 
-  <script src="/Authentication/login.js"></script>
+  <!-- <script src="/Authentication/login.js"></script> -->
 </body>
 
 </html>
