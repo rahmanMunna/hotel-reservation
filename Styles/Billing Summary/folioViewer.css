@@ -1,0 +1,48 @@
+body{
+    background-color: #ded7dc;
+}
+table,
+div {
+    width: 80%;
+    margin: auto;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+td {
+    text-align: center;
+    color: #6e34bed4;
+}
+
+tr:hover {
+    background-color: rgb(120, 146, 167);
+    color: aliceblue;
+    cursor: pointer;
+    transition: background-color .2s ease;
+
+}
+
+#btn-div{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: end;
+    height: 20vh;
+
+
+}
+
+button {
+    font-size: 30px;
+    color: rgb(119, 27, 27);
+    background-color: #ded7dc;
+    border-radius: 10px;
+    padding: 10px;
+}
+button:hover{
+    background-color: aquamarine;
+    cursor: pointer;
+    color: black;
+    transform: scale(1.04);
+    transition: transform .3s ease background-color .3s ease;
+}

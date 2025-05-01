@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charge Break Down</title>
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+
+        table,
+        div {
+            width: 70%;
+            margin: auto;
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        tr:hover {
+            background-color: rgb(120, 146, 167);
+            color: aliceblue;
+            cursor: pointer;
+            transition: background-color .2s ease;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        div {
+            margin-top: 50px;
+            text-align: end;
+        }
+
+        button {
+            width: 20%;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        button:hover {
+            background-color: rgb(229, 127, 255);
+            cursor: pointer;
+            color: black;
+            transform: scale(1.04);
+            transition: transform .7s ease background-color .7s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Item/Service</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                    <th>Category</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>25-Apr</td>
+                    <td>3 PM</td>
+                    <td>Room Night Charge</td>
+                    <td>1</td>
+                    <td>1000 Tk</td>
+                    <td>1000 Tk</td>
+                    <td>Room</td>
+                    <td>Room Service</td>
+                </tr>
+                <tr>
+                    <td>25-Apr</td>
+                    <td>3 PM</td>
+                    <td>Room Night Charge</td>
+                    <td>1</td>
+                    <td>1000 Tk</td>
+                    <td>1000 Tk</td>
+                    <td>Room</td>
+                    <td>Room Service</td>
+                </tr>
+                <tr>
+                    <td>25-Apr</td>
+                    <td>3 PM</td>
+                    <td>Room Night Charge</td>
+                    <td>1</td>
+                    <td>1000 Tk</td>
+                    <td>1000 Tk</td>
+                    <td>Room</td>
+                    <td>Room Service</td>
+                </tr>
+                <tr>
+                    <td>25-Apr</td>
+                    <td>3 PM</td>
+                    <td>Room Night Charge</td>
+                    <td>1</td>
+                    <td>1000 Tk</td>
+                    <td>1000 Tk</td>
+                    <td>Room</td>
+                    <td>Room Service</td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <button>Generate PDF</button>
+        </div>
+
+    </main>
+</body>
+
+</html>
