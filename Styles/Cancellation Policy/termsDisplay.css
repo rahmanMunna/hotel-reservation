@@ -1,0 +1,45 @@
+main {
+    width: 70%;
+    margin: auto;
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+table {
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+span {
+    color: rebeccapurple
+}
+
+#booking-details {
+    /* border: 2px solid rebeccapurple; */
+    padding-left: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    width: 80%;
+    margin: auto;
+}
+#btns{
+    text-align: center;
+    /* border: 1px solid; */
+}
+button{
+    height: 40px;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(245, 226, 198);
+    background-color: rgb(41, 43, 38);
+}
+button:hover{
+    background-color: bisque;
+    color: black;
+    transition: background-color .5s ease;
+    cursor: pointer;
+}

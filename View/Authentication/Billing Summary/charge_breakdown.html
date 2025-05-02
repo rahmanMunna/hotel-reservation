@@ -74,9 +74,10 @@
             cursor: pointer;
             transition: color .5s ease, background-color .5s ease;
         }
-        #search{
+
+        #search {
             width: 70%;
-            margin:auto;
+            margin: auto;
             display: flex;
             align-items: end;
         }
@@ -92,7 +93,7 @@
                 <input type="button" value="Search">
             </section>
             <section style="text-align: end;" id="filter-by-category">
-                <select style="font-size: 20px; padding: 5px;"  name="" id="">
+                <select style="font-size: 20px; padding: 5px;" name="" id="">
                     <option value="">Filter by Category</option>
                     <option value="Room">Room</option>
                     <option value="Food">Food</option>
@@ -158,7 +159,9 @@
             </tbody>
         </table>
         <p>
-            <button>Generate PDF</button>
+            <a href="./receipt_generator.html">
+                <button>Generate Receipt</button>
+            </a>
         </p>
 
     </main>

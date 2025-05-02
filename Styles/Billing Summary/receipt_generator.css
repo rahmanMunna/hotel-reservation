@@ -20,27 +20,40 @@ h2 {
     text-align: center;
     margin-bottom: 30px;
 }
-#btns{
+
+#btns {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
 }
-button{
+
+button {
     font-size: 30px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     border-radius: 10px;
     background-color: aliceblue;
 }
-button:hover{
+
+button:hover {
     background-color: cadetblue;
     color: antiquewhite;
-    transition: background-color .5s ease,color .5s ease;
+    transition: background-color .5s ease, color .5s ease;
     cursor: pointer;
 }
-footer{
+
+footer {
     text-align: center;
 
 }
-h3{
+
+h3 {
     color: brown;
+}
+
+#guest-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 3px solid rebeccapurple;
+    padding-left: 5px;
+    border-radius: 5px;
 }
