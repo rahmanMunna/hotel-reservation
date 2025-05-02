@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modification</title>
+    <!-- If we use module as type..In a module, handleIncrement is not global, so the HTML cannot access it.-->
+
 </head>
 
 <body>
@@ -23,20 +25,20 @@
         <div>
             <h2>Modify Changes</h2>
             <table>
-                <form action="">
+                <form onsubmit="return handleSubmit()" action="">
                     <tbody>
                         <tr>
                             <td>New Check-in Date</td>
-                            <td><input type="date" name="" id=""></td>
+                            <td><input type="date" class="date" name="" id=""></td>
                         </tr>
                         <tr>
                             <td>New Check-out Date</td>
-                            <td><input type="date" name="" id=""></td>
+                            <td><input type="date" class="date" name="" id=""></td>
                         </tr>
                         <tr>
                             <td>Room Type</td>
                             <td>
-                                <select name="" id="">
+                                <select id="room-type" name="" id="">
                                     <option value="">Select Room Type</option>
                                     <option value="Standard Room-1000">Standard Room-1000(per night)</option>
                                     <option value="Deluxe Suite-2000">Deluxe Suite-2000(per night)</option>
@@ -47,8 +49,13 @@
                         <tr>
                             <td>Guest Count Selector</td>
                             <td>
-                                <button>+</button> <button>-</button> Adults <span>(0)</span>
-                                <button>+</button> <button>-</button> Children <span>(0)</span>
+                                <input onclick="handleIncrement('adults')" type="button" value="+">
+                                <input onclick="handleDecrement('adults')" type="button" value="-">
+                                Adults (<span id="adults">0</span>)
+
+                                <input onclick="handleIncrement('children')" type="button" value="+">
+                                <input onclick="handleDecrement('children')" type="button" value="-"> Children
+                                (<span id="children">0</span>)
                             </td>
                         </tr>
 
@@ -112,6 +119,8 @@
         <h3>"This rate becomes Non-Refundable after modification."</h3>
         </p>
     </main>
+    <script type="" src="../../Javascript/Cancellation_policy/modifiation_flow.js"></script>
+
 </body>
 
 </html>
