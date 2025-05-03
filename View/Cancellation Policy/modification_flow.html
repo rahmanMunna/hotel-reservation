@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modification</title>
+    <link rel="stylesheet" href="../../Styles/Cancellation Policy/modification_flow.css">
     <!-- If we use module as type..In a module, handleIncrement is not global, so the HTML cannot access it.-->
 
 </head>
@@ -24,9 +25,9 @@
         <!-- Modify -->
         <div>
             <h2>Modify Changes</h2>
-            <table>
+            <table id="modify-changes">
                 <form onsubmit="return handleSubmit()" action="">
-                    <tbody>
+                    <tbody id="modify-changes-tbody">
                         <tr>
                             <td>New Check-in Date</td>
                             <td><input type="date" class="date" name="" id=""></td>
@@ -62,11 +63,12 @@
                     </tbody>
                     <tfoot>
                         <tr>
+
                             <td>
-                                <input type="submit" value="Save & Modify Booking" name="" id="">
+                                <input class="btn" type="button" value="Cancel Changes" name="" id="">
                             </td>
                             <td>
-                                <input type="button" value="Cancel Changes" name="" id="">
+                                <input class="btn" type="submit" value="Save & Modify Booking" name="" id="">
                             </td>
                         </tr>
                     </tfoot>
@@ -76,7 +78,7 @@
         <!-- Pricing update -->
         <div>
             <h2>Pricing Summary</h2>
-            <table>
+            <table id="pricing-summary" border="3">
                 <thead>
                     <tr>
                         <th>Item</th>
