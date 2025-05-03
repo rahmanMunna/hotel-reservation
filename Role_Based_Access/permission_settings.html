@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Permission Settings</title>
+  <style>
+    body { font-family: Arial; background: #f4f4f4; padding: 20px; }
+    .container { max-width: 600px; background: #fff; padding: 20px; margin: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    label, select, button, input { display: block; width: 100%; margin-top: 10px; }
+    h2 { text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Permission Settings</h2>
+    <form id="roleForm">
+      <label>User Email:</label>
+      <input type="email" id="userEmail" placeholder="Enter user email">
+      <label>Assign Role:</label>
+      <select id="role">
+        <option value="">Select role</option>
+        <option value="Admin">Admin</option>
+        <option value="Editor">Editor</option>
+        <option value="User">User</option>
+      </select>
+      <button type="submit">Assign Role</button>
+    </form>
+  </div>
+  <script src="access_validation.js"></script>
+</body>
+
+</html>
