@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us - Hotel Reservation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+    }
+    label, input, textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contact Us</h1>
+  <form id="contactForm" action="confirmation.html" method="GET">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <div class="error" id="nameError"></div>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <div class="error" id="emailError"></div>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+    <div class="error" id="messageError"></div>
+
+    <label for="captcha">What is 3 + 2? (CAPTCHA)</label>
+    <input type="text" id="captcha" name="captcha" required>
+    <div class="error" id="captchaError"></div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="validation.js"></script>
+</body>
+</html>
