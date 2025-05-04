@@ -1,7 +1,11 @@
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
+main{
+    width: 80%;
+    margin: auto;
+    /* border: 1px solid; */
+}
 .card {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -42,6 +46,19 @@ button:hover {
     transition: width .5s ease;
     cursor: pointer;
 
+}
+a{
+    text-decoration: none;
+    font-size: 20px;
+    border: 2px solid;
+    padding: 5px;
+    border-radius: 10px;
+    
+}
+a:hover{
+    background-color: rgb(215, 250, 243);
+    color: black;
+    transition: background-color .3s ease-in,color .3s ease-in;
 }
 
 /* Responsive design   */
