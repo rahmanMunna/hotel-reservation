@@ -1,10 +1,16 @@
+let checkIn = '';
 function handledSelectedDate() {
     const dates = document.getElementsByClassName('dates');
 
     for (const date of dates) {
         date.addEventListener('click', () => {
             const selectedDate = date.innerHTML;
-            setCheckInDate(selectedDate)
+            if (date.classList.length == 2 && date.classList[1] === 'checked-in') {
+                setCheckOutDate(selectedDate);
+            }
+            else {
+                setCheckInDate(selectedDate)
+            }
             changeSelectedDateColor(date);
         })
     }
@@ -21,6 +27,10 @@ function setCheckInDate(date) {
     const [year, month] = monthInfo.classList.toString().split('-');
     const checkInDate = document.getElementById('check-in-date');
     checkInDate.innerHTML = `${date} ${monthNames[month]}, ${year}`;
+    checkIn = `${date} ${monthNames[month]}, ${year}`;
+    console.log(checkIn);
+
+
 }
 
 function setCheckOutDate(date) {
@@ -38,6 +48,7 @@ function setCheckOutDate(date) {
 function changeSelectedDateColor(component) {
     component.style.backgroundColor = 'red'
     component.style.color = 'white'
+    component.classList.add("checked-in");
 }
 function setNightCount(sign) {
     const night = document.getElementById('night-count');
