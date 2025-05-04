@@ -1,13 +1,41 @@
-// document.getElementById('login-form').addEventListener('submit',handleLogin);
 function handleLogin() {
-    const email = document.getElementById('email-input-field').value;
-    const userId = document.getElementById('user-id-input-field').value;
-    const password = document.getElementById('password-input-field').value;
+    const email = document.getElementById('email').value;
+    const userId = document.getElementById('userId').value;
+    const password = document.getElementById('password').value;
+    const errorMsg = document.getElementById('error-msg');
+    errorMsg.style.color = 'red'
 
-   console.log(email,userId,password);
-   return false;
+
+    if (!isEmpty([userId, email, password])) {
+        // alert('Please fill all fields');
+        errorMsg.innerHTML = 'Please fill all fields';
+        return false;
+    }
+    if (userId <= 0) {
+        errorMsg.innerHTML = 'Invalid User ID';
+        return false;
+    }
+    if (!isEmailValid(email)) {
+        errorMsg.innerHTML = 'Enter a valid email';
+        return false;
+    }
+    if (!isValidPassword(password)) {
+        errorMsg.innerHTML = 'Password must contains uppercase,lowercase,special character and number';
+        // alert('Password must contains uppercase,lowercase,special character and number');
+        return false;
+    }
+    alert('Successfully Login')
+    return true;
 }
 
+const isEmpty = (elements) => {
+    for (const element of elements) {
+        if (element.trim().length === 0) {
+            return false;
+        }
+    }
+    return true;
+};
 const isEmailValid = (email) => {
     const errorMsg = document.getElementById('error-msg');
     errorMsg.style.color = 'red'
@@ -47,3 +75,28 @@ const isFirstCharacterNumber = (text) => {
     return ch >= '0' && ch <= '9';
 };
 
+const isValidPassword = (password) => {
+    if (password.length < 8) return false;
+
+    let hasUpper = false;
+    let hasLower = false;
+    let hasSpecial = false;
+    let hasNumber = false;
+
+    const specialChars = "!@#$%&*()_+[]{}|<>?/";
+
+    for (let i = 0; i < password.length; i++) {
+        const char = password[i];
+
+
+        if (char >= 'A' && char <= "Z") hasUpper = true;         // A-Z
+        else if (char >= 'a' && char <= 'z') hasLower = true;   // a-z
+        else if (specialChars.includes(char)) hasSpecial = true;
+        else if (char >= '0' && char <= '9') hasNumber = true;
+
+        // Short-circuit if all conditions are met
+        if (hasUpper && hasLower && hasSpecial) return true;
+    }
+
+    return hasUpper && hasLower && hasSpecial;
+};

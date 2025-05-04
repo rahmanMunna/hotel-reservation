@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Reservation - Home</title>
+  <style>
+    body { font-family: Arial; margin: 0; padding: 0; }
+    header { background: #333; color: #fff; padding: 20px; text-align: center; }
+    nav a { margin: 0 15px; color: white; text-decoration: none; }
+    section { padding: 50px 20px; text-align: center; }
+    .cta { background: #28a745; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Hotel Cymon</h1>
+    <nav>
+      <a href="features.html">Features</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="#signup">Sign Up</a>
+    </nav>
+  </header>
+  <section>
+    <h2>Your Comfort, Our Priority</h2>
+    <p>Book rooms in top-rated hotels at the best price.</p>
+    <a href="#signup" class="cta">Get Started</a>
+  </section>
+  <section id="signup">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <input type="text" id="name" placeholder="Full Name"><br><br>
+      <input type="email" id="email" placeholder="Email Address"><br><br>
+      <input type="password" id="password" placeholder="Password"><br><br>
+      <button type="submit">Register</button>
+    </form>
+  </section>
+  <script src="form_validation.js"></script>
+</body>
+</html>
