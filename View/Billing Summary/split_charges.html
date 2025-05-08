@@ -14,59 +14,34 @@
             <input type="checkbox" value='Enabled' />Split Charges
 
         </div>
-        <table border="2" id="split-charges-table">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Date</th>
-                    <th>Description</th>
-                    <th>Amount</th>
-                    <th>Guest A</th>
-                    <th>Guest B</th>
-                    <th>Split Mode</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr id="1">
-                    <td>1</td>
-                    <td>01/05/2025</td>
-                    <td>Room Night</td>
-                    <td id="amount">1000</td>
-                    <td class="input">
-                        <input type="number" name="" id="guest-a">
-                    </td>
-                    <td class="input">
-                        <input type="number" id="guest-b">
-                    </td>
-                    <td>
-                        <select name="" id="split-mode" onchange="handleSplitModeChange(this.value)">
-                            <option value="">Split Mode</option>
-                            <option value="Evenly Splitted">Evenly Splitted</option>
-                            <option value="Manually Splitted">Manually Splitted</option>
-                            <option value="Charge Ownership">Charge Ownership</option>
-                        </select>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div id="split-charges-div">
+            <table border="2" id="split-charges-table">
+                <thead>
+                    <tr id="table-header">
+                        <th>No</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <!--  -->
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+            </table>
+        </div>
+        <button onclick="handleConfirm()">Confirm</button>
 
         <h1>Summary Table</h1>
         <table id="summary-table" border="2">
-            <thead>
+            <thead id="summary-table-header">
                 <tr>
                     <th>Guest</th>
                     <th>Balance</th>
-                    <th>Paid</th>
-                    <th>Owes</th>
+
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>A</td>
-                    <td>1000</td>
-                    <td>500</td>
-                    <td>500</td>
-                </tr>
+            <tbody id="summary-table-body">
+            
             </tbody>
         </table>
     </main>
