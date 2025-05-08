@@ -1,12 +1,25 @@
-body{
-    background-color: #ded7dc;
+body {
+    background-color: #f4f4f4;
+  
 }
-table,
-div {
+main{
     width: 80%;
+    margin: auto;
+}
+#folio-table,
+div {
+    width: 100%;
     margin: auto;
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
+}
+#summary-table{
+    width: 10%;
+    margin-left: auto;
+    border: 2px solid;
+    font-size: 20px;
+    margin-bottom: 30px;
+   
 }
 
 td {
@@ -18,11 +31,11 @@ tr:hover {
     background-color: rgb(120, 146, 167);
     color: aliceblue;
     cursor: pointer;
-    transition: background-color .2s ease;
+    transition: background-color .2s ease,color .2 ease;
 
 }
 
-#btn-div{
+#btn-div {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -39,10 +52,63 @@ button {
     border-radius: 10px;
     padding: 10px;
 }
-button:hover{
+
+button:hover {
     background-color: aquamarine;
     cursor: pointer;
     color: black;
     transform: scale(1.04);
     transition: transform .3s ease background-color .3s ease;
+}
+
+span {
+    background-color: antiquewhite;
+    padding: 5px;
+    border-radius: 10px;
+    
+}
+
+#guest-info {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    margin: auto;
+    border: 1px solid;
+    margin-bottom: 30px;
+    padding: 10px;
+    font-size: large;
+    
+}
+#sort-by{
+    text-align: end;
+    margin-bottom: 30px;
+}
+select{
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px;
+
+}
+
+
+/* Responsive design */
+@media (max-width : 500px){
+    #guest-info{
+        grid-template-columns: repeat(2,1fr);
+        font-size: 14px;
+        width: 100%;
+        margin-left: 0px;
+    }
+    #folio-table,div{
+        width: 100%;
+        font-size: 12px;
+    }
+    button{
+        font-size: 14px;
+        
+
+    }
+    select{
+        font-size: 12px;
+        padding: 5px;
+    }
 }
