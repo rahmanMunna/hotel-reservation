@@ -1,3 +1,5 @@
+const bookedDates = [2, 4, 5, 6, 12, 16, 18];
+
 const [currentYear, currentMonth] = currentMonthAndYear();
 const dates = generateDate(currentYear, currentMonth);
 displayDates(dates);
@@ -8,23 +10,31 @@ function displayDates(dates) {
     let startingIndex = dates.day[0];
     let dateCount = 0;
     clearAllBoxes(boxes);
-
     // console.log(boxes.length)
-
-
     while (dateCount < dates.date.length) {
         boxes[startingIndex].innerHTML = dates.date[dateCount];
         startingIndex++;
         dateCount++;
     }
-    // console.log(dateCount, dates.date.length)
 
+    //marks booked date
+    for (const box of boxes) {
+        const day = parseInt(box.innerText.trim());
+        if (bookedDates.includes(day)) {
+            box.style.backgroundColor = "red"; // or any color you want
+            box.style.color = "white"; // optional for better contrast
+        }
+        // console.log(dateCount, dates.date.length)
+
+    }
 }
 
 function clearAllBoxes(boxes) {
     let count = 0;
     while (count < 42) {
         boxes[count].innerHTML = "";
+        boxes[count].style.backgroundColor = 'rgb(189, 225, 213)';
+        boxes[count].style.color = ' rgb(183, 17, 69)';
         count++;
     }
 }
