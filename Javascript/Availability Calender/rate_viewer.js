@@ -164,7 +164,7 @@ function isValidDate(checkInDate, checkOutDate) {
     const checkIn = new Date(checkInDate);
     const checkOut = new Date(checkOutDate);
 
-    if (checkIn > checkOut) {
+    if (checkIn >= checkOut) {
         return false;
     }
     return true;
@@ -264,6 +264,8 @@ function handleCheckOutDate() {
 
     if (!isValidDate(checkInDate, checkOutDate)) {
         alert("Select a valid check Out Date");
+        // checkInDate = "";
+        // checkOutDate = "";
         return false;
     }
     const div = document.getElementById("summary-table");
@@ -278,5 +280,21 @@ function handleCheckOutDate() {
     generateRate(checkIn, checkOut);
     generateAvailableRoomInfo();
 
+}
 
+function handleCheckInDate() {
+    const checkInDate = document.getElementById('check-in-date').value;
+    const checkOutDate = document.getElementById('check-out-date').value;
+
+    if (checkOutDate === "") {
+        return;
+    }
+    if (!isValidDate(checkInDate, checkOutDate)) {
+        alert('Invalid Date Selected');
+        // checkInDate = "";
+        // checkOutDate = "";
+        const summaryTable = document.getElementById("summary-table");
+        summaryTable.hidden = true;
+    }
+    return;
 }
