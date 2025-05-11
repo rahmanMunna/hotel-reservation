@@ -23,12 +23,12 @@
     </header>
     <main>
         <div id="guest-info">
-            <h3>Guest Name : xyz</h3>
-            <h3>Room Number : 80</h3>
-            <h3>Reservation Id : #58458</h3>
-            <h3>Check in Date : 99-99-9999</h3>
-            <h3>Check out Date : 99-99-9999</h3>
-            <h3>Number Of Nights : 3</h3>
+            <h3 id="guest-name">Guest Name : </h3>
+            <h3 id="room-number">Room Number : 80</h3>
+            <h3 id="reservation-id">Reservation Id : #58458</h3>
+            <h3 id="check-in-date">Check in Date : 99-99-9999</h3>
+            <h3 id="check-out-date">Check out Date : 99-99-9999</h3>
+            <h3 id="number-of-nights">Number Of Nights : 3</h3>
         </div>
         <div id="charges">
             <h2>
@@ -43,35 +43,8 @@
                         <th>Amount</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>25-Apr</td>
-                        <td>Room Night Charge</td>
-                        <td>1</td>
-                        <td>1000 Tk</td>
-                        <td>1000 Tk</td>
-                    </tr>
-                    <tr>
-                        <td>25-Apr</td>
-                        <td>Room Night Charge</td>
-                        <td>1</td>
-                        <td>1000 Tk</td>
-                        <td>1000 Tk</td>
-                    </tr>
-                    <tr>
-                        <td>25-Apr</td>
-                        <td>Room Night Charge</td>
-                        <td>1</td>
-                        <td>1000 Tk</td>
-                        <td>1000 Tk</td>
-                    </tr>
-                    <tr>
-                        <td>25-Apr</td>
-                        <td>Room Night Charge</td>
-                        <td>1</td>
-                        <td>1000 Tk</td>
-                        <td>1000 Tk</td>
-                    </tr>
+                <tbody id="charges-tbody">
+                   <!-- js populate this based on data -->
                 </tbody>
             </table>
         </div>
@@ -84,40 +57,22 @@
                         <th>Amount</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Total Amount Due</td>
-                        <td>1000 Tk </td>
-                    </tr>
-                    <tr>
-                        <td>Payed Amount</td>
-                        <td>1000 TK </td>
-                    </tr>
-                    <tr>
-                        <td>Payment Method</td>
-                        <td>Visa(**** **** ***1234)</td>
-                    </tr>
-                    <tr>
-                        <td>payment Date</td>
-                        <td>April 29,2025</td>
-                    </tr>
-                    <tr>
-                        <td>Balance Due</td>
-                        <td>0.00 TK
-                    </tr>
+                <tbody id="payment-summary-tbody">
+                   <!-- js will populate this section  -->
                 </tbody>
             </table>
         </div>
         <div id="btns">
             <button id="email-receipt">Email Receipt</button>
-            <button id="email-receipt">Print</button>
-            <button id="email-receipt">Download PDF</button>
+            <!-- <button id="print">Print</button> -->
+            <button id="download-pdf">Download PDF</button>
         </div>
     </main>
     <footer>
         <h3>"Thank you for staying with us. We hope to see you again!"</h3>
         <h3>"All charges are final unless disputed within 24 hours."”</h3>
     </footer>
+    <script src="./reciept_generator.js"></script>
 </body>
 
 
