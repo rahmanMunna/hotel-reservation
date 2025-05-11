@@ -40,7 +40,7 @@ function handleAddButton(){
   const startDate = document.getElementById('from-date').value;
   const endDate = document.getElementById('to-date').value;
   const groupContact = document.getElementById('number').value;
-  const contactName = document.getElementById('name');
+  const contactName = document.getElementById('name').value;
 
   const groupInfo = [groupName,groupContact,startDate,endDate,groupContact,contactName];
 
@@ -165,6 +165,5 @@ function loadEventScheduleTable(){
     tbody.appendChild(tr);
   })
 }
-
 
 loadEventScheduleTable();

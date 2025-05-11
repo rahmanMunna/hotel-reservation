@@ -1,85 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculate Penalty</title>
-    <link rel="stylesheet" href="../../Styles/Cancellation Policy/penalty_calculator.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="../../Styles/Cancellation Policy/penalty_calculator.css"
+    />
+  </head>
 
-<body>
+  <body>
     <main>
-        <div id="guest-information">
-            <h3>Booking Id : <span>#8768879</span></h3>
-            <h3>Total Amount paid : <span>800</span></h3>
-            <h3>Cancellation Policy Applied : <span>Flexible Rate</span></h3>
-        </div>
-        <!-- Select date and note -->
-        <div>
-            <table>
-                <tbody>
-                    <form action="">
-                        <tr>
-                            <td>
-                                <label for="">Cancellation date</label>
-                            </td>
-                            <td>
-                                <input type="date" name="" id="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="">Reason for Cancellation</label>
-                            </td>
-                            <td>
-                                <textarea rows="4"
-                                cols="30" placeholder="optional" name="" id=""></textarea>
-                            </td>
-                        </tr>
-                    </form>
-                </tbody>
-            </table>
-        </div>
-        <!-- Show penalty Details table -->
-        <div>
-            <table border="2">
-                <thead>
-                    <tr>
-                        <th>Cancellation date</th>
-                        <th>
-                            Penalty Fee
-                        </th>
-                        <th>
-                            Refundable Amount
-                        </th>
-                        <th>
-                            Notes
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>May 1,20</td>
-                        <td>1 night(2000)</td>
-                        <td>600</td>
-                        <td>After free period, penalty applies</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <p style="text-align: center;">
-            <a href="">
-                <button>Confirm Cancellation</button>
-            </a>
-            <a href="">
-                <button>Modify Stay instead</button>
-            </a>
-            <a href="./termsDisplay.html">
-                <button>Back to Terms</button>
-            </a>
-        </p>
+      <div id="guest-information">
+        <h3>Booking Id : <span>#8768879</span></h3>
+        <h3>Total Amount paid : <span>800</span></h3>
+        <h3>Cancellation Policy Applied : <span>Flexible Rate</span></h3>
+      </div>
+      <!-- Select date and note -->
+      <div>
+        <table>
+          <tbody>
+            <form onsubmit="return handleSaveButton()" action="">
+              <tr>
+                <td>
+                  <label for="">Cancellation date</label>
+                </td>
+                <td>
+                  <input type="date" name="" id="cancellation-date" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="">Reason for Cancellation</label>
+                </td>
+                <td>
+                  <textarea
+                    rows="4"
+                    cols="30"
+                    placeholder=""
+                    name=""
+                    id="reason-for-cancellation"
+                  ></textarea>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <input type="submit" value="Save" />
+                </td>
+              </tr>
+            </form>
+          </tbody>
+        </table>
+      </div>
+      <!-- Show penalty Details table -->
+      <div>
+        <table border="2">
+          <thead>
+            <tr>
+              <th>Cancellation date</th>
+              <th>Penalty Fee</th>
+              <th>Refundable Amount</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="set-cancellation-date">May 1,20</td>
+              <td id="panelaty-fee">1 night(2000)</td>
+              <td id="refundable-amount">600</td>
+              <td id="notes">After free period, penalty applies</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align: center">
+        <a href="">
+          <button>Confirm Cancellation</button>
+        </a>
+        <a href="">
+          <button>Modify Stay instead</button>
+        </a>
+        <a href="./termsDisplay.html">
+          <button>Back to Terms</button>
+        </a>
+      </p>
     </main>
-</body>
 
+    <script src="../../Javascript/Cancellation_policy/calculate_penalty.js"></script>
+
+  </body>
 </html>
