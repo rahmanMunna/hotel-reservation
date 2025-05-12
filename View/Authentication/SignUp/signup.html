@@ -1,82 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign up form</title>
-    <link rel="stylesheet" href="../../../Styles/Authentication/signup.css">
-</head>
+    <link rel="stylesheet" href="../../../Styles/Authentication/signup.css" />
+  </head>
 
-<body>
+  <body>
     <div id="sign-up-div">
-        <h1>Register</h1>
-        <table>
-            <tbody>
-                <form id="sign-up-form" action="" onsubmit="return handleSubmit()">
-                    <tr>
-                        <td>First Name</td>
-                        <td>
-                            <input id="first-name" type="text" placeholder="enter your first name">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Last Name</td>
-                        <td>
-                            <input id="last-name" type="text" placeholder="enter your Last name">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td>
-                            <input id="email" type="email" placeholder="enter your email">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Phone</td>
-                        <td>
-                            <input id="phone" type="number" placeholder="enter your phone number">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Date of Birth</td>
-                        <td>
-                            <input id="dob" type="date">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td>
-                            <input id="password" type="password" placeholder="enter password">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Confirm Password</td>
-                        <td>
-                            <input id="confirm-password" type="password" placeholder="enter password">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <input id="signup-btn" type="submit" value="Register">
-                        </td>
-                    </tr>
-
-                </form>
-            </tbody>
-        </table>
-        <p style="text-align: center;" id="error-msg"></p>
-        <div id="login-div">
-            <p>
-                Already have an Account?
-            </p>
-            <a href="../Login/login.html">Login</a>
-        </div>
+      <h1>Register</h1>
+      <table>
+        <tbody>
+          <form id="sign-up-form" method="post" action="../../../php/signup.php" onsubmit="return handleSubmit()">
+            <tr>
+              <td>First Name</td>
+              <td>
+                <input
+                  name="firstName"
+                  id="first-name"
+                  type="text"
+                  placeholder="enter your first name"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Last Name</td>
+              <td>
+                <input
+                  name="lastName"
+                  id="last-name"
+                  type="text"
+                  placeholder="enter your Last name"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>
+                <input
+                  name="email"
+                  id="email"
+                  type="email"
+                  placeholder="enter your email"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Phone</td>
+              <td>
+                <input
+                  name="phone"
+                  id="phone"
+                  type="number"
+                  placeholder="enter your phone number"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Date of Birth</td>
+              <td>
+                <input name="dob" id="dob" type="date" />
+              </td>
+            </tr>
+            <tr>
+              <td>Password</td>
+              <td>
+                <input
+                  name="password"
+                  id="password"
+                  type="password"
+                  placeholder="enter password"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Confirm Password</td>
+              <td>
+                <input
+                  name="confirmPassword"
+                  id="confirm-password"
+                  type="password"
+                  placeholder="enter password"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <input name="submit" id="signup-btn" type="submit" value="Register" />
+              </td>
+            </tr>
+          </form>
+        </tbody>
+      </table>
+      <p style="text-align: center" id="error-msg"></p>
+      <div id="login-div">
+        <p>Already have an Account?</p>
+        <a href="../Login/login.html">Login</a>
+      </div>
     </div>
 
     <script src="../../../Javascript/Authentication/signup.js"></script>
-
-</body>
-
+  </body>
 </html>

@@ -1,34 +1,29 @@
 <?php
+
 if (isset($_POST["submit"])) {
     $loginData = $_POST;
     $email = $loginData["email"];
     $userId = $loginData["userId"];
     $password = $loginData["password"];
 
+    $userEmail = "munna@gmail.com";
+    $userPassword = "Example#1234";
+    $id = '1234';
+
     // echo "name : {$email} password : ${password}";
-    if (isValidEmail($email)) {
-        echo "Valid Email";
+
+    if ($email == $userEmail && $userId == $id && $userPassword == $password) {
+        setcookie('status', 'true', time() + 5000, '/');
+        header('Location: ../View/home.html');
+        exit(); // Always use exit after a header redirect
+
     } else {
-        echo 'Invalid Email';
+        header('Location: ../View/Authentication/Login/login.html');
     }
+
+
 } else {
-    echo "Haven't submit yet";
+    header('Location: ../View/Authentication/Login/login.html');
 }
 
-function isValidEmail($email)
-{
-    if ($email != "") {
-        $email = trim($email);
-        if (strpos($email, '@') !== false) {
-            list($localName, $domainName) = explode('@', $email);
-            if ($domainName === 'gmail.com') {
-                return true;
-            }
-        }
-        else{
-            return false;
-        }
-    }
-    return false;
-}
-function isValidPassword($password) {}
+?>
