@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Room Status Board</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    h2 { color: #333; }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    th, td { padding: 12px; border: 1px solid #ccc; text-align: center; }
+    th { background-color: #007bff; color: #fff; }
+    .status-clean { background-color: #d4edda; }
+    .status-dirty { background-color: #f8d7da; }
+    .status-inprogress { background-color: #fff3cd; }
+  </style>
+</head>
+<body>
+  <h2>Room Status Board</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Room Number</th>
+        <th>Status</th>
+        <th>Last Cleaned</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="status-clean">
+        <td>101</td>
+        <td>Clean</td>
+        <td>2025-05-12</td>
+      </tr>
+      <tr class="status-dirty">
+        <td>102</td>
+        <td>Dirty</td>
+        <td>2025-05-10</td>
+      </tr>
+      <tr class="status-inprogress">
+        <td>103</td>
+        <td>Cleaning in Progress</td>
+        <td>2025-05-11</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
