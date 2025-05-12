@@ -1,10 +1,30 @@
-const bookedDates = [2, 4, 5, 6, 12, 16, 18];
+// const bookedDates = [2, 4, 5, 6, 12, 16, 18];
+const bookedDates = [
+    "2025-03-10", // March
+    "2025-03-22",
+    "2025-04-05", // April
+    "2025-04-14",
+    "2025-05-02", // May
+    "2025-05-04",
+    "2025-05-05",
+    "2025-05-06",
+    "2025-05-12",
+    "2025-05-16",
+    "2025-05-18",
+    "2025-06-03", // June
+    "2025-06-17",
+    "2025-07-01", // July
+    "2025-07-15",
+    "2025-08-08", // August
+    "2025-08-20"
+];
+
 
 const [currentYear, currentMonth] = currentMonthAndYear();
 const dates = generateDate(currentYear, currentMonth);
-displayDates(dates);
+displayDates(dates, currentMonth, currentYear);
 
-function displayDates(dates) {
+function displayDates(dates, currentDate, currentYear) {
     const boxes = document.getElementsByClassName("dates");
     const calenderDiv = document.getElementById('dates-day');
     let startingIndex = dates.day[0];
@@ -16,18 +36,25 @@ function displayDates(dates) {
         startingIndex++;
         dateCount++;
     }
+    markBookedDate(boxes, currentMonth, currentYear);
+}
+function markBookedDate(boxes, currentMonth, currentYear) {
+    // Pad month to 2 digits
+    const paddedMonth = String(currentMonth).padStart(2, '0');
 
-    //marks booked date
     for (const box of boxes) {
-        const day = parseInt(box.innerText.trim());
-        if (bookedDates.includes(day)) {
-            box.style.backgroundColor = "red"; // or any color you want
-            box.style.color = "white"; // optional for better contrast
-        }
-        // console.log(dateCount, dates.date.length)
+        const day = box.innerText.trim();
+        const paddedDay = String(day).padStart(2, '0');
 
+        const date = `${currentYear}-${paddedMonth}-${paddedDay}`;
+
+        if (bookedDates.includes(date)) {
+            box.style.backgroundColor = "red";
+            box.style.color = "white";
+        }
     }
 }
+
 
 function clearAllBoxes(boxes) {
     let count = 0;
@@ -86,7 +113,7 @@ function displayPreviousMonthCalendar() {
     currentMonthInfo.classList.value = year + "-" + previousMonth;
     showMonthAndYear(year, previousMonth, currentMonthInfo);
     const dates = generateDate(year, previousMonth);
-    displayDates(dates)
+    displayDates(dates,previousMonth,year)
 
 }
 
@@ -96,7 +123,7 @@ function displayNextMonthCalendar() {
     currentMonthInfo.classList.value = year + "-" + nextMonth;
     showMonthAndYear(year, nextMonth, currentMonthInfo);
     const dates = generateDate(year, nextMonth);
-    displayDates(dates)
+    displayDates(dates,nextMonth,year)
 }
 
 function showMonthAndYear(year, month, currentMonthInfo) {

@@ -34,75 +34,118 @@ const events = [
     description: 'A celebration following the ceremony, including dinner, dancing, and other festivities.'
   }
 ]
+const eventSpaces = [
+  {
+    venue: "Grand Ballroom",
+    available: false
+  },
+  {
+    venue: "Executive Boardroom",
+    available: true
+  },
+  {
+    venue: "Poolside Terrace",
+    available: true
+  },
+  {
+    venue: "Garden Lawn",
+    available: false
+  },
+  {
+    venue: "Sky Lounge",
+    available: true
+  },
+  {
+    venue: "VIP Suite",
+    available: false
+  },
+  {
+    venue: "Conference Hall",
+    available: true
+  },
+  {
+    venue: "Banquet Hall B",
+    available: true
+  },
+  {
+    venue: "Exhibition Space",
+    available: false
+  },
+  {
+    venue: "Pre-Function Area",
+    available: true
+  }
+];
 
-function handleAddButton(){
+function handleAddButton() {
   const groupName = document.getElementById("group-name").value;
   const startDate = document.getElementById('from-date').value;
   const endDate = document.getElementById('to-date').value;
   const groupContact = document.getElementById('number').value;
   const contactName = document.getElementById('name').value;
 
-  const groupInfo = [groupName,groupContact,startDate,endDate,groupContact,contactName];
+  const groupInfo = [groupName, groupContact, startDate, endDate, groupContact, contactName];
 
-  if(!isEmpty(groupInfo)){
+  if (!isEmpty(groupInfo)) {
     alert("Fill all the field");
     return;
   }
 
-  if(new Date(startDate) >= new Date(endDate)){
+  if (new Date(startDate) >= new Date(endDate)) {
     alert("Enter a valid Date");
     return;
   }
-  if(groupContact.length !== 11){
+  if (groupContact.length !== 11) {
     alert("Enter a valid contact number");
     return;
   }
   setContactName(contactName);
-  setEventDate(startDate,endDate);
+  setEventDate(startDate, endDate);
   setGroupContact(groupContact);
   setGroupName(groupName);
-  
+
   document.getElementById('save-event').disabled = false;
 
   return;
-  
+
 }
 
 const isEmpty = (elements) => {
-    for (const element of elements) {
-        if (element.length === 0) {
-            return false;
-        }
+  for (const element of elements) {
+    if (element.length === 0) {
+      return false;
     }
-    return true;
+  }
+  return true;
 };
 
-function setGroupName(groupName){
-  const groupNameSummary =document.getElementById('set-group-name');
+function setGroupName(groupName) {
+  const groupNameSummary = document.getElementById('set-group-name');
   groupNameSummary.innerHTML = groupName;
 }
-function setGroupContact(number){
+function setGroupContact(number) {
   const groupContactSummary = document.getElementById('set-group-contact');
   groupContactSummary.innerHTML = number;
 }
-function setContactName(contactName){
+function setContactName(contactName) {
   const setContactName = document.getElementById('set-contact-name');
   setContactName.innerHTML = contactName;
 }
-function setEventDate(startDate,endDate){
+function setEventDate(startDate, endDate) {
   const monthNames = [
-        'January', 'February', 'March', 'April', 'May', 'June',
-        'July', 'August', 'September', 'October', 'November', 'December'
-    ];
-    const start = new Date(startDate);
-    const end = new Date(endDate);
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+  const start = new Date(startDate);
+  const end = new Date(endDate);
 
-    const eventDate = document.getElementById('set-event-date');
-    eventDate.innerHTML = `${monthNames[start.getMonth()]} ${start.getDate()} - ${monthNames[end.getMonth()]} ${end.getDate()} `
+  const eventDate = document.getElementById('set-event-date');
+  eventDate.innerHTML = `${monthNames[start.getMonth()]} ${start.getDate()} - ${monthNames[end.getMonth()]} ${end.getDate()} `
 
 }
 
-function handleSubmit(){
+function handleSubmit() {
+
   const eventName = document.getElementsByName('event-name')[0].value;
   const date = document.getElementsByName('event-date')[0].value;
   const startTime = document.getElementsByName('event-time')[0].value;
@@ -110,46 +153,43 @@ function handleSubmit(){
   const venue = document.getElementsByName('venue')[0].value;
   const numberOfGuests = document.getElementsByName('guests')[0].value;
   const setupType = document.getElementsByName('setup-type')[0].value;
-  // const equipment = document.getElementsByName('equipment')[0].value;
-  // const notes = document.getElementsByName('notes')[0].value;
 
-
-  const addEventData = [eventName,date,startTime,endTime,venue,numberOfGuests,setupType];
+  const addEventData = [eventName, date, startTime, endTime, venue, numberOfGuests, setupType];
 
   console.log(addEventData)
-  if(!isEmpty(addEventData)){
+  if (!isEmpty(addEventData)) {
     alert('Fill all the field');
     return false;
   }
-  if(numberOfGuests<=0){
+  if (numberOfGuests <= 0) {
     alert("Enter a valid number of guests");
     return false;
   }
   const newEvent = {
-    name:eventName,
-    date:date,
-    startTime:parseInt(startTime),
-    endTime:parseInt(endTime),
-    venue:venue,
-    guests:parseInt(numberOfGuests),
-    setup:setupType,
+    name: eventName,
+    date: date,
+    startTime: parseInt(startTime),
+    endTime: parseInt(endTime),
+    venue: venue,
+    guests: parseInt(numberOfGuests),
+    setup: setupType,
     duration: `${parseInt(endTime) - parseInt(startTime)}h`
   }
   events.push(newEvent);
   console.log(events);
-  
+
   // console.log(time);
   loadEventScheduleTable();
   return true;
 
 }
 
-function loadEventScheduleTable(){
-  const tbody =  document.getElementById("event-schedule-tbody");
-  events.forEach(event =>{
+function loadEventScheduleTable() {
+  const tbody = document.getElementById("event-schedule-tbody");
+  events.forEach(event => {
     const tr = document.createElement('tr');
-    tr.innerHTML = 
-    `  
+    tr.innerHTML =
+      `  
     <td id="event-name">${event.name}</td>
     <td id="date">${event.date}</td>
     <td id="starting-time">${event.startTime}</td>
@@ -166,4 +206,19 @@ function loadEventScheduleTable(){
   })
 }
 
+function loadVenueOptions() {
+  const selectVenue = document.getElementById('select-venue');
+  eventSpaces.forEach(eventSpace => {
+    const option = document.createElement('option');
+    option.value = eventSpace.venue;
+    option.innerHTML = eventSpace.venue;
+    eventSpace.available ? option.disabled = true : option.disabled = false;
+
+    selectVenue.after(option);
+
+  })
+}
+
+
 loadEventScheduleTable();
+loadVenueOptions();

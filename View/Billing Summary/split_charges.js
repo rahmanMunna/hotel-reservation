@@ -106,7 +106,7 @@ function manuallySplitted(id) {
                 state = true;
                 return;
             }
-    
+
             else {
                 totalAmount += parseInt(input.value);
                 console.log(totalAmount, parseInt(input.value));
@@ -121,7 +121,7 @@ function manuallySplitted(id) {
     else if (totalAmount > parseInt(amount)) {
         alert('Out of Amount');
     }
-    
+
 }
 function chargeOwnership() {
 
@@ -129,7 +129,6 @@ function chargeOwnership() {
 
 function handleSplitModeChange(splittedMode, id) {
     if (!isSelected(splittedMode)) {
-
         return false;
     }
     if (splittedMode === "Evenly Splitted") {
@@ -153,22 +152,41 @@ function handleConfirm() {
     // console.log(inputs)
 
     //check is any mode is selected for all row
-    for (const split_option of split_options) {
+    // for (const split_option of split_options) {
 
-        if (split_option.value === "") {
-            alert();
-            // return;
+    //     if (split_option.value === "") {
+    //         alert('Select a split mode');
+    //         return;
+    //     }
+
+    // }
+
+    // //check all input field has value
+    // for (const input of inputs) {
+
+    //     if (input.value === "" || parseInt(input.value) < 0) {
+    //         alert('Enter a valid amount');
+    //         return;
+    //     }
+    // }
+
+    //validate all charges inserted correctly
+
+    charges.forEach(charge => {
+        const inputs = document.getElementsByClassName(charge.id);
+        console.log(inputs);
+        let totalAmount = 0;
+        for (const input of inputs) {
+            totalAmount = totalAmount + parseInt(input.value);
         }
-
-    }
-    //check all input field has value
-    for (const input of inputs) {
-
-        if (input.value === "" || parseInt(input.value) < 0) {
-            alert();
-            return;
+        console.log(charge.amount,totalAmount)
+        if (totalAmount < charge.amount) {
+            alert(`row-${charge.id} has total amount doesn't match`);
+            return false;
         }
-    }
+    })
+
+
 
 }
 
