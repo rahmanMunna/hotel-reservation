@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Category Filter</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #eef; }
+    label, select { font-size: 18px; margin-bottom: 10px; }
+    .result { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h2>Filter Rooms by Category</h2>
+  <label for="room-type">Choose a type:</label>
+  <select id="room-type">
+    <option value="standard">Standard</option>
+    <option value="deluxe">Deluxe</option>
+    <option value="suite">Suite</option>
+  </select>
+  <div class="result" id="result"></div>
+
+  <script>
+    const select = document.getElementById('room-type');
+    const result = document.getElementById('result');
+    select.addEventListener('change', () => {
+      result.innerHTML = `You selected: <strong>${select.value}</strong> room.`;
+    });
+  </script>
+</body>
+</html>
