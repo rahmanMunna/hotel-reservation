@@ -10,83 +10,7 @@ if (isset($_SESSION['status'])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Charge Break Down</title>
-        <style>
-            body {
-                background-color: aliceblue;
-            }
-
-            table,
-            section,
-            p {
-                width: 70%;
-                margin: auto;
-                font-size: 20px;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-            }
-
-            tr:hover {
-                background-color: rgb(120, 146, 167);
-                color: aliceblue;
-                cursor: pointer;
-                transition: background-color .2s ease;
-            }
-
-            td {
-                text-align: center;
-            }
-
-            p {
-                margin-top: 50px;
-                text-align: end;
-            }
-
-            button {
-                width: 20%;
-                text-align: center;
-                font-size: 30px;
-            }
-
-            button:hover {
-                background-color: rgb(229, 127, 255);
-                cursor: pointer;
-                color: black;
-                transform: scale(1.04);
-                transition: transform .7s ease background-color .7s ease;
-            }
-
-            input[type="search"] {
-                height: 40px;
-                width: 40%;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                font-size: 20px;
-            }
-
-            input[type="button"] {
-                height: 40px;
-                border-radius: 5px;
-            }
-
-            #search-by-service {
-                display: flex;
-                align-items: center;
-                gap: 4px;
-            }
-
-            input[type="button"]:hover {
-                color: antiquewhite;
-                background-color: blueviolet;
-                cursor: pointer;
-                transition: color .5s ease, background-color .5s ease;
-            }
-
-            #search {
-                width: 70%;
-                margin: auto;
-                display: flex;
-                align-items: end;
-            }
-        </style>
+        <link rel="stylesheet" href="../../Styles/Billing Summary/charge_breakdown.css">
     </head>
 
     <body>
@@ -131,7 +55,7 @@ if (isset($_SESSION['status'])) {
             </p>
 
         </main>
-        <script src="./charge_breakdown.js"></script>
+        <script src="../../Javascript/Billing Summary/charge_breakdown.js"></script>
     </body>
 
     </html>

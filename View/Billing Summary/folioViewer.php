@@ -110,7 +110,7 @@ if (isset($_SESSION['status'])) {
                 </a>
             </div>
         </main>
-        <script src="./folioViewer.js"></script>
+        <script src="../../Javascript/Billing Summary/folioViewer.js"></script>
         <!-- <script src="./split_charges.js"></script> -->
     </body>
 

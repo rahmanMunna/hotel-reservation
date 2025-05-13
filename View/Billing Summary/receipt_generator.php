@@ -77,7 +77,7 @@ if (isset($_SESSION['status'])) {
             <h3>"Thank you for staying with us. We hope to see you again!"</h3>
             <h3>"All charges are final unless disputed within 24 hours."”</h3>
         </footer>
-        <script src="./reciept_generator.js"></script>
+        <script src="../../Javascript/Billing Summary/receipt_generator.js"></script>
     </body>
 
 
