@@ -14,7 +14,7 @@ if (isset($_SESSION['status'])) {
     </head>
 
     <body>
-        <a href="../php/logout.php">
+        <a href="../controller/php/logout.php">
             <button>logout</button>
         </a>
         <a href="../View/Billing Summary/folioViewer.php">
