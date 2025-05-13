@@ -4,4 +4,4 @@
 session_start();
 session_destroy();
 
-header('Location: ../View/Authentication/Login/login.html');
+header('Location: ../../View/Authentication/Login/login.html');

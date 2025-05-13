@@ -14,13 +14,15 @@ if (isset($_POST["submit"])) {
 
     if ($email == $userEmail && $userId == $id && $userPassword == $password) {
         $_SESSION['status'] = true;
+        $_SESSION['userId'] = $userId;
+        $_SESSION['email'] = $email;
         // setcookie('status', 'true', time() + 5000, '/');
-        header('Location: ../View/home.php');
+        header('Location: ../../View/home.php');
         exit(); // Always use exit after a header redirect
 
     } else {
-        header('Location: ../View/Authentication/Login/login.html');
+        header('Location: ../../View/Authentication/Login/login.html');
     }
 } else {
-    header('Location: ../View/Authentication/Login/login.html');
+    header('Location: ../../View/Authentication/Login/login.html');
 }
