@@ -29,6 +29,15 @@ if (isset($_SESSION['status'])) {
         <a href="../View/Contact_Us_Form/contact_us.php">
             <button>Contact Us</button>
         </a>
+        <a href="../View/Group Booking/group_manager.php">
+            <button>Group Booking</button>
+        </a>
+        <a href="../View/Group Booking/group_block_tool.php">
+            <button>Group Booking Tool</button>
+        </a>
+        <a href="../View/Group Booking/event_planner.php">
+            <button>Event Planner</button>
+        </a>
     </body>
 
     </html>
