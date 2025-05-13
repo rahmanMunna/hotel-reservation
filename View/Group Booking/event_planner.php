@@ -175,7 +175,7 @@ if (isset($_SESSION['status'])) {
                 </table>
             </form>
         </section>
-        <script src="../../Javascript/Group bookings/event_planner.js"></script>
+        <script src="../../asset/Javascript/Group bookings/event_planner.js"></script>
     </body>
 
     </html>

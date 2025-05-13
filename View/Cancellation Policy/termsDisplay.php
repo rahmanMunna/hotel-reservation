@@ -9,7 +9,7 @@ if (isset($_SESSION['status'])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Terms Display</title>
-        <link rel="stylesheet" href="../../Styles/Cancellation Policy/termsDisplay.css">
+        <link rel="stylesheet" href="../../asset/Styles/Cancellation Policy/termsDisplay.css">
     </head>
 
     <body>
@@ -71,7 +71,7 @@ if (isset($_SESSION['status'])) {
                 </a>
             </p>
         </main>
-        <script src="../../Javascript/Cancellation_policy/termDisplay.js"></script>
+        <script src="../../asset/Javascript/Cancellation_policy/termDisplay.js"></script>
     </body>
 
     </html>

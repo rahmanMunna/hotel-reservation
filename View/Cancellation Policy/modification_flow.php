@@ -9,7 +9,7 @@ if (isset($_SESSION['status'])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Modification</title>
-        <link rel="stylesheet" href="../../Styles/Cancellation Policy/modification_flow.css">
+        <link rel="stylesheet" href="../../asset/Styles/Cancellation Policy/modification_flow.css">
         <!-- If we use module as type..In a module, handleIncrement is not global, so the HTML cannot access it.-->
 
     </head>
@@ -125,7 +125,7 @@ if (isset($_SESSION['status'])) {
             <h3>"This rate becomes Non-Refundable after modification."</h3>
             </p>
         </main>
-        <script type="" src="../../Javascript/Cancellation_policy/modifiation_flow.js"></script>
+        <script type="" src="../../asset/Javascript/Cancellation_policy/modification_flow.js"></script>
 
     </body>
 

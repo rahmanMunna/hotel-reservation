@@ -9,7 +9,7 @@ if (isset($_SESSION['status'])) {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Contact US</title>
-        <link rel="stylesheet" href="../../Styles/Contact_Us/contact_us.css">
+        <link rel="stylesheet" href="../../asset/Styles/Contact_Us/contact_us.css">
 
     </head>
 
@@ -50,7 +50,7 @@ if (isset($_SESSION['status'])) {
             </form>
         </main>
 
-        <script src="../../Javascript/contact_us/contact_us.js"></script>
+        <script src="../../asset/Javascript/contact_us/contact_us.js"></script>
     </body>
 
     </html>

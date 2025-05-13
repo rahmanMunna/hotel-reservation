@@ -10,7 +10,7 @@ if (isset($_SESSION['status'])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Folio Viewer</title>
-        <link rel="stylesheet" href="../../Styles/Billing Summary/folioViewer.css">
+        <link rel="stylesheet" href="../../asset/Styles/Billing Summary/folioViewer.css">
     </head>
 
     <body>
@@ -110,7 +110,7 @@ if (isset($_SESSION['status'])) {
                 </a>
             </div>
         </main>
-        <script src="../../Javascript/Billing Summary/folioViewer.js"></script>
+        <script src="../../asset/Javascript/Billing Summary/folioViewer.js"></script>
         <!-- <script src="./split_charges.js"></script> -->
     </body>
 

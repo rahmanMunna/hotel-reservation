@@ -182,8 +182,8 @@ if (isset($_SESSION['status'])) {
                 </table>
             </div>
         </main>
-        <script src="../../Javascript/Group bookings/groupBookingValidation.js"></script>
-        <script src="../../Javascript/Group bookings/groupBookingSummaryTable.js"></script>
+        <script src="../../asset/Javascript/Group bookings/groupBookingValidation.js"></script>
+        <script src="../../asset/Javascript/Group bookings/groupBookingSummaryTable.js"></script>
     </body>
 
     </html>

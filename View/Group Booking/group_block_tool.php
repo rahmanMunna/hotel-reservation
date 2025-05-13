@@ -165,7 +165,7 @@ if (isset($_SESSION['status'])) {
                 <input type="submit" value="Submit" />
             </form>
         </main>
-        <script src="../../Javascript/Group bookings/group_block_tool.js"></script>
+        <script src="../../asset/Javascript/Group bookings/group_block_tool.js"></script>
     </body>
 
     </html>

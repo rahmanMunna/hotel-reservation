@@ -9,7 +9,7 @@ if (isset($_SESSION['status'])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Service Catalog</title>
-        <link rel="stylesheet" href="../../Styles/Concierge Request/service_catalog.css">
+        <link rel="stylesheet" href="../../asset/Styles/Concierge Request/service_catalog.css">
     </head>
 
     <body>
@@ -19,7 +19,7 @@ if (isset($_SESSION['status'])) {
 
             </div>
         </main>
-        <script type="module" src="../../Javascript/Concierge_Request/services.js"></script>
+        <script type="module" src="../../asset/Javascript/Concierge_Request/services.js"></script>
     </body>
 
     </html>

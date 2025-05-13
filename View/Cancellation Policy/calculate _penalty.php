@@ -11,7 +11,7 @@ if (isset($_SESSION['status'])) {
         <title>Calculate Penalty</title>
         <link
             rel="stylesheet"
-            href="../../Styles/Cancellation Policy/penalty_calculator.css" />
+            href="../../asset/Styles/Cancellation Policy/penalty_calculator.css" />
     </head>
 
     <body>
@@ -91,7 +91,7 @@ if (isset($_SESSION['status'])) {
             </p>
         </main>
 
-        <script src="../../Javascript/Cancellation_policy/calculate_penalty.js"></script>
+        <script src="../../asset/Javascript/Cancellation_policy/calculate_penalty.js"></script>
 
     </body>
 

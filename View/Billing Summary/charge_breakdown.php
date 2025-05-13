@@ -9,7 +9,7 @@ if (isset($_SESSION['status'])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Charge Break Down</title>
-        <link rel="stylesheet" href="../../Styles/Billing Summary/charge_breakdown.css">
+        <link rel="stylesheet" href="../../asset/Styles/Billing Summary/charge_breakdown.css">
     </head>
 
     <body>
@@ -54,7 +54,7 @@ if (isset($_SESSION['status'])) {
             </p>
 
         </main>
-        <script src="../../Javascript/Billing Summary/charge_breakdown.js"></script>
+        <script src="../../asset/Javascript/Billing Summary/charge_breakdown.js"></script>
     </body>
 
     </html>

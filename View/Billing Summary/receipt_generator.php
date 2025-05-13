@@ -10,7 +10,7 @@ if (isset($_SESSION['status'])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Receipt Generator</title>
-        <link rel="stylesheet" href="../../Styles/Billing Summary/receipt_generator.css">
+        <link rel="stylesheet" href="../../asset/Styles/Billing Summary/receipt_generator.css">
     </head>
 
     <body>
@@ -77,7 +77,7 @@ if (isset($_SESSION['status'])) {
             <h3>"Thank you for staying with us. We hope to see you again!"</h3>
             <h3>"All charges are final unless disputed within 24 hours."”</h3>
         </footer>
-        <script src="../../Javascript/Billing Summary/receipt_generator.js"></script>
+        <script src="../../asset/Javascript/Billing Summary/receipt_generator.js"></script>
     </body>
 
 

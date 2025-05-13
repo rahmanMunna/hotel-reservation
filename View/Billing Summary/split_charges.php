@@ -50,7 +50,7 @@ if (isset($_SESSION['status'])) {
                 </tbody>
             </table>
         </main>
-        <script src="../../Javascript/Billing Summary/split_charges.jss"></script>
+        <script src="../../asset/Javascript/Billing Summary/split_charges.jss"></script>
     </body>
 
     </html>
