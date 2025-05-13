@@ -12,12 +12,16 @@ if (isset($_SESSION['status'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Welcome Home</title>
     </head>
+
     <body>
         <a href="../php/logout.php">
             <button>logout</button>
         </a>
         <a href="../View/Billing Summary/folioViewer.php">
             <button>Billing Summary</button>
+        </a>
+        <a href="../View/Cancellation Policy/termsDisplay.php">
+            <button>Cancellation Policy</button>
         </a>
     </body>
 
