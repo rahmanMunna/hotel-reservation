@@ -26,6 +26,9 @@ if (isset($_SESSION['status'])) {
         <a href="../View/Concierge Request/service_catalog.php">
             <button>Service Catalog</button>
         </a>
+        <a href="../View/Contact_Us_Form/contact_us.php">
+            <button>Contact Us</button>
+        </a>
     </body>
 
     </html>
