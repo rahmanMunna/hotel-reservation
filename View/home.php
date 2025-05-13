@@ -23,6 +23,9 @@ if (isset($_SESSION['status'])) {
         <a href="../View/Cancellation Policy/termsDisplay.php">
             <button>Cancellation Policy</button>
         </a>
+        <a href="../View/Concierge Request/service_catalog.php">
+            <button>Service Catalog</button>
+        </a>
     </body>
 
     </html>

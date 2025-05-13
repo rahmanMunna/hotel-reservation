@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+session_start();
+if (isset($_SESSION['status'])) {
+?>
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -23,3 +27,9 @@
 </body>
 
 </html>
+
+<?php
+} else {
+    echo "<h1 style='color:red'>Unauthorized Access!!</h1>";
+}
+?>
