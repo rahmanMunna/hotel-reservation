@@ -100,10 +100,10 @@ if (isset($_POST['submit'])) {
     }
 
     // Set success cookie and redirect
-    setcookie('status', 'true', time() + 5000, '/');
+    $_SESSION['status'] = true;
+    // setcookie('status', 'true', time() + 5000, '/');
     header('Location: ../View/home.html');
     exit;
-
 } else {
     header('Location: ../View/Authentication/SignUp/signup.html');
     exit;
