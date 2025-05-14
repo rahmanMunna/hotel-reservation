@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/validation.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="validation.js"></script>
     <title>Edit Profile</title>
 </head>
 <body>

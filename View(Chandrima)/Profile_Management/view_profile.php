@@ -24,3 +24,4 @@ $_SESSION['avatar'] = 'uploads/avatar1.jpg';
     </div>
 </body>
 </html>
+ 
