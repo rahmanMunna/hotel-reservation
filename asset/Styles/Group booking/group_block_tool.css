@@ -1,0 +1,31 @@
+body{
+    background-color: azure;
+}
+
+#guest-info-table,
+#input-table,
+#summary-table,
+#heading,
+#select-payment-option-div {
+    /* background-color: aliceblue; */
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    
+}
+input,.btn,select{
+    font-size: 25px;
+    /* padding: 10px;; */
+}
+table{
+    padding: 10px;
+}
+
+.btn {
+    width: 10%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}

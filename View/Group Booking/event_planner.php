@@ -9,6 +9,7 @@ if (isset($_SESSION['status'])) {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Event Planner</title>
+        <link rel="stylesheet" href="../../asset/Styles/Group booking/event_planner.css">
         <!-- <link rel="stylesheet" href="./event_planner.css" /> -->
         <style>
             #navbar {
@@ -57,36 +58,41 @@ if (isset($_SESSION['status'])) {
         </div>
         <!-- Header Section -->
         <header>
-            <table border="2">
-                <tbody>
-                    <tr>
-                        <td>Group Name :</td>
-                        <td>
-                            <input type="text" name="" id="group-name" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Group Contact</td>
-                        <td>
-                            <input type="number" name="" id="number" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Contact Name</td>
-                        <td>
-                            <input type="text" name="" id="name" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Event Date :</td>
-                        <td>
-                            <b>From</b> <input type="date" name="" id="from-date" />
-                            <b>To </b> <input type="date" name="" id="to-date" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <button onclick="handleAddButton()">Add</button>
+            <div id="event-info-div">
+                <table border="2">
+                    <tbody>
+                        <tr>
+                            <td>Group Name :</td>
+                            <td>
+                                <input type="text" name="" id="group-name" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Group Contact</td>
+                            <td>
+                                <input type="number" name="" id="number" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Contact Name</td>
+                            <td>
+                                <input type="text" name="" id="name" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Event Date :</td>
+                            <td>
+                                <b>From</b> <input type="date" name="" id="from-date" />
+                                <b>To </b> <input type="date" name="" id="to-date" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn" onclick="handleAddButton()">Add</button>
+            </div>
+            <div >
+
+            </div>
         </header>
 
         <!-- Event Summary Section -->
@@ -130,7 +136,7 @@ if (isset($_SESSION['status'])) {
         </section>
 
         <!-- Event Schedule Table -->
-        <section>
+        <section id="event-schedule">
             <h2>Event Schedule</h2>
             <table border="1">
                 <thead>

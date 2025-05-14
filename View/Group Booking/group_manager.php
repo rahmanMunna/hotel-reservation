@@ -9,6 +9,7 @@ if (isset($_SESSION['status'])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Group Manager</title>
+        <link rel="stylesheet" href="../../asset/Styles/Group booking/group_manager.css">
         <style>
             #navbar {
                 width: 50%;
@@ -192,10 +193,13 @@ if (isset($_SESSION['status'])) {
                         </tfoot>
                     </form>
                 </table>
+
                 <p id="error-msg"></p>
             </div>
-            <div>
-                <h1>Summary</h1>
+
+            <h1>Summary</h1>
+            <div id="summary-div">
+                <!-- -->
                 <table border="2" id="summary-table">
                     <thead>
                         <th>Group Name</th>
