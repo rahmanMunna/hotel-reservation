@@ -3,30 +3,75 @@ session_start();
 if (isset($_SESSION['status'])) {
 ?>
     <!DOCTYPE html>
-<html lang="en">
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Request Tracer</title>
-    <link rel="stylesheet" href="../../asset/Styles/Concierge Request/request_tracer.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Request Tracer</title>
+        <link rel="stylesheet" href="../../asset/Styles/Concierge Request/request_tracer.css">
 
-<body>
-    <div id="heading">
-        <button id="back-btn">
-            <a style="text-decoration: none;" href="./service_catalog.html">back</a>
-        </button>
-        <h2>Your Requested Order</h2>
-    </div>
-    <main>
-    </main>
+        <style>
+            #navbar {
+                width: 50%;
+                margin: auto;
+                margin-bottom: 30px;
+                /* background-color: gainsboro; */
+
+            }
+
+            nav {
+                display: flex;
+                gap: 30px;
+                list-style: none;
+                font-size: 30px;
+                justify-content: center;
 
 
-    <script type="module" src="../../asset/Javascript/Concierge_Request/request_tracer.js"></script>
-</body>
+            }
 
-</html>
+            li {
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            li:hover {
+                background-color: rgb(212, 237, 223);
+                cursor: pointer;
+                font-weight: bolder;
+                /* color: wheat; */
+            }
+        </style>    
+
+    </head>
+
+    <body>
+        <div id="navbar">
+            <nav>
+                <a href="../home.php">
+                    <li>Home</li>
+                </a>
+                <li>About</li>
+                <li>Contact</li>
+                <li>Login</li>
+                <!-- <li></li> -->
+            </nav>
+        </div>
+
+        <div id="heading">
+            <button id="back-btn">
+                <a style="text-decoration: none;" href="./service_catalog.php">back</a>
+            </button>
+            <h2>Your Requested Order</h2>
+        </div>
+        <main>
+        </main>
+
+
+        <script type="module" src="../../asset/Javascript/Concierge_Request/request_tracer.js"></script>
+    </body>
+
+    </html>
 
 <?php
 } else {
