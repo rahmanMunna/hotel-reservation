@@ -1,0 +1,37 @@
+body {
+  font-family: Arial;
+  background: #f7f7f7;
+}
+.navbar {
+  background: #333;
+  padding: 10px;
+  text-align: center;
+}
+.navbar a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+.container {
+  background: white;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #aaa;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+}
+.filters {
+  margin-top: 15px;
+}
