@@ -52,12 +52,12 @@ const employees = [
 ];
 
 function loadEmployeeInfo() {
-    const tbody = document.getElementById("employee-info-tbody");
+  const tbody = document.getElementById("employee-info-tbody");
 
-    employees.forEach(employee => {
-        const tr = document.createElement('tr');
-        tr.innerHTML =
-            `
+  employees.forEach(employee => {
+    const tr = document.createElement('tr');
+    tr.innerHTML =
+      `
          <td>${employee.id}</td>
          <td>${employee.firstName}</td>
          <td>${employee.lastName}</td>
@@ -66,8 +66,12 @@ function loadEmployeeInfo() {
          <td>${employee.dob}</td>
          <td>${employee.role}</td>
          <td>${employee.joiningDate}</td>
+         <td>
+          <button>Edit</button>
+          <button>Delete</button>
+         </td>
         `
-        tbody.appendChild(tr);
-    })
+    tbody.appendChild(tr);
+  })
 }
 loadEmployeeInfo();

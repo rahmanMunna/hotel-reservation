@@ -31,6 +31,9 @@
             <a href="../Manage Employee/manage_employee.php">
                 <button>Manage Employee</button>
             </a>
+            <a href="../Manage Employee/addNewEmployee.php">
+                <button>Add new Employee</button>
+            </a>
             <a href="">
                 <button>Manage Guests</button>
             </a>
