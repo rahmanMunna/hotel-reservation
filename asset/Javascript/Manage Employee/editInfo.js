@@ -1,0 +1,3 @@
+function editInfo() {
+    return false;
+}

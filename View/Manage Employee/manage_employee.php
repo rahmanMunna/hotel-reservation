@@ -42,12 +42,66 @@ if (!isset($_SESSION['status'])) {
                 <tbody id="employee-info-tbody">
                 </tbody>
             </table>
-
         </div>
+
+        <!-- Edit/Delete -->
+
+        <div id="add-employee">
+            <table>
+                <form onsubmit="return editInfo()" action="">
+                    <tbody>
+                        <tr>
+                            <td>First Name</td>
+                            <td><input type="text" name="firstName" id="firstName"></td>
+                        </tr>
+                        <tr>
+                            <td>Last Name</td>
+                            <td><input type="text" name="lastName" id="lastName"></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><input type="email" name="email" id="email"></td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td><input type="number" name="phone" id="phone"></td>
+                        </tr>
+                        <tr>
+                            <td>DOB</td>
+                            <td><input type="date" name="dob" id="dob"></td>
+                        </tr>
+                        <tr>
+                            <td>Role</td>
+                            <td>
+                                <select name="" id="role">
+                                    <option value="">Select a role</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="Receptionist">Receptionist</option>
+                                    <option value="Chef">Chef</option>
+                                    <option value="Front Desk">Front Desk</option>
+                                    <option value="House Keeping">House Keeping</option>
+                                    <option value="Staff">Staff</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="submit" value="Edit">
+                            </td>
+                        </tr>
+                    </tfoot>
+                </form>
+            </table>
+        </div>
+
     </div>
 
     <script src="../../asset/Javascript/Manage Employee/loadEmployeesInfo.js"></script>
-    <!-- <script src="../../asset/Javascript/Manage Employee/addEmployee.js"></script> -->
+    <script src="../../asset/Javascript/Manage Employee/editInfo.js"></script>
 
 </body>
 
