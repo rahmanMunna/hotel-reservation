@@ -1,0 +1,28 @@
+  #navbar {
+      width: 50%;
+      margin: auto;
+      /* background-color: gainsboro; */
+
+  }
+
+  nav {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      font-size: 30px;
+      justify-content: center;
+
+
+  }
+
+  li {
+      padding: 10px;
+      border-radius: 10px;
+  }
+
+  li:hover {
+      background-color: rgb(212, 237, 223);
+      cursor: pointer;
+      font-weight: bolder;
+      /* color: wheat; */
+  }

@@ -48,7 +48,9 @@ if (isset($_SESSION['status'])) {
     <body>
         <div id="navbar">
             <nav>
-                <a href="../home.php"><li>Home</li></a>
+                <a href="../home.php">
+                    <li>Home</li>
+                </a>
                 <li>About</li>
                 <li>Contact</li>
                 <li>Login</li>

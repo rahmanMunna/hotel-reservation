@@ -1,0 +1,53 @@
+#sidebar-main-content {
+    display: flex;
+    gap: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#employee-info-div {
+    width: 60%;
+    /* border: 1px solid; */
+
+}
+
+#employee-info-table {
+    width: 100%;
+}
+
+#add-employee {
+    width: 25%;
+
+}
+
+td,
+th {
+    font-size: 20px;
+    padding: 10px;
+}
+
+input,
+option,
+select {
+    font-size: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+input[type="submit"] {
+    width: 50%;
+    color: aquamarine;
+    background-color: rgb(39, 125, 200);
+}
+
+input[type="submit"]:hover {
+    background-color: aquamarine;
+    color: black;
+    cursor: pointer;
+
+}
+
+input:hover {
+    background-color: white;
+    box-shadow: 6px 4px 8px rgb(5, 32, 206);
+    /* x-offset, y-offset, blur-radius, color */
+}
