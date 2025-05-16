@@ -37,7 +37,7 @@
             <a href="">
                 <button>Manage Guests</button>
             </a>
-            <a href="../controller/php/logout.php">
+            <a href="../../controller/php/logout.php">
                 <button>logout</button>
             </a>
         </div>
