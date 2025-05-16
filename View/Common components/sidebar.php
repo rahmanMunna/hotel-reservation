@@ -7,6 +7,9 @@
         </div>
 
         <div id="sidebar-btn">
+            <a href="../Make Reservation/make_reservation.php">
+                <button>Make a Reservation</button>
+            </a>
             <a href="../View/Concierge Request/service_catalog.php">
                 <button>Service Catalog</button>
             </a>
