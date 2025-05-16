@@ -57,23 +57,23 @@ const rooms = [
 ];
 
 function displayRooms() {
-    const roomsCards = document.getElementById('rooms-cards');
+    const tbody = document.getElementById('room-details-tbody');
     rooms.forEach(room => {
         if (room.available) {
-            const div = document.createElement('div');
-            div.innerHTML =
-                `
-            <p>Room ID: <span>${room.room_id}</span></p>
-            <p>Room No: <span>${room.room_no}</span></p>
-            <p>Room Type: <span>${room.room_type}</span></p>
-            <p>Bed Type: <span>${room.bed_type}</span></p>
-            <p>Capacity: <span>${room.capacity}</span></p>
-            <p>Amenities: <span>${room.amenities.join(", ")}</span></p>
-            <p>Floor: <span>${room.floor}</span></p>
-            <p>Price per night: <span>$${room.price_per_night}</span></p>
+            const tr = document.createElement('tr');
+            tr.innerHTML =
             `
-            div.setAttribute('class', 'room-card');
-            roomsCards.appendChild(div);
+            <td>${room.room_id}</td>
+            <td>${room.room_no}</td>
+            <td>${room.room_type}</td>
+            <td>${room.bed_type}</td>
+            <td>${room.capacity}</td>
+            <td>${room.floor}</td>
+            <td>$${room.price_per_night}</td>
+            <td>${room.amenities.join(", ")}</td>
+            `
+            tr.setAttribute('class', 'room-card');
+            tbody.appendChild(tr);
         }
     })
 }

@@ -10,27 +10,7 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
         <title>Admin Dashboard</title>
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/sidebar.css">
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/navbar.css">
-        <style>
-            #sidebar-main-content {
-                display: flex;
-                border: 1px solid;
-            }
-            #reservation-table{
-                width: 30%;
-                border: 1px solid;
-            }
-            #rooms-cards{
-                margin-left: auto;
-                width: 50%;
-                display: grid;
-                grid-template-columns: repeat(2,1fr);
-                gap: 10px;
-            }
-            .room-card{
-                border: 1px solid;
-                /* height: 30vh; */
-            }
-        </style>
+        <link rel="stylesheet" href="../../asset/Styles/Make Reservation/make_reservation.css">
 
     </head>
 
@@ -40,7 +20,7 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
         <div id="sidebar-main-content">
             <?php include('../Common components/sidebar.php'); ?>
             <div id="reservation-table">
-                <form action="">
+                <form onsubmit="return handleConfirmReservation()" action="">
                     <table>
                         <tbody>
                             <tr>
@@ -75,7 +55,7 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                             <tr>
                                 <td>Bed Type</td>
                                 <td>
-                                    <select name="" id="">
+                                    <select name="" id="bed-type">
                                         <option value="">Select Bed Type</option>
                                         <option value="Single">Single</option>
                                         <option value="Double">Double</option>
@@ -85,8 +65,8 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                             <tr>
                                 <td>Number of Guest : </td>
                                 <td>
-                                    Adults : <input type="number" name="" id="children"> <br>
-                                    Children : <input type="number" name="" id="Adult">
+                                    Adults : <input type="number" name="" id="adults">
+                                    Children : <input type="number" name="" id="children">
                                 </td>
                             </tr>
                             <tr>
@@ -109,16 +89,31 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                             </tr>
                         </tbody>
                     </table>
-                    <input type="submit" value="Confirm Reservation">
+                    <p id="error-msg"></p>
+                    <input id="btn" type="submit" value="Confirm Reservation">
                 </form>
             </div>
 
             <!-- display all rooms -->
-            <div id="rooms-cards">
+            <div id="room-info-table">
+                <table border=2>
+                    <thead>
+                        <th>Room Id</th>
+                        <th>Room No</th>
+                        <th>Room Type</th>
+                        <th>Bed Type</th>
+                        <th>Capacity</th>
+                        <th>Floor</th>
+                        <th>Price per Nights</th>
+                        <th>Amenities</th>
+                    </thead>
+                    <tbody id="room-details-tbody"></tbody>
+                </table>
             </div>
         </div>
 
         <script src="../../asset/Javascript/Rooms/displayAllRooms.js"></script>
+        <script src="../../asset/Javascript/Rooms/validation.js"></script>
     </body>
 
     </html>
