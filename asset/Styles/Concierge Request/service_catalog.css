@@ -1,11 +1,18 @@
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-main{
-    width: 80%;
-    margin: auto;
+
+#sidebar-main-content {
+    display: flex;
+    gap: 10px;
+}
+
+#service-catalog {
+    width: 70%;
+    /* margin-left: auto; */
     /* border: 1px solid; */
 }
+
 .card {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -31,7 +38,7 @@ h1 {
     text-align: center;
 }
 
-button {
+.order-book-btn {
     width: 50%;
     height: 30px;
     border-radius: 5px;
@@ -39,7 +46,7 @@ button {
 
 }
 
-button:hover {
+.order-book-btn:hover {
     background-color: rgb(54, 105, 131);
     color: aliceblue;
     width: 100%;
@@ -47,37 +54,40 @@ button:hover {
     cursor: pointer;
 
 }
-a{
+
+a {
     text-decoration: none;
     font-size: 20px;
     border: 2px solid;
     padding: 5px;
     border-radius: 10px;
-    
+
 }
-a:hover{
+
+a:hover {
     background-color: rgb(215, 250, 243);
     color: black;
-    transition: background-color .3s ease-in,color .3s ease-in;
+    transition: background-color .3s ease-in, color .3s ease-in;
 }
 
 /* Responsive design   */
 
 /* Tablet */
 @media (min-width: 601px) and (max-width: 1024px) {
-    .card{
+    .card {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (min-width : 401px) and (max-width: 600px) {
-    .card{
+    .card {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 /* mobile */
 @media (max-width: 400px) {
-    .card{
+    .card {
         grid-template-columns: repeat(1, 1fr);
     }
 }

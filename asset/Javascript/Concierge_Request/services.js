@@ -1,6 +1,6 @@
 import servicesData from "./services_data.js";
 
-// console.log(servicesData)
+console.log(servicesData)
 
 
 function displayServices() {
@@ -37,21 +37,25 @@ function displayServices() {
 }
 displayServices();
 
+function addToLocalStorage() {
 
-//Add to localStorage
-let placedOrders = JSON.parse(localStorage.getItem('request-order')) || []
-console.log(placedOrders);
-let requestOrder = [...placedOrders];
-const btns = document.getElementsByTagName('button');
-for (const btn of btns) {
-    btn.addEventListener('click', (e) => {
-        const card = e.target.parentElement;
+    //Add to localStorage
+    let placedOrders = JSON.parse(localStorage.getItem('request-order')) || []
+    // console.log(placedOrders);
+    let requestOrder = [...placedOrders];
+    const btns = document.getElementsByClassName('order-book-btn');
+    console.log(btns);
+    for (const btn of btns) {
 
-        checkForDuplicate(requestOrder, card.id);
-        localStorage.setItem('request-order', JSON.stringify(requestOrder));
-    })
+        btn.addEventListener('click', (e) => {
+            const card = e.target.parentElement;
+            checkForDuplicate(requestOrder, card.id);
+            localStorage.setItem('request-order', JSON.stringify(requestOrder));
+        })
+    }
+
+
 }
-
 function checkForDuplicate(itemList, itemWishToAdd) {
     for (const item of itemList) {
         if (item === itemWishToAdd) {
@@ -62,6 +66,5 @@ function checkForDuplicate(itemList, itemWishToAdd) {
     itemList.push(itemWishToAdd);
     alert("✅ Order placed successfully!");
 }
+addToLocalStorage();
 
-
-  

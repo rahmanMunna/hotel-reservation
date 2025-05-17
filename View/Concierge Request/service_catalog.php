@@ -1,76 +1,47 @@
 <?php
 session_start();
-if (isset($_SESSION['status'])) {
+if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
 ?>
     <!DOCTYPE html>
     <html lang="en">
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Service Catalog</title>
+        <meta charset="UTF-8" />
+        <title>Admin Dashboard</title>
+        
+        <link rel="stylesheet" href="../../asset/Styles/Common Styles/navbar.css">
+        <link rel="stylesheet" href="../../asset/Styles/Common Styles/sidebar.css">
         <link rel="stylesheet" href="../../asset/Styles/Concierge Request/service_catalog.css">
-        <style>
-            #navbar {
-                width: 50%;
-                margin: auto;
-                margin-bottom: 30px;
-                /* background-color: gainsboro; */
-
-            }
-
-            nav {
-                display: flex;
-                gap: 30px;
-                list-style: none;
-                font-size: 30px;
-                justify-content: center;
-
-
-            }
-
-            li {
-                padding: 10px;
-                border-radius: 10px;
-            }
-
-            li:hover {
-                background-color: rgb(212, 237, 223);
-                cursor: pointer;
-                font-weight: bolder;
-                /* color: wheat; */
-            }
-        </style>
+        
+        <!-- <link rel="stylesheet" href="../../asset/Styles/Dashboard/adminDashboard.css"> -->
     </head>
 
     <body>
 
-        <div id="navbar">
-            <nav>
-                <a href="../home.php">
-                    <li>Home</li>
-                </a>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Login</li>
-                <!-- <li></li> -->
-            </nav>
-        </div>
+        <?php include('../Common components/navbar.php'); ?>
 
-        <main>
-            <a id="" style="text-decoration: none;" href="./request_tracer.php">See Order Details</a>
-            <div id="services">
+        <div id="sidebar-main-content">
+             <?php include('../Common components/sidebar_guest.php'); ?>
+            <div id="service-catalog">
+                <a id="" style="text-decoration: none;" href="./request_tracer.php">See Order Details</a>
+                <div id="services">
 
+                </div>
             </div>
-        </main>
+
+        </div>
         <script type="module" src="../../asset/Javascript/Concierge_Request/services.js"></script>
+
     </body>
 
     </html>
 
-
 <?php
 } else {
-    echo "<h1 style='color:red'>Unauthorized Access!!</h1>";
+    header('Location: ../Authentication/Login/login.php');
+    exit();
 }
 ?>
+
+
+
