@@ -37,9 +37,13 @@
             <a href="../Manage Employee/addNewEmployee.php">
                 <button>Add new Employee</button>
             </a>
+            <a href="../Rooms/addNewRooms.php">
+                <button>Add New Room</button>
+            </a>
             <a href="">
                 <button>Manage Guests</button>
             </a>
+
             <a href="../../controller/php/logout.php">
                 <button>logout</button>
             </a>
