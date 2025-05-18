@@ -17,12 +17,43 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
 
         <style>
             #sidebar-main-content {
+                width: 100%;
+                display: flex;
+                gap: 10px;
+                /* border: 1px solid; */
+            }
+
+            #main-content {
+                width: 40%;
+            }
+
+            #check-in-out-date {
                 display: flex;
                 gap: 10px;
             }
 
-            #main-content {
-                width: 70%;
+            #error-msg {
+                text-align: center;
+                font-size: 22px;
+                /* background-color: wheat; */
+                padding: 5px;
+                /* border: 1px solid; */
+            }
+
+            #room-cards {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                width: 40%;
+                gap: 10px;
+                height: 50rem;
+                
+                
+            }
+
+            .card {
+                border: 1px solid;
+                padding: 10px;          
+                
             }
         </style>
     </head>
@@ -40,7 +71,6 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
                             <
                                 </button>
                                 <span class="2025-4" id="year-month">2025,May</span>
-
                                 <button class="prev-next-btn" onclick="displayNextMonthCalendar()">></button>
                     </div>
                     <div id="dates-day">
@@ -101,25 +131,31 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
                 <!-- Select-check-in-out -->
                 <div id="select-check-in-out">
                     <div>
-                        <div>
+                        <div id="check-in-out-date">
                             <h3>Check-in Date : <span id="">
-                                    <input type="date" name="" id="check-in-date">
+                                    <input onchange="handleCheckInDate()" type="date" name="" id="check-in-date">
                                 </span> </h3>
                             <h3>Check-out Date : <span id="">
                                     <input onchange="handleCheckOutDate()" type="date" name="" id="check-out-date">
                                 </span> </h3>
+                            <h3>Nights : <span id="night-count">0</span>
+                            </h3>
                         </div>
-                        <h3>Nights : <span id="night-count">0</span>
-                            <!-- <button onclick="setNightCount('-')" class="plus-or-minus">-</button>
-                    <button onclick="setNightCount('+')" class="plus-or-minus">+</button> -->
-                        </h3>
-                        <!-- <h3>Total : <span id="total"></span>0</h3> -->
+                        <p id="error-msg"></p>
+
+
                     </div>
                 </div>
             </div>
 
+            <!-- display Available Rooms -->
+            <div  id="room-cards">
+    
+            </div>
+
         </div>
         <script src="../../asset/Javascript/Make Reservation/generate_dynamic_calender.js"></script>
+        <script src="../../asset/Javascript/Make Reservation/displayAvailableRooms.js"></script>
     </body>
 
     </html>

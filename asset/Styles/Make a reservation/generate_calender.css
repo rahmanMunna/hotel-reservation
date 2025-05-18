@@ -1,6 +1,7 @@
 body {
     background-color: beige;
 }
+
 /* 
 main {
     width: 100%;
@@ -62,6 +63,8 @@ main {
 .prev-next-btn {
     font-size: 20px;
     font-weight: 800;
+    width: 20%;
+    background-color: aquamarine;
 }
 
 .prev-next-btn:hover {
@@ -101,8 +104,13 @@ input[type='date'] {
 }
 
 
+/*  */
+
+
+
+
 /* Responsive Design */
-@media (min-width:400px) and (max-width:1500px) {
+/* @media (min-width:400px) and (max-width:1500px) {
     main {
         width: 100%;
         flex-direction: column;
@@ -145,4 +153,4 @@ input[type='date'] {
         padding: 1px;
     }
 
-}
+} */
