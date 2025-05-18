@@ -7,18 +7,18 @@
         </div>
 
         <div id="sidebar-btn">
-            <!-- <a href="../Make Reservation/make_reservation.php">
-                <button>Make a Reservation</button>
-            </a> -->
+            <a href="../My Bookings/myBookings.php">
+                <button>My Bookings</button>
+            </a>
             <a href="../Concierge Request/service_catalog.php">
                 <button>Service Catalog</button>
             </a>
             <a href="../Make Reservation/make_a_reservation_guest.php">
                 <button>Make a Reservation</button>
             </a>
-            <a href="../../View/Availability Calendar/dynamic_calendar.php">
+            <!-- <a href="../../View/Availability Calendar/dynamic_calendar.php">
                 <button>See available Room</button>
-            </a>
+            </a> -->
             <!-- <a href="../View/Group Booking/group_manager.php">
                 <button>Group Booking</button>
             </a>
