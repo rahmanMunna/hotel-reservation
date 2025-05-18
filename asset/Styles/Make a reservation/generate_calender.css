@@ -1,0 +1,148 @@
+body {
+    background-color: beige;
+}
+/* 
+main {
+    width: 100%;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+
+} */
+
+#dates-day {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    column-gap: 5px;
+
+}
+
+.days {
+    text-align: center;
+    background-color: rgb(198, 198, 245);
+    padding: 5px;
+}
+
+.dates {
+    text-align: center;
+    background-color: rgb(189, 225, 213);
+    color: rgb(183, 17, 69);
+    padding: 5px;
+    border-radius: 10%;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dates:hover {
+    background-color: brown;
+    color: azure;
+    cursor: pointer;
+    transition: background-color .5s ease-out;
+
+}
+
+#btn-month-info {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 800;
+    background-color: rgb(93, 183, 127);
+
+}
+
+#dynamic-calendar {
+    /* width: 40%; */
+    background-color: aliceblue;
+    padding: 20px;
+    border: 1px solid;
+}
+
+.prev-next-btn {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.prev-next-btn:hover {
+    background-color: brown;
+    color: azure;
+    cursor: pointer;
+    transition: background-color .5s ease-out;
+}
+
+#select-check-in-out {
+    /* width: 25%; */
+    margin-right: auto;
+    /* border: 2px solid; */
+    display: flex;
+    /* align-items: center; */
+    font-size: 18px;
+    padding-left: 10px;
+
+}
+
+#select-check-in-out>div {
+    /* border: 3px solid rebeccapurple; */
+    padding: 10px;
+}
+
+h3 {
+    color: blueviolet;
+}
+
+span {
+    color: rgb(231, 8, 98);
+}
+
+input[type='date'] {
+    padding: 10px;
+    font-size: 15px;
+}
+
+
+/* Responsive Design */
+@media (min-width:400px) and (max-width:1500px) {
+    main {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    #dynamic-calendar {
+        width: 100%;
+    }
+
+    #select-check-in-out {
+        width: 100%;
+        margin-right: 0px;
+        font-size: 15px;
+        justify-content: center;
+
+    }
+
+    #select-check-in-out>div {
+        border-style: none;
+    }
+
+    td,
+    th {
+        font-size: 12px;
+        padding: 1px;
+    }
+
+    #rate-viewer {
+        width: 100%;
+        border-style: none;
+    }
+
+}
+
+@media (min-width:1501px) {
+
+    td,
+    th {
+        font-size: 14px;
+        padding: 1px;
+    }
+
+}

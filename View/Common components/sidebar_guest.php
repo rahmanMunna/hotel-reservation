@@ -13,6 +13,9 @@
             <a href="../Concierge Request/service_catalog.php">
                 <button>Service Catalog</button>
             </a>
+            <a href="../Make Reservation/make_a_reservation_guest.php">
+                <button>Make a Reservation</button>
+            </a>
             <a href="../../View/Availability Calendar/dynamic_calendar.php">
                 <button>See available Room</button>
             </a>
