@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if (isset($_SESSION['status'])) {
+if (isset($_SESSION['status']) || $_COOKIE(['status'])) {
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -92,6 +92,6 @@ if (isset($_SESSION['status'])) {
 
 <?php
 } else {
-    echo "<h1 style='color:red'>Unauthorized Access!!</h1>";
+    header('Location: ../Authentication/Login/login.php');
 }
 ?>
