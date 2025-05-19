@@ -1,0 +1,37 @@
+#sidebar-main-content {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+#bookings-div {
+    width: 80%;
+    /* border: 1px solid; */
+    /* height: 40rem; */
+
+}
+
+.booking-card div {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.booking-card {
+    border: 1px solid;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: beige;
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+span {
+    color: blue;
+    background-color: wheat;
+    padding: 5px;
+}

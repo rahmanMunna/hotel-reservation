@@ -13,6 +13,7 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
         <title>Guest Dashboard</title>
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/sidebar.css">
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/navbar.css">
+        <link rel="stylesheet" href="../../asset/Styles/My Bookings/show_bookings_cards.css">
     </head>
 
     <body>
@@ -20,9 +21,13 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
 
         <div onclick="" id="sidebar-main-content">
             <?php include('../Common components/sidebar_guest.php'); ?>
+            <div id="bookings-div">
+                
+            </div>
 
         </div>
 
+            <script src="../../asset/Javascript/My Bookings/displayAllBookings.js"></script>
     </body>
 
     </html>
