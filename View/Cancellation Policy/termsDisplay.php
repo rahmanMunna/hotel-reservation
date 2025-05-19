@@ -10,8 +10,7 @@ if (isset($_SESSION['status'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Terms Display</title>
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/sidebar.css">
-        <link rel="stylesheet" href="../../asset/Styles/Cancellation Policy/termsDisplay.css">
-        
+        <link rel="stylesheet" href="../../asset/Styles/Cancellation Policy/termsDisplay.css">  
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/navbar.css">
         <style>
             #sidebar-main-content{

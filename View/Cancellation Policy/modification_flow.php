@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['status'])) {
+if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -13,12 +13,11 @@ if (!isset($_SESSION['status'])) {
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/sidebar.css">
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/navbar.css">
         <!-- If we use module as type..In a module, handleIncrement is not global, so the HTML cannot access it.-->
-         <style>
-            #sidebar-main-content{
+        <style>
+            #sidebar-main-content {
                 display: flex;
             }
-            
-         </style>
+        </style>
 
 
     </head>
@@ -148,6 +147,6 @@ if (!isset($_SESSION['status'])) {
 
 <?php
 } else {
-    echo "<h1 style='color:red'>Unauthorized Access!!</h1>";
+    header('Location: ../Authentication/Login/login.php');
 }
 ?>
