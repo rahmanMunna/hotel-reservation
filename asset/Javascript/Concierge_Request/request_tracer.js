@@ -1,4 +1,5 @@
 import servicesData from "./services_data.js";
+alert();
 
 const placedOrder = JSON.parse(localStorage.getItem('request-order'));
 
@@ -22,7 +23,7 @@ for (const serviceData of servicesData) {
 function displayRequestOrders() {
     for (const requestedOrder of requestedOrders) {
 
-        console.log(requestedOrder);
+        // console.log(requestedOrder);
 
         const main = document.getElementsByTagName('main');
         // console.log(main)
@@ -41,7 +42,7 @@ function displayRequestOrders() {
                 <p>
                     price: ${requestedOrder.items.price}
                 </p>
-                <button>Pending</button>
+                <button id="status-btn">Pending</button>
             </div>
             `
         main[0].appendChild(div);

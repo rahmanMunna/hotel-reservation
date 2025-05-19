@@ -1,7 +1,5 @@
 a {
     font-size: 25px;
-
-
 }
 
 #heading {
@@ -19,7 +17,8 @@ a {
 }
 
 #back-btn {
-    background-color: rgb(66, 193, 85);
+    background-color: rgb(70, 97, 74);
+    /* width: 20%; */
 
 }
 
@@ -59,8 +58,8 @@ a:hover{
 
 }
 
-button {
+/* button {
     border-radius: 5px;
     color: white;
     background-color: rgb(160, 33, 174);
-}
+} */

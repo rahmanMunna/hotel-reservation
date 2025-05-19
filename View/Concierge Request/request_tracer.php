@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['status'])) {
+if (isset($_SESSION['status']) || $_COOKIE['status']) {
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -9,64 +9,48 @@ if (isset($_SESSION['status'])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Request Tracer</title>
+        <link rel="stylesheet" href="../../asset/Styles/Common Styles/sidebar.css">
+        <link rel="stylesheet" href="../../asset/Styles/Common Styles/navbar.css">
         <link rel="stylesheet" href="../../asset/Styles/Concierge Request/request_tracer.css">
 
         <style>
-            #navbar {
-                width: 50%;
-                margin: auto;
-                margin-bottom: 30px;
-                /* background-color: gainsboro; */
-
-            }
-
-            nav {
+            #sidebar-main-content {
                 display: flex;
-                gap: 30px;
-                list-style: none;
-                font-size: 30px;
-                justify-content: center;
-
-
+                border: 1px solid;
             }
 
-            li {
-                padding: 10px;
-                border-radius: 10px;
+            #main-content {
+                width: 80%;
             }
 
-            li:hover {
-                background-color: rgb(212, 237, 223);
-                cursor: pointer;
-                font-weight: bolder;
-                /* color: wheat; */
+            #back-btn {
+                background-color: rgb(219, 225, 21);
             }
-        </style>    
+
+            #status-btn {
+                width: 30%;
+            }
+        </style>
 
     </head>
 
     <body>
-        <div id="navbar">
-            <nav>
-                <a href="../home.php">
-                    <li>Home</li>
-                </a>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Login</li>
-                <!-- <li></li> -->
-            </nav>
-        </div>
+        <?php include('../Common components/navbar.php'); ?>
 
-        <div id="heading">
-            <button id="back-btn">
-                <a style="text-decoration: none;" href="./service_catalog.php">back</a>
-            </button>
-            <h2>Your Requested Order</h2>
-        </div>
-        <main>
-        </main>
+        <div id="sidebar-main-content">
+            <?php include('../Common components/sidebar_guest.php'); ?>
+            <div id="main-content">
+                <div id="heading">
+                    <button id="back-btn">
+                        <a style="text-decoration: none;" href="./service_catalog.php">back</a>
+                    </button>
+                    <h2>Your Requested Order</h2>
+                </div>
 
+                <main>
+                </main>
+            </div>
+        </div>
 
         <script type="module" src="../../asset/Javascript/Concierge_Request/request_tracer.js"></script>
     </body>
@@ -75,6 +59,6 @@ if (isset($_SESSION['status'])) {
 
 <?php
 } else {
-    echo "<h1 style='color:red'>Unauthorized Access!!</h1>";
+    header("Location: ../Authentication/Login/login.php");
 }
 ?>
