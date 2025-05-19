@@ -9,110 +9,83 @@ if (isset($_SESSION['status'])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Terms Display</title>
+        <link rel="stylesheet" href="../../asset/Styles/Common Styles/sidebar.css">
         <link rel="stylesheet" href="../../asset/Styles/Cancellation Policy/termsDisplay.css">
+        
+        <link rel="stylesheet" href="../../asset/Styles/Common Styles/navbar.css">
         <style>
-            #navbar {
-                width: 50%;
-                margin: auto;
-                margin-bottom: 30px;
-                /* background-color: gainsboro; */
-
-            }
-
-            nav {
+            #sidebar-main-content{
                 display: flex;
-                gap: 30px;
-                list-style: none;
-                font-size: 30px;
-                justify-content: center;
-
-
-            }
-
-            li {
-                padding: 10px;
-                border-radius: 10px;
-            }
-
-            li:hover {
-                background-color: rgb(212, 237, 223);
-                cursor: pointer;
-                font-weight: bolder;
-                /* color: wheat; */
             }
         </style>
+
     </head>
-    <div id="navbar">
-        <nav>
-            <a href="../home.php">
-                <li>Home</li>
-            </a>
-            <li>About</li>
-            <li>Contact</li>
-            <li>Login</li>
-            <!-- <li></li> -->
-        </nav>
-    </div>
+    <?php include('../Common components/navbar.php'); ?>
 
     <body>
-        <main>
-            <!-- Booking Details -->
-            <div>
-                <h2>Guest information</h2>
-                <div id="booking-details">
-                    <h3>Guest Name : <span id="guest-name">XYZ</span> </h3>
-                    <h3>Reservation Id : <span id="reservation-id">#8768879</span> </h3>
-                    <h3>Room Type : <span id="room-type">Deluxe Suite</span> </h3>
-                    <!-- <h3>Rate Type : <span id="">"Non-Refundable"</span> </h3> -->
-                    <h3>Check-in Date : <span id="check-in-date">June 15,2024</span> </h3>
-                    <h3>Booking Date : <span id="bookingDate">April 29,2024</span> </h3>
+        <div id="sidebar-main-content">
+            <?php include('../Common components/sidebar_guest.php'); ?>
+            <main>
+                <!-- Booking Details -->
+                <div>
+                    <h2>Guest information</h2>
+                    <div id="booking-details">
+                        <h3>Guest Name : <span id="guest-name">XYZ</span> </h3>
+                        <h3>Reservation Id : <span id="reservation-id">#8768879</span> </h3>
+                        <h3>Room Type : <span id="room-type">Deluxe Suite</span> </h3>
+                        <!-- <h3>Rate Type : <span id="">"Non-Refundable"</span> </h3> -->
+                        <h3>Check-in Date : <span id="check-in-date">June 15,2024</span> </h3>
+                        <h3>Booking Date : <span id="bookingDate">April 29,2024</span> </h3>
+                    </div>
                 </div>
-            </div>
-            <p style="border: 1px solid;"></p>
-            <!-- Cancellation Rules -->
-            <div id="cancellation-rules">
-                <h2>Cancellation Rules (Terms and Condition)</h2>
-                <table border="2">
-                    <thead>
-                        <tr>
-                            <th>Rate Type</th>
-                            <th>Cancellation Rule</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Flexible Type</td>
+                <p style="border: 1px solid;"></p>
+                <!-- Cancellation Rules -->
+                <div id="cancellation-rules">
+                    <h2>Cancellation Rules (Terms and Condition)</h2>
+                    <table border="2">
+                        <thead>
+                            <tr>
+                                <th>Rate Type</th>
+                                <th>Cancellation Rule</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Flexible Type</td>
+                                <td>
+                                    Free cancellation until 3 days before check-in. Then 1 night charge.
+                                </td>
+                            </tr>
+                            <td>Non-Refundable</td>
                             <td>
-                                Free cancellation until 3 days before check-in. Then 1 night charge.
+                                No refund at any time after booking.
                             </td>
-                        </tr>
-                        <td>Non-Refundable</td>
-                        <td>
-                            No refund at any time after booking.
-                        </td>
-                        </tr>
-                        <td>Early Bird Special</td>
-                        <td>
-                            50% refund if cancelled 30 days before stay; otherwise non-refundable.
-                        </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p style="text-align: center;border: 1px solid;">
-                <h3 style=" text-align: center;color: rgb(231, 28, 28);">"Refunds will be processed within 7 business days."
-                </h3>
-                </p>
+                            </tr>
+                            <td>Early Bird Special</td>
+                            <td>
+                                50% refund if cancelled 30 days before stay; otherwise non-refundable.
+                            </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="text-align: center;border: 1px solid;">
+                    <h3 style=" text-align: center;color: rgb(231, 28, 28);">"Refunds will be processed within 7 business days."
+                    </h3>
+                    </p>
 
-            </div>
-            <p id="btns">
-                <a href="./calculate _penalty.php">
-                    <button>Calculate Penalty</button>
-                </a>
-                <a href="./modification_flow.php">
-                    <button>Modify Booking</button>
-                </a>
-            </p>
-        </main>
+                </div>
+                <p id="btns">
+                    <a href="./calculate _penalty.php">
+                        <button>Calculate Penalty</button>
+                    </a>
+                    <a href="./modification_flow.php">
+                        <button>Modify Booking</button>
+                    </a>
+                </p>
+            </main>
+
+        </div>
+
         <script src="../../asset/Javascript/Cancellation_policy/termDisplay.js"></script>
     </body>
 
