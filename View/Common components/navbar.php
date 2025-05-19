@@ -3,7 +3,7 @@
 
     <div id="navbar">
         <nav>
-            <li>Home</li>
+            <a href="../Dashboard/guest_dashboard.php"><li>Home</li></a>
             <li>About</li>
             <li>Contact</li>
             <li>Login</li>

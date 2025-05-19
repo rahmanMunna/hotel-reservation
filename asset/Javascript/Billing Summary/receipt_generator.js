@@ -92,7 +92,7 @@ function loadPaymentSummary() {
     rows.forEach(row => {
         const tr = document.createElement('tr');
         tr.innerHTML =
-        `
+            `
         <td>${row[0]}</td>
         <td>${row[1]}</td>
         `
@@ -100,8 +100,12 @@ function loadPaymentSummary() {
     })
 
 }
-document.getElementById('download-pdf').addEventListener('click', ()=>{
+
+document.getElementById('download-pdf').addEventListener('click', () => {
+    const btn = document.getElementById('download-pdf');
+    btn.setAttribute('hidden', 'true');
     window.print();
+    btn.removeAttribute('hidden');
 })
 
 loadReservationDetails();

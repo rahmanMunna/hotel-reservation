@@ -1,9 +1,14 @@
 body {
-    background-color: rgb(207, 219, 219);
+    /* background-color: #b1c1b7; */
     width: 70%;
     margin: auto;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
+}
+
+#greeting {
+    text-align: center;
+
 }
 
 table {
@@ -42,7 +47,7 @@ button:hover {
     cursor: pointer;
 }
 
-footer {
+#greeting {
     text-align: center;
 
 }

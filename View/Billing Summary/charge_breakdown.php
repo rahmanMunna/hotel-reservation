@@ -91,7 +91,7 @@ if (isset($_SESSION['status'])) {
                 </tbody>
             </table>
             <p>
-                <a href="./receipt_generator.html">
+                <a href="./receipt_generator.php">
                     <button>Generate Receipt</button>
                 </a>
             </p>

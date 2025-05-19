@@ -18,7 +18,7 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
     <body>
         <?php include('../Common components/navbar.php'); ?>
 
-        <div onclick="" id="sidebar-main-content">
+        <div id="sidebar-main-content">
             <?php include('../Common components/sidebar_guest.php'); ?>
 
         </div>
