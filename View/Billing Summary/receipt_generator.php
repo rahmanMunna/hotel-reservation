@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if (isset($_SESSION['status']) || $_COOKIE(['status'])) {
+if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
 ?>
     <!DOCTYPE html>
     <html lang="en">
