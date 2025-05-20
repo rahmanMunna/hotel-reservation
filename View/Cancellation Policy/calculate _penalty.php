@@ -36,13 +36,13 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                 <div>
                     <table>
                         <tbody>
-                            <form onsubmit="return handleSaveButton()" action="">
+                            <form method="post" onsubmit="return handleSaveButton()" action="../../controller/php/cancellation_validation.php">
                                 <tr>
                                     <td>
                                         <label for="">Cancellation date</label>
                                     </td>
                                     <td>
-                                        <input type="date" name="" id="cancellation-date" />
+                                        <input type="date" name="cancellation-date" id="cancellation-date" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -54,14 +54,14 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                                             rows="4"
                                             cols="30"
                                             placeholder=""
-                                            name=""
+                                            name="reason-for-cancellation"
                                             id="reason-for-cancellation"></textarea>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td></td>
                                     <td>
-                                        <input type="submit" value="Save" />
+                                        <input name="submit" type="submit" value="Save" />
                                     </td>
                                 </tr>
                             </form>

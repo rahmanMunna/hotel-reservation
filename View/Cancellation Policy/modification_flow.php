@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['status']) || !isset($_COOKIE['status'])) {
+if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -141,7 +141,7 @@ if (!isset($_SESSION['status']) || !isset($_COOKIE['status'])) {
 
         </div>
 
-        <!-- <script type="" src="../../asset/Javascript/Cancellation_policy/modification_flow.js"></script> -->
+        <script type="" src="../../asset/Javascript/Cancellation_policy/modification_flow.js"></script>
 
     </body>
 

@@ -17,7 +17,7 @@ function handleSubmit() {
         return false;
     }
 
-    // Submit form only if everything is valid
+    
     return true;
 }
 
