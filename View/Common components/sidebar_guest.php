@@ -10,7 +10,7 @@
             <a href="../My Bookings/myBookings.php">
                 <button>My Bookings</button>
             </a>
-            <a href="../Concierge Request/service_catalog.php">
+            <a href="../Concierge Request/service_catalog_guest.php">
                 <button>Service Catalog</button>
             </a>
             <a href="../Make Reservation/make_a_reservation_guest.php">

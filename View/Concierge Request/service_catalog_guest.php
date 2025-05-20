@@ -21,9 +21,9 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
         <?php include('../Common components/navbar.php'); ?>
 
         <div id="sidebar-main-content">
-             <?php include('../Common components/sidebar.php'); ?>
+             <?php include('../Common components/sidebar_guest.php'); ?>
             <div id="service-catalog">
-                <a id="" style="text-decoration: none;" href="./request_tracer.php">See Order Details</a>
+                <a id="" style="text-decoration: none;" href="./request_tracer_guest.php">See Order Details</a>
                 <div id="services">
 
                 </div>

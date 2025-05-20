@@ -38,7 +38,7 @@ if (isset($_SESSION['status']) || $_COOKIE['status']) {
         <?php include('../Common components/navbar.php'); ?>
 
         <div id="sidebar-main-content">
-            <?php include('../Common components/sidebar.php'); ?>
+            <?php include('../Common components/sidebar_guest.php'); ?>
             <div id="main-content">
                 <div id="heading">
                     <button id="back-btn">
