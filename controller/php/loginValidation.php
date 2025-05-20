@@ -1,46 +1,46 @@
 <?php
 
-function isAllLowerCase($text)
-{
-    return strtolower($text) === $text;
-}
+// function isAllLowerCase($text)
+// {
+//     return strtolower($text) === $text;
+// }
 
-function isFirstCharacterNumber($text)
-{
-    return is_numeric($text[0]);
-}
+// function isFirstCharacterNumber($text)
+// {
+//     return is_numeric($text[0]);
+// }
 
-function isValidPassword($password)
-{
-    if (strlen($password) < 8) return false;
+// function isValidPassword($password)
+// {
+//     if (strlen($password) < 8) return false;
 
-    $hasUpper = false;
-    $hasLower = false;
-    $hasSpecial = false;
-    $hasNumber = false;
+//     $hasUpper = false;
+//     $hasLower = false;
+//     $hasSpecial = false;
+//     $hasNumber = false;
 
-    $specialChars = "!@#$%&*()_+[]{}|<>?/";
+//     $specialChars = "!@#$%&*()_+[]{}|<>?/";
 
-    for ($i = 0; $i < strlen($password); $i++) {
-        $char = $password[$i];
+//     for ($i = 0; $i < strlen($password); $i++) {
+//         $char = $password[$i];
 
-        if ($char >= 'A' && $char <= 'Z') {
-            $hasUpper = true;
-        } elseif ($char >= 'a' && $char <= 'z') {
-            $hasLower = true;
-        } elseif ($char >= '0' && $char <= '9') {
-            $hasNumber = true;
-        } elseif (strpos($specialChars, $char) !== false) {
-            $hasSpecial = true;
-        }
+//         if ($char >= 'A' && $char <= 'Z') {
+//             $hasUpper = true;
+//         } elseif ($char >= 'a' && $char <= 'z') {
+//             $hasLower = true;
+//         } elseif ($char >= '0' && $char <= '9') {
+//             $hasNumber = true;
+//         } elseif (strpos($specialChars, $char) !== false) {
+//             $hasSpecial = true;
+//         }
 
-        if ($hasUpper && $hasLower && $hasNumber && $hasSpecial) {
-            return true;
-        }
-    }
+//         if ($hasUpper && $hasLower && $hasNumber && $hasSpecial) {
+//             return true;
+//         }
+//     }
 
-    return $hasUpper && $hasLower && $hasNumber && $hasSpecial;
-}
+//     return $hasUpper && $hasLower && $hasNumber && $hasSpecial;
+// }
 
 session_start();
 if (isset($_POST["submit"])) {
@@ -50,15 +50,15 @@ if (isset($_POST["submit"])) {
     $userId = $loginData["userId"];
     $password = $loginData["password"];
 
-    // admin fake data
+    // guest fake data
 
     $guestEmail = "guest@gmail.com";
-    $guestPassword = "1234";
+    $guestPassword = "Guest#1234";
     $guestID = '1234';
 
-    //guest fake
-    $adminEmail = "munna@gmail.com";
-    $adminPassword = "1234";
+    //admin fake data
+    $adminEmail = "admin@gmail.com";
+    $adminPassword = "Admin#1234";
     $adminID = '1234';
 
    
@@ -80,6 +80,7 @@ if (isset($_POST["submit"])) {
         header('Location: ../../View/Authentication/Login/login.php');
     }
 } else {
+    // echo "Invalid Credentials";
     header('location: ../../View/Authentication/Login/login.php');
     exit();
 }

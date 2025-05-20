@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['status'])) {
+if (isset($_SESSION['status'])) {
     // header('Location: ../Authentication/Login/login.html');
     exit();
 }
@@ -11,7 +11,7 @@ if (!isset($_SESSION['status'])) {
 
 <head>
     <meta charset="UTF-8" />
-    <title>Admin Dashboard</title>
+    <title>Add Employee</title>
     <link rel="stylesheet" href="../../asset/Styles/Common Styles/sidebar.css">
     <link rel="stylesheet" href="../../asset/Styles/Manage Employee/employee_info_table.css">
 </head>
@@ -28,7 +28,7 @@ if (!isset($_SESSION['status'])) {
         <!-- Add employee -->
         <div id="add-employee">
             <table>
-                <form onsubmit="return addEmployee()" action="">
+                <form action='../../controller/php/addEmployee.php' method="post" onsubmit="return addEmployee()">
                     <tbody>
                         <tr>
                             <td>First Name</td>
@@ -53,7 +53,7 @@ if (!isset($_SESSION['status'])) {
                         <tr>
                             <td>Role</td>
                             <td>
-                                <select name="" id="role">
+                                <select name="role" id="role">
                                     <option value="">Select a role</option>
                                     <option value="Manager">Manager</option>
                                     <option value="Receptionist">Receptionist</option>
@@ -81,6 +81,11 @@ if (!isset($_SESSION['status'])) {
                 </form>
             </table>
         </div>
+
+        <!-- Error-msg -->
+         <div>
+            <p id="error-msg"></p>
+         </div>
     </div>
 
     <!-- <script src="../../asset/Javascript/Manage Employee/loadEmployeesInfo.js"></script> -->
