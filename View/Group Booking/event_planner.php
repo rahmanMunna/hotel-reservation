@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['status'])) {
+if (isset($_SESSION['status'])) {
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -13,6 +13,12 @@ if (!isset($_SESSION['status'])) {
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/sidebar.css">
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/navbar.css">
         <link rel="stylesheet" href="../../asset/Styles/Group booking/event_planner.css">
+
+        <style>
+            #sidebar-main-content{
+                display: flex;
+            }
+        </style>
     </head>
 
     <body>
@@ -129,7 +135,7 @@ if (!isset($_SESSION['status'])) {
                 <!-- Event Details Form -->
                 <section class="event-form">
                     <h2>Add/Edit Event</h2>
-                    <form action="" onsubmit="return handleSubmit()">
+                    <form method="post" action="../../controller/php/event_planner_validation.php" onsubmit="return handleSubmit()">
                         <table>
                             <tr>
                                 <td><label for="event-name">Event Name:</label></td>
@@ -142,8 +148,8 @@ if (!isset($_SESSION['status'])) {
                             <tr>
                                 <td><label for="event-time">Time:</label></td>
                                 <td>
-                                    From : <input type="time" id="" name="event-time" />
-                                    To : <input type="time" id="" name="event-time" />
+                                    From : <input type="time" id="" name="event-time-from" />
+                                    To : <input type="time" id="" name="event-time-to" />
                                 </td>
                             </tr>
                             <tr>
@@ -184,7 +190,7 @@ if (!isset($_SESSION['status'])) {
 
                             <tr>
                                 <td colspan="2" style="text-align: right">
-                                    <button id="save-event" disabled type="submit">Save Event</button>
+                                    <button id="save-event"  type="submit" name="submit">Save Event</button>
                                 </td>
                             </tr>
                         </table>
@@ -194,11 +200,7 @@ if (!isset($_SESSION['status'])) {
 
         </div>
 
-
-
-
-
-        <script src="../../asset/Javascript/Group bookings/event_planner.js"></script>
+        <!-- <script src="../../asset/Javascript/Group bookings/event_planner.js"></script> -->
     </body>
 
     </html>
