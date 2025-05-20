@@ -25,10 +25,13 @@ if (isset($_SESSION['status']) || $_COOKIE['status']) {
 
             #back-btn {
                 background-color: rgb(219, 225, 21);
+                width: 10%;
             }
 
             #status-btn {
-                width: 30%;
+                width: 10%;
+                
+                text-align: center;
             }
         </style>
 
@@ -41,9 +44,9 @@ if (isset($_SESSION['status']) || $_COOKIE['status']) {
             <?php include('../Common components/sidebar_guest.php'); ?>
             <div id="main-content">
                 <div id="heading">
-                    <button id="back-btn">
-                        <a style="text-decoration: none;" href="./service_catalog.php">back</a>
-                    </button>
+                    <a style="text-decoration: none;" href="./service_catalog_guest.php">
+                        <button id="back-btn">back</button>
+                    </a>
                     <h2>Your Requested Order</h2>
                 </div>
 

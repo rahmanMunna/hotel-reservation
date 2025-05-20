@@ -16,7 +16,7 @@
             <a href="../Make Reservation/make_a_reservation_guest.php">
                 <button>Make a Reservation</button>
             </a>
-            <a href="../../View/Billing Summary/folioViewer.php">
+            <a href="../../View/Billing Summary/folioViewer_guest.php">
                 <button>Billing Summary</button>
             </a>
             <a href="../../View/Cancellation Policy/termsDisplay.php">

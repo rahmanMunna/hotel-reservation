@@ -20,7 +20,7 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
         <?php include('../Common components/navbar.php'); ?>
 
         <div id="sidebar-main-content">
-            <?php include('../Common components/sidebar.php'); ?>
+            <?php include('../Common components/sidebar_guest.php'); ?>
             <main>
                 <h1>Guest Folio - Split Charges </h1>
 

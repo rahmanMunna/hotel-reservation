@@ -178,7 +178,7 @@ if (isset($_SESSION['status'])  || $_COOKIE['status']) {
     <body>
         <?php include('../Common components/navbar.php'); ?>
         <div id="sidebar-main-content">
-            <?php include('../Common components/sidebar.php'); ?>
+            <?php include('../Common components/sidebar_guest.php'); ?>
             <main>
                 <div id="guest-info-summary">
                     <div id="guest-info">
@@ -265,7 +265,7 @@ if (isset($_SESSION['status'])  || $_COOKIE['status']) {
                     <a href="./charge_breakdown.php">
                         <button class="btn" id="view-break-down" name="">View Break Down</button>
                     </a>
-                    <a href="./split_charges.php">
+                    <a href="./split_charges_guest.php">
                         <button class="btn" id="split-payment">Split Payment</button>
                     </a>
                     <a href="./receipt_generator.php">
