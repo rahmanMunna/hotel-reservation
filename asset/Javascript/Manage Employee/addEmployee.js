@@ -1,5 +1,3 @@
-// alert();
-
 function addEmployee() {
 
     const firstName = getFirstName();

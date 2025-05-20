@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!isset($_SESSION['status'])) {
-    // header('Location: ../Authentication/Login/login.html');
+if (!isset($_SESSION['status']) || !isset($_COOKIE['status'])) {
+    header('Location: ../Authentication/Login/login.php');
     exit();
 }
 ?>
@@ -74,7 +74,7 @@ if (!isset($_SESSION['status'])) {
                         <tr>
                             <td></td>
                             <td>
-                                <input type="submit" value="Add">
+                                <input type="submit" name="submit" value="Add">
                             </td>
                         </tr>
                     </tfoot>

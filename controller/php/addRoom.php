@@ -12,11 +12,11 @@ if (isset($_POST["submit"])) {
 
     // Check each checkbox by name
     if (isset($_POST['wifi'])) {
-        $selectedAmenities[] = $_POST['wifi']; // "wifi"
+        $selectedAmenities[] = $_POST['wifi']; 
     }
 
     if (isset($_POST['ac'])) {
-        $selectedAmenities[] = $_POST['ac']; // "ac"
+        $selectedAmenities[] = $_POST['ac']; 
     }
 
     if (isset($_POST['tv'])) {

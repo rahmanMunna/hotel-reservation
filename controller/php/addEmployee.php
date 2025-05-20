@@ -55,11 +55,13 @@ if (isset($_POST["submit"])) {
         }
     }
 
-    header('Location: ../../View/successful_alert.php');
+    // header('Location: ../../View/successful_alert.php');
 
     //decision
-    // if ($isValid) {
-    //     header('Location: ../../View/successful_alert.php');
-    //     exit();
-    // } 
+    if ($isValid) {
+        header('Location: ../../View/successful_alert.php');
+        exit();
+    }else{
+        echo "failed";
+    } 
 }
