@@ -143,7 +143,7 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
                             <tr>
                                 <td></td>
                                 <td>
-                                    <input type="submit" value="Add">
+                                    <input type="submit" name="submit" value="Add">
                                 </td>
                             </tr>
                         </tfoot>

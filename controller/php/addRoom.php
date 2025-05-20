@@ -1,18 +1,53 @@
 <?php
 if (isset($_POST["submit"])) {
-    $roomType = trim($_POST['room-type'] ?? '');
-    $roomNo = trim($_POST['room-no'] ?? '');
-    $bedType = trim($_POST['bed-type'] ?? '');
-    $floor = trim($_POST['floor'] ?? '');
-    $capacity = trim($_POST['capacity'] ?? '');
-    $price = trim($_POST['price-per-night'] ?? '');
-    $availability = trim($_POST['availability'] ?? '');
-    $amenities = $_POST['amenities'] ?? [];
+    $roomType = trim($_POST['room-type']);
+    $roomNo = trim($_POST['room-no']);
+    $bedType = trim($_POST['bed-type']);
+    $floor = trim($_POST['floor']);
+    $capacity = trim($_POST['capacity']);
+    $price = trim($_POST['price-per-night']);
+    $availability = trim($_POST['availability']);
+
+    $selectedAmenities = [];
+
+    // Check each checkbox by name
+    if (isset($_POST['wifi'])) {
+        $selectedAmenities[] = $_POST['wifi']; // "wifi"
+    }
+
+    if (isset($_POST['ac'])) {
+        $selectedAmenities[] = $_POST['ac']; // "ac"
+    }
+
+    if (isset($_POST['tv'])) {
+        $selectedAmenities[] = $_POST['tv'];
+    }
+
+    if (isset($_POST['minibar'])) {
+        $selectedAmenities[] = $_POST['minibar'];
+    }
+
+    if (isset($_POST['room_service'])) {
+        $selectedAmenities[] = $_POST['room_service'];
+    }
+
+    if (isset($_POST['balcony'])) {
+        $selectedAmenities[] = $_POST['balcony'];
+    }
+
+    if (isset($_POST['bathroom'])) {
+        $selectedAmenities[] = $_POST['bathroom'];
+    }
+
+    if (isset($_POST['closet'])) {
+        $selectedAmenities[] = $_POST['closet'];
+    }
+
 
     $valid = true;
 
     // Check required fields
-    if ($roomType === '' || $roomNo === '' || $bedType === '' || $floor === '' || $capacity === '' || $price === '' || $availability === '' || empty($amenities)) {
+    if ($roomType === '' || $roomNo === '' || $bedType === '' || $floor === '' || $capacity === '' || $price === '' || $availability === '' || count($selectedAmenities) === 0) {
         $valid = false;
     }
 
@@ -28,10 +63,9 @@ if (isset($_POST["submit"])) {
     }
 
     if ($valid) {
-        echo "Success";
+        header('Location: ../../View/successful_alert.php');
     } else {
         echo "Failed";
-        // Validation failed — handle accordingly (redirect, ignore, etc.)
+        
     }
 }
-?>
