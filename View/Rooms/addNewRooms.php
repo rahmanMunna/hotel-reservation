@@ -44,12 +44,12 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
             <!-- Add Room -->
             <div id="add-room">
                 <table>
-                    <form onsubmit="" action="">
+                    <form action="../../controller/php/addRoom.php" method="post" onsubmit="return handleAddRoom()" action="">
                         <tbody>
                             <tr>
                                 <td>Room Type</td>
                                 <td>
-                                    <select name="" id="room-type">
+                                    <select name="room-type" id="room-type">
                                         <option value="">Select Room Type</option>
                                         <option value="A">A</option>
                                         <option value="B">B</option>
@@ -64,7 +64,7 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
                             <tr>
                                 <td>Bed Type</td>
                                 <td>
-                                    <select name="" id="bed-type">
+                                    <select name="bed-type" id="bed-type">
                                         <option value="">Select Bed Type</option>
                                         <option value="A">A</option>
                                         <option value="B">B</option>
@@ -89,7 +89,7 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
                             <tr>
                                 <td>Availability</td>
                                 <td>
-                                    <select name="" id="availability">
+                                    <select name="availability" id="availability">
                                         <option value="">Select an option</option>
                                         <option value="Available">Available</option>
                                         <option value="Not available">Not available</option>
@@ -97,12 +97,12 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
                                 </td>
                             </tr>
 
-                            <tr>
+                            <!-- <tr>
                                 <td>Select Image : </td>
                                 <td>
                                     <input type="file" name="" id="">
                                 </td>
-                            </tr>
+                            </tr> -->
 
                             <tr>
                                 <!-- <td>Select Amenities</td> -->
@@ -110,28 +110,28 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
                                 <td>
                                     <label style="color: blue;font-size:25px" for="">Select Amenities :</label><br>
 
-                                    <input type="checkbox" name="wifi" id="wifi" value="wifi">
+                                    <input type="checkbox" class="amenity-checkbox" name="wifi" id="wifi" value="wifi">
                                     <label for="wifi">Wi-Fi</label><br>
 
-                                    <input type="checkbox" name="ac" id="ac" value="ac">
+                                    <input type="checkbox" class="amenity-checkbox" name="ac" id="ac" value="ac">
                                     <label for="ac">Air Conditioning</label><br>
 
-                                    <input type="checkbox" name="tv" id="tv" value="tv">
+                                    <input type="checkbox" class="amenity-checkbox" name="tv" id="tv" value="tv">
                                     <label for="tv">Flat-Screen TV</label><br>
 
-                                    <input type="checkbox" name="minibar" id="minibar" value="minibar">
+                                    <input type="checkbox" class="amenity-checkbox" name="minibar" id="minibar" value="minibar">
                                     <label for="minibar">Minibar</label><br>
 
-                                    <input type="checkbox" name="room_service" id="room_service" value="room_service">
+                                    <input type="checkbox" class="amenity-checkbox" name="room_service" id="room_service" value="room_service">
                                     <label for="room_service">Room Service</label><br>
 
-                                    <input type="checkbox" name="balcony" id="balcony" value="balcony">
+                                    <input type="checkbox" class="amenity-checkbox" name="balcony" id="balcony" value="balcony">
                                     <label for="balcony">Private Balcony</label><br>
 
-                                    <input type="checkbox" name="bathroom" id="bathroom" value="bathroom">
+                                    <input type="checkbox" class="amenity-checkbox" name="bathroom" id="bathroom" value="bathroom">
                                     <label for="bathroom">Private Bathroom</label><br>
 
-                                    <input type="checkbox" name="closet" id="closet" value="closet">
+                                    <input type="checkbox" class="amenity-checkbox" name="closet" id="closet" value="closet">
                                     <label for="closet">Closet/Wardrobe</label><br>
 
 
@@ -149,8 +149,12 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
                         </tfoot>
                     </form>
                 </table>
+                <p id="error-msg"></p>
             </div>
+
         </div>
+
+        <script src="../../asset/Javascript/Rooms/addNewRoom.js"></script>
     </body>
 
     </html>
