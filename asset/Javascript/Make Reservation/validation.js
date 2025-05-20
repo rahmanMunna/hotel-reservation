@@ -2,10 +2,11 @@ function handleConfirmReservation() {
     const guestName = document.getElementById('guest-name').value;
     const phone = document.getElementById('phone').value;
     const email = document.getElementById('email').value;
-    const roomType = document.getElementById('room-type').value;
+    const roomId = document.getElementById('room-id').value;
+    // const roomType = document.getElementById('room-type').value;
 
 
-    const bedType = document.getElementById('bed-type').value;
+    // const bedType = document.getElementById('bed-type').value;
 
     const adults = document.getElementById('adults').value;
     const children = document.getElementById('children').value;
@@ -45,7 +46,7 @@ function handleConfirmReservation() {
         // alert('Phone number must be 11 character');
         return false;
     }
-   
+
     if (children < 0 || adults <= 0) {
         errorMsg.innerHTML = "Invalid Guest number";
         return false;
@@ -54,6 +55,10 @@ function handleConfirmReservation() {
     if (!checkValidDate(checkInDate, checkOutDate)) {
         errorMsg.innerHTML = "Invalid Check-out Date";
         return false;
+    }
+    if(roomId !== "R001" || roomId !== "R003" || roomId !== "R004"){
+        errorMsg.innerHTML = "Unavailable Room id";
+        return true;
     }
 
     console.log(formData)

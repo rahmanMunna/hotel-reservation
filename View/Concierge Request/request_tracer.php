@@ -16,7 +16,7 @@ if (isset($_SESSION['status']) || $_COOKIE['status']) {
         <style>
             #sidebar-main-content {
                 display: flex;
-                border: 1px solid;
+                /* border: 1px solid; */
             }
 
             #main-content {

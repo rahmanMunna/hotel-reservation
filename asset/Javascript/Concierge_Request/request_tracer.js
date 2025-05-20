@@ -1,5 +1,5 @@
 import servicesData from "./services_data.js";
-alert();
+// alert();
 
 const placedOrder = JSON.parse(localStorage.getItem('request-order'));
 

@@ -20,9 +20,17 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
         <div id="sidebar-main-content">
             <?php include('../Common components/sidebar.php'); ?>
             <div id="reservation-table">
-                <form onsubmit="return handleConfirmReservation()" method="post" action="../../controller/php/make_reservation_validation.php">
+                <form onsubmit="return handleConfirmReservation()"
+                    method="post"
+                    action="../../controller/php/make_reservation_validation.php">
                     <table>
                         <tbody>
+                            <tr>
+                                <td>Room ID</td>
+                                <td>
+                                    <input type="text" name="room-id" id="room-id">
+                                </td>
+                            </tr>
                             <tr>
                                 <td>Guest Name</td>
                                 <td>
@@ -41,27 +49,7 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                                     <input type="email" name="email" id="email">
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Room Type</td>
-                                <td>
-                                    <select name="room-type" id="room-type">
-                                        <option value="">Select a room type</option>
-                                        <option value="A">A</option>
-                                        <option value="B">B</option>
-                                        <option value="C">C</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Bed Type</td>
-                                <td>
-                                    <select name="bed-type" id="bed-type">
-                                        <option value="">Select Bed Type</option>
-                                        <option value="Single">Single</option>
-                                        <option value="Double">Double</option>
-                                    </select>
-                                </td>
-                            </tr>
+
                             <tr>
                                 <td>Number of Guest : </td>
                                 <td>
@@ -113,7 +101,7 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
         </div>
 
         <script src="../../asset/Javascript/Rooms/displayAllRooms.js"></script>
-        <!-- <script src="../../asset/Javascript/Make Reservation/validation.js"></script> -->
+        <script src="../../asset/Javascript/Make Reservation/validation.js"></script>
     </body>
 
     </html>
