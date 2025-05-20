@@ -22,7 +22,7 @@
             <a href="../View/Group Booking/group_block_tool.php">
                 <button>Group Booking Tool</button>
             </a>
-            <a href="../View/Group Booking/event_planner.php">
+            <a href="../../View/Group Booking/event_planner.php">
                 <button>Event Planner</button>
             </a>
             <a href="../View/Billing Summary/folioViewer.php">
@@ -40,9 +40,9 @@
             <a href="../Rooms/addNewRooms.php">
                 <button>Add New Room</button>
             </a>
-            <a href="">
+            <!-- <a href="">
                 <button>Manage Guests</button>
-            </a>
+            </a> -->
 
             <a href="../../controller/php/logout.php">
                 <button>logout</button>

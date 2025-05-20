@@ -1,43 +1,51 @@
-#event-info-div,
-.summary,
-.event-form,
-#event-schedule {
-    width: 60%;
-    margin: auto;
-    /* background-color: aliceblue; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 20px;
-    font-size: 30px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 30px;
+  #sidebar-main-content {
+      display: flex;
+      width: 100%;
+  }
 
-}
+  #main-content {
+      width: 100%;
+      /* border: 1px solid; */
+  }
 
-input,
-select {
-    font-size: 20px;
-}
+  #event-info-div,
+  .summary,
+  .event-form,
+  #event-schedule {
+      width: 80%;
+      margin-bottom: 20px;
+      font-size: 20px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      padding: 30px;
+      /* border: 1px solid;  */
 
-.btn{
-    width: 30%;
-    margin-left: auto;
-    margin-top: 10px;
-    height: 40px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 30px;
-    text-align: center;
-    background-color: rgb(188, 205, 199);
-    /* color: azure; */
-    font-weight: bolder;
-}
-.btn:hover{
-    background-color: blanchedalmond;
-    cursor: pointer;
-}
-h2{
-    background-color: rgb(108, 162, 209);
-    text-align: center;
-    padding: 10px;
-}
+  }
+
+  input,
+  select {
+      font-size: 20px;
+  }
+
+  .btn {
+      /* width: 30%; */
+      margin-left: auto;
+      margin-top: 10px;
+      height: 40px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 30px;
+      text-align: center;
+      background-color: rgb(188, 205, 199);
+      /* color: azure; */
+      font-weight: bolder;
+  }
+
+  .btn:hover {
+      background-color: blanchedalmond;
+      cursor: pointer;
+  }
+
+  h2 {
+      background-color: rgb(108, 162, 209);
+      text-align: center;
+      padding: 10px;
+  }
