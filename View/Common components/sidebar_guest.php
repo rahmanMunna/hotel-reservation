@@ -19,7 +19,7 @@
             <a href="../../View/Billing Summary/folioViewer_guest.php">
                 <button>Billing Summary</button>
             </a>
-            <a href="../../View/Cancellation Policy/termsDisplay.php">
+            <a href="../../View/Cancellation Policy/termsDisplay_guest.php">
                 <button>Cancellation Policy</button>
             </a>
             <a href="../../controller/php/logout.php">

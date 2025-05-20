@@ -13,9 +13,9 @@
             <a href="../Concierge Request/service_catalog.php">
                 <button>Service Catalog</button>
             </a>
-            <a href="../../View/Availability Calendar/dynamic_calendar.php">
+            <!-- <a href="../../View/Availability Calendar/dynamic_calendar.php">
                 <button>See available Room</button>
-            </a>
+            </a> -->
             <a href="../../View/Group Booking/group_manager.php">
                 <button>Group Booking</button>
             </a>
@@ -28,15 +28,15 @@
             <a href="../../View/Billing Summary/folioViewer.php">
                 <button>Billing Summary</button>
             </a>
-            <a href="../View/Cancellation Policy/termsDisplay.php">
+            <a href="../../View/Cancellation Policy/termsDisplay.php">
                 <button>Cancellation Policy</button>
             </a>
-            <a href="../Manage Employee/manage_employee.php">
+            <!-- <a href="../Manage Employee/manage_employee.php">
                 <button>Manage Employee</button>
             </a>
             <a href="../Manage Employee/addNewEmployee.php">
                 <button>Add new Employee</button>
-            </a>
+            </a> -->
             <a href="../Rooms/addNewRooms.php">
                 <button>Add New Room</button>
             </a>

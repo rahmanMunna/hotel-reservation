@@ -25,7 +25,7 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
         <?php include('../Common components/navbar.php'); ?>
 
         <div id="sidebar-main-content">
-            <?php include('../Common components/sidebar.php'); ?>
+            <?php include('../Common components/sidebar_guest.php'); ?>
             <main>
                 <div id="guest-information">
                     <h3>Booking Id : <span>#8768879</span></h3>
@@ -93,10 +93,10 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                     <!-- <a href="">
                         <button>Confirm Cancellation</button>
                     </a> -->
-                    <a href="./modification_flow.php">
+                    <a href="./modification_flow_guest.php">
                         <button>Modify Stay instead</button>
                     </a>
-                    <a href="./termsDisplay.php">
+                    <a href="./termsDisplay_guest.php">
                         <button>Back to Terms</button>
                     </a>
                 </p>

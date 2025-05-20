@@ -25,7 +25,7 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
     <body>
         <?php include('../Common components/navbar.php'); ?>
         <div id="sidebar-main-content">
-            <?php include('../Common components/sidebar.php'); ?>
+            <?php include('../Common components/sidebar_guest.php'); ?>
             <main>
                 <div id="guest-information">
                     <h3 class="guest-info-h2">Guest Name : <span>XYZ</span> </h3>

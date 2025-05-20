@@ -23,7 +23,7 @@ if (isset($_SESSION['status'])) {
 
     <body>
         <div id="sidebar-main-content">
-            <?php include('../Common components//sidebar.php'); ?>
+            <?php include('../Common components/sidebar_guest.php'); ?>
             <main>
                 <!-- Booking Details -->
                 <div>
@@ -74,10 +74,10 @@ if (isset($_SESSION['status'])) {
 
                 </div>
                 <p id="btns">
-                    <a href="./calculate _penalty.php">
+                    <a href="./calculate _penalty_guest.php">
                         <button>Calculate Penalty</button>
                     </a>
-                    <a href="./modification_flow.php">
+                    <a href="./modification_flow_guest.php">
                         <button>Modify Booking</button>
                     </a>
                 </p>
