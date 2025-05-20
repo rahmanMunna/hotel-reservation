@@ -20,7 +20,7 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
         <div id="sidebar-main-content">
             <?php include('../Common components/sidebar.php'); ?>
             <div id="reservation-table">
-                <form onsubmit="return handleConfirmReservation()" action="">
+                <form onsubmit="return handleConfirmReservation()" method="post" action="../../controller/php/make_reservation_validation.php">
                     <table>
                         <tbody>
                             <tr>
@@ -44,7 +44,7 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                             <tr>
                                 <td>Room Type</td>
                                 <td>
-                                    <select name="" id="room-type">
+                                    <select name="room-type" id="room-type">
                                         <option value="">Select a room type</option>
                                         <option value="A">A</option>
                                         <option value="B">B</option>
@@ -55,7 +55,7 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                             <tr>
                                 <td>Bed Type</td>
                                 <td>
-                                    <select name="" id="bed-type">
+                                    <select name="bed-type" id="bed-type">
                                         <option value="">Select Bed Type</option>
                                         <option value="Single">Single</option>
                                         <option value="Double">Double</option>
@@ -65,32 +65,32 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                             <tr>
                                 <td>Number of Guest : </td>
                                 <td>
-                                    Adults : <input type="number" name="" id="adults">
-                                    Children : <input type="number" name="" id="children">
+                                    Adults : <input type="number" name="adults" id="adults">
+                                    Children : <input type="number" name="children" id="children">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Booking Date</td>
                                 <td>
-                                    <input type="date" name="" id="booking-date">
+                                    <input type="date" name="booking-date" id="booking-date">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Check-in-Date</td>
                                 <td>
-                                    <input type="date" name="" id="check-in-date">
+                                    <input type="date" name="check-in-date" id="check-in-date">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Check-out-Date</td>
                                 <td>
-                                    <input type="date" name="" id="check-out-date">
+                                    <input type="date" name="check-out-date" id="check-out-date">
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <p id="error-msg"></p>
-                    <input id="btn" type="submit" value="Confirm Reservation">
+                    <input id="btn" type="submit" name="submit" value="Confirm Reservation">
                 </form>
             </div>
 
@@ -113,7 +113,7 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
         </div>
 
         <script src="../../asset/Javascript/Rooms/displayAllRooms.js"></script>
-        <script src="../../asset/Javascript/Rooms/validation.js"></script>
+        <!-- <script src="../../asset/Javascript/Make Reservation/validation.js"></script> -->
     </body>
 
     </html>

@@ -45,11 +45,7 @@ function handleConfirmReservation() {
         // alert('Phone number must be 11 character');
         return false;
     }
-    if (phone[0] === '0' && phone[1] === '1') {
-        errorMsg.innerHTML = "Enter a valid phone Number";
-        // alert('Enter a valid phone Number');
-        return false;
-    }
+   
     if (children < 0 || adults <= 0) {
         errorMsg.innerHTML = "Invalid Guest number";
         return false;
@@ -61,7 +57,7 @@ function handleConfirmReservation() {
     }
 
     console.log(formData)
-    return false;
+    return true;
 }
 
 const isEmpty = (elements) => {
