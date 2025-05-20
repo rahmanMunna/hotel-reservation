@@ -1,16 +1,3 @@
-function handleIncrement(fieldName) {
-    const adults = document.getElementById(fieldName);
-    adults.innerText = parseInt(adults.innerText) + 1 || 1;
-}
-
-function handleDecrement(fieldName) {
-    const adults = document.getElementById(fieldName);
-    if (parseInt(adults.innerText) !== 0) {
-        adults.innerText = parseInt(adults.innerText) - 1 || 0;
-    }
-
-}
-
 function handleSubmit() {
     if (!dateIsSelected()) {
         return false;
@@ -18,148 +5,163 @@ function handleSubmit() {
     if (!isRoomTypeSelected()) {
         return false;
     }
-    if (!getGuestNumber()) {
+    if (!isGuestCountSelected()) {
+
         return false;
     }
-    //Update Table
+    // Update Table
     if (setNewPrice()) {
         setMoreToPay();
         setRefund();
-    }
-    else {
+    } else {
         return false;
     }
-    return false;
+
+    // Submit form only if everything is valid
+    return true;
 }
 
 function getCheckInDate() {
     const dates = document.getElementsByClassName('date');
     return dates[0].value;
 }
+
 function getCheckOutDate() {
     const dates = document.getElementsByClassName('date');
     return dates[1].value;
 }
+
 function getRoomType() {
-    const roomType = document.getElementById('room-type').value;
-    return roomType;
-
+    return document.getElementById('room-type').value;
 }
+
+function getAdultGuestNumber() {
+    return parseInt(document.getElementById('adults').value);
+}
+
+function getChildGuestNumber() {
+    return parseInt(document.getElementById('children').value);
+}
+
 function getGuestNumber() {
-    const adults = document.getElementById('adults');
-    const children = document.getElementById('children');
+    const adults = parseInt(document.getElementById('adults').value);
+    const children = parseInt(document.getElementById('children').value);
 
-    if (children.innerText === '0' && adults.innerText === '0') {
-        alert('Please select Guest Number');
-        return false;
-    }
-    return [parseInt(adults.innerText), parseInt(children.innerText)];
-
+    return (adults > 0 || children >= 0);
 }
+
 function getRoomPrice() {
     return getRoomType() !== "" ? getRoomType().split('-')[1] : -1;
 }
+
 function getCurrentPrice() {
-    const currentPrice = document.getElementById('current-total').innerHTML;
-    return currentPrice;
+    return document.getElementById('current-total').innerHTML;
 }
 
 // Validation
 function dateIsSelected() {
-
     const checkInDate = getCheckInDate();
     const checkOutDate = getCheckOutDate();
 
     if (!checkInDate) {
-        alert('check In date is not Selected');
+        alert('Check-in date is not selected.');
         return false;
-
     }
     if (!checkOutDate) {
-        alert('check Out date is not Selected');
+        alert('Check-out date is not selected.');
         return false;
     }
+
+    // Check if check-in is before check-out
+    const checkIn = new Date(checkInDate);
+    const checkOut = new Date(checkOutDate);
+
+    if (checkOut <= checkIn) {
+        alert('Check-out date must be after check-in date.');
+        return false;
+    }
+
     return true;
-
-
-
 }
 
 function isRoomTypeSelected() {
-
     if (getRoomType() === "") {
-        alert('Room type not Selected');
+        alert('Room type not selected.');
         return false;
     }
     return true;
 }
 
-function calculateTotalNumberOFNights() {
-    let pricePerNight = parseInt(getRoomPrice());
-    let checkIn = getCheckInDate();
-    let checkOut = getCheckOutDate(); // yyyy-m-d
+function isGuestCountSelected() {
+    const adultsInput = document.getElementById('adults').value;
+    const childrenInput = document.getElementById('children').value;
 
-    const checkInDate = parseInt(checkIn.split('-')[2]);
-    const checkOutDate = parseInt(checkOut.split('-')[2]);
-
-    const checkInMonth = parseInt(checkIn.split('-')[1]);
-    const checkOutMonth = parseInt(checkOut.split('-')[1]);
-
-    const checkInYear = parseInt(checkIn.split('-')[0]);
-    const checkOutYear = parseInt(checkOut.split('-')[0]);
-
-    // Create Date objects 
-    const checkInFullDate = new Date(checkInYear, checkInMonth - 1, checkInDate);
-    const checkOutFullDate = new Date(checkOutYear, checkOutMonth - 1, checkOutDate);
-
-    // Validate and calculate stay duration
-    if (checkOutFullDate <= checkInFullDate) {
-        return -1;
-
-    } else {
-        const timeDiff = checkOutFullDate - checkInFullDate; // return in millisec
-        const stayNights = timeDiff / (1000 * 60 * 60 * 24);
-        return stayNights;
-    }
-
-}
-
-
-function setNewPrice() {
-    if (calculateTotalNumberOFNights() === -1) {
-        alert("Error: Check-out date must be after check-in date.")
+    // Check if empty
+    if (adultsInput === "" || childrenInput === "") {
+        alert("Please fill in both adult and children guest counts.");
         return false;
     }
-    else {
-        const newPrice = document.getElementById('new-price');
-        const stayNights = calculateTotalNumberOFNights();
-        const roomPricePerNight = parseInt(getRoomPrice());
-        newPrice.innerHTML = stayNights * roomPricePerNight + ' Tk';
-        return true;
+
+    // Convert to numbers
+    const adults = parseInt(adultsInput);
+    const children = parseInt(childrenInput);
+
+    // Check for valid numbers
+    if (isNaN(adults) || adults < 0 || isNaN(children) || children < 0) {
+        alert("Please enter valid non-negative numbers for guests.");
+        return false;
     }
 
-
+    return true;
 }
+
+
+function calculateTotalNumberOFNights() {
+    let checkIn = getCheckInDate();
+    let checkOut = getCheckOutDate();
+
+    const checkInDate = new Date(checkIn);
+    const checkOutDate = new Date(checkOut);
+
+    if (checkOutDate <= checkInDate) {
+        return -1;
+    }
+
+    const timeDiff = checkOutDate - checkInDate;
+    const stayNights = timeDiff / (1000 * 60 * 60 * 24);
+    return stayNights;
+}
+
+function setNewPrice() {
+    const stayNights = calculateTotalNumberOFNights();
+    if (stayNights === -1) {
+        alert("Error: Check-out date must be after check-in date.");
+        return false;
+    }
+
+    const newPrice = document.getElementById('new-price');
+    const roomPricePerNight = parseInt(getRoomPrice());
+    newPrice.innerHTML = (stayNights * roomPricePerNight) + ' Tk';
+    return true;
+}
+
 function setMoreToPay() {
     const originalPrice = parseInt(document.getElementById('original-price').innerHTML);
     const newPrice = parseInt(document.getElementById('new-price').innerHTML);
     const moreToPay = document.getElementById('more-to-pay');
     const remaining = originalPrice < newPrice ? newPrice - originalPrice : 0;
     moreToPay.innerHTML = `+${remaining} TK`;
-    return;
-
 }
+
 function setRefund() {
     const originalPrice = parseInt(document.getElementById('original-price').innerHTML);
     const newPrice = parseInt(document.getElementById('new-price').innerHTML);
     const refund = document.getElementById('refund');
     const remaining = originalPrice > newPrice ? originalPrice - newPrice : 0;
     refund.innerHTML = `-${remaining} TK`;
-    return;
 }
 
 function start() {
-    document.getElementById('original-price').innerHTML = getCurrentPrice(); // set current Price initially
-
+    document.getElementById('original-price').innerHTML = getCurrentPrice();
 }
 start();

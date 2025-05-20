@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
+if (!isset($_SESSION['status']) || !isset($_COOKIE['status'])) {
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -41,20 +41,20 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                 <div>
                     <h2>Modify Changes</h2>
                     <table id="modify-changes">
-                        <form onsubmit="return handleSubmit()" action="">
+                        <form method="post" onsubmit="return handleSubmit()" action="../../controller/php/modification_bookings_validation.php">
                             <tbody id="modify-changes-tbody">
                                 <tr>
                                     <td>New Check-in Date</td>
-                                    <td><input type="date" class="date" name="" id=""></td>
+                                    <td><input type="date" class="date" name="check-in-date" id="check-in-date"></td>
                                 </tr>
                                 <tr>
                                     <td>New Check-out Date</td>
-                                    <td><input type="date" class="date" name="" id=""></td>
+                                    <td><input type="date" class="date" name="check-out-date" id="check-out-date"></td>
                                 </tr>
                                 <tr>
                                     <td>Room Type</td>
                                     <td>
-                                        <select id="room-type" name="" id="">
+                                        <select id="room-type" name="room-type" id="">
                                             <option value="">Select Room Type</option>
                                             <option value="Standard Room-1000">Standard Room-1000(per night)</option>
                                             <option value="Deluxe Suite-2000">Deluxe Suite-2000(per night)</option>
@@ -65,13 +65,15 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                                 <tr>
                                     <td>Guest Count Selector</td>
                                     <td>
-                                        <input onclick="handleIncrement('adults')" type="button" value="+">
-                                        <input onclick="handleDecrement('adults')" type="button" value="-">
-                                        Adults (<span id="adults">0</span>)
+                                        <!-- <input onclick="handleIncrement('adults')" type="button" value="+">
+                                        <input onclick="handleDecrement('adults')" type="button" value="-"> -->
+                                        <!-- <input type="number" disabled>Adults (<span name="adults" id="adults">0</span>) -->
+                                         <input type="number" name="adults" id="adults">
 
-                                        <input onclick="handleIncrement('children')" type="button" value="+">
-                                        <input onclick="handleDecrement('children')" type="button" value="-"> Children
-                                        (<span id="children">0</span>)
+                                        <!-- <input onclick="handleIncrement('children')" type="button" value="+">
+                                        <input onclick="handleDecrement('children')" type="button" value="-"> Children -->
+                                        <!-- (<span name="children" id="children">0</span>) -->
+                                         <input type="number" name="children" id="children">
                                     </td>
                                 </tr>
 
@@ -80,10 +82,10 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                                 <tr>
 
                                     <td>
-                                        <input class="btn" type="button" value="Cancel Changes" name="" id="">
+                                        <!-- <input class="btn" type="button" value="Cancel Changes" name="" id=""> -->
                                     </td>
                                     <td>
-                                        <input class="btn" type="submit" value="Save & Modify Booking" name="" id="">
+                                        <input class="btn" type="submit" value="Save & Modify Booking" name="submit" id="">
                                     </td>
                                 </tr>
                             </tfoot>
@@ -139,7 +141,7 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
 
         </div>
 
-        <script type="" src="../../asset/Javascript/Cancellation_policy/modification_flow.js"></script>
+        <!-- <script type="" src="../../asset/Javascript/Cancellation_policy/modification_flow.js"></script> -->
 
     </body>
 
