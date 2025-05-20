@@ -3,8 +3,8 @@
 <html>
 <head>
   <title>Room Gallery</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="filter.js" defer></script>
+  <link rel="stylesheet" href="../../../asset/Styles(Chandrima)/Room_types/style.css">
+  <script src="../../../asset/Javascript(Chandrima)/Room_types/filter.js" defer></script>
 </head>
 <body>
 <div class="navbar">

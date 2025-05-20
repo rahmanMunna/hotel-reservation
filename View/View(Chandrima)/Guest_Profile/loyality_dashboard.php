@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>Loyalty Dashboard</title>
-    <link rel="stylesheet" href="../../asset/Styles(Chandrima)/Guest_Profile/style.css">
+    <link rel="stylesheet" href="../../../asset/Styles(Chandrima)/Guest_Profile/style.css">
 </head>
 <body>
 <div class="navbar">
@@ -19,6 +19,6 @@
   <p>Points Earned: <strong>3,250</strong></p>
   <p>Free Nights Available: <strong>2</strong></p>
 </div>
-<script src="../../asset/Javascript(Chandrima)/Guest_Profile/profile_validate.js"></script>
+<script src="../../../asset/Javascript(Chandrima)/Guest_Profile/profile_validate.js"></script>
 </body>
 </html>
