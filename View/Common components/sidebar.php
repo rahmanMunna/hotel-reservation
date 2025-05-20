@@ -16,16 +16,16 @@
             <a href="../../View/Availability Calendar/dynamic_calendar.php">
                 <button>See available Room</button>
             </a>
-            <a href="../View/Group Booking/group_manager.php">
+            <a href="../../View/Group Booking/group_manager.php">
                 <button>Group Booking</button>
             </a>
-            <a href="../View/Group Booking/group_block_tool.php">
+            <a href="../../View/Group Booking/group_block_tool.php">
                 <button>Group Booking Tool</button>
             </a>
             <a href="../../View/Group Booking/event_planner.php">
                 <button>Event Planner</button>
             </a>
-            <a href="../View/Billing Summary/folioViewer.php">
+            <a href="../../View/Billing Summary/folioViewer.php">
                 <button>Billing Summary</button>
             </a>
             <a href="../View/Cancellation Policy/termsDisplay.php">

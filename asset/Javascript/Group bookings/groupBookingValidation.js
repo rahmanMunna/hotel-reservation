@@ -36,7 +36,7 @@ function handleSubmit() {
 
     displaySummaryTable(formData);
     showSuccessFulMsg();
-    return false;
+    return true;
 }
 
 const isEmpty = (elements) => {
