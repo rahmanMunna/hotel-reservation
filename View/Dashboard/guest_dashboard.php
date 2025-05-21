@@ -13,6 +13,11 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
         <title>Guest Dashboard</title>
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/sidebar.css">
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/navbar.css">
+        <style>
+            #sidebar-main-content{
+                display: flex;
+            }
+        </style>
     </head>
 
     <body>
@@ -20,6 +25,8 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
 
         <div id="sidebar-main-content">
             <?php include('../Common components/sidebar_guest.php'); ?>
+            <?php include('../Availability Calendar/dynamic_calendar.php'); ?>
+
 
         </div>
 

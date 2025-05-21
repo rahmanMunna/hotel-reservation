@@ -59,7 +59,7 @@ main {
     border: 1px solid;
 }
 
-button {
+/* button {
     font-size: 20px;
     font-weight: 800;
 }
@@ -69,7 +69,7 @@ button:hover {
     color: azure;
     cursor: pointer;
     transition: background-color .5s ease-out;
-}
+} */
 
 #select-check-in-out {
     width: 25%;

@@ -176,17 +176,7 @@ function changeSelectedDateColor(component) {
     component.style.color = 'white'
     component.classList.add("checked-in");
 }
-// function setNightCount(sign) {
-//     const night = document.getElementById('night-count');
-//     if (sign === '+') {
 
-//         night.innerHTML = parseInt(night.innerHTML) + 1;
-//     }
-//     else if (sign === '-') {
-//         night.innerHTML = parseInt(night.innerHTML) == 0 ? 0 : parseInt(night.innerHTML) - 1;
-//     }
-
-// }
 
 function setNight(checkInDate, checkOutDate) {
     const night = document.getElementById('night-count');
@@ -200,6 +190,7 @@ function setNight(checkInDate, checkOutDate) {
 function generateRate(checkIn, checkOut) {
     const matchesRange = getRatesInRange(checkIn, checkOut);
     const table = document.getElementById('rate-view-table');
+    table.innerHTML = '';
     const tbody = document.createElement('tbody');
 
     matchesRange.forEach(a_matchesRange => {
@@ -230,6 +221,7 @@ function generateAvailableRoomInfo() {
     })
 
     const table = document.getElementById('available-room');
+    table.innerHTML = '';
     const tbody = document.createElement('tbody');
 
     availableRooms.forEach(availableRoom => {
@@ -269,6 +261,7 @@ function handleCheckOutDate() {
         return false;
     }
     const div = document.getElementById("summary-table");
+    div.innerHTML = "";
     div.hidden = false;
     const checkIn = new Date(checkInDate);
     const checkOut = new Date(checkOutDate);
