@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+  <?php session_start();
+  if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
+    
+} else {
+    header('Location: ../Authentication/Login/login.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,3 +42,4 @@
 <script src="../../asset/Javascript(Chandrima)/Landing_Page/validation.js"></script>
 </body>
 </html>
+ 

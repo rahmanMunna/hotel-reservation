@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+.navbar {
+  background: #333;
+  padding: 10px;
+  text-align: center;
+}
+.navbar a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+.section {
+  background: white;
+  margin: 20px auto;
+  padding: 20px;
+  width: 80%;
+  border-radius: 10px;
+}
+.cta {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #0066cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+form input, form button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+}
+form button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}

@@ -1,9 +1,16 @@
-<?php session_start(); ?>
+  <?php session_start();
+  if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
+    
+} else {
+    header('Location: ../Authentication/Login/login.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Stay History</title>
-   <link rel="stylesheet" href="../../asset/Styles(Chandrima)/Guest_Profile/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="navbar">
@@ -27,6 +34,5 @@
     </tr>
   </table>
 </div>
-<script src="../../asset/Javascript(Chandrima)/Guest_Profile/profile_validate.js"></script>
 </body>
 </html>
