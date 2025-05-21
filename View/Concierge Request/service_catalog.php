@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['status']) || isset($_COOKIE['status'])) {
+if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -13,7 +13,6 @@ if (!isset($_SESSION['status']) || isset($_COOKIE['status'])) {
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/sidebar.css">
         <link rel="stylesheet" href="../../asset/Styles/Concierge Request/service_catalog.css">
         
-        <!-- <link rel="stylesheet" href="../../asset/Styles/Dashboard/adminDashboard.css"> -->
     </head>
 
     <body>

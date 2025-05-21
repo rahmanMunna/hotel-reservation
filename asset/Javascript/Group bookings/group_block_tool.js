@@ -1,111 +1,79 @@
-const roomDetails = [
-  {
-    "roomType": "Deluxe King",
-    "quantityRequested": 10,
-    "pricePerNight": 130,
-    "availableRooms": 20,
-    "notes": "Close to elevator"
-  },
-  {
-    "roomType": "Double Queen",
-    "quantityRequested": 8,
-    "pricePerNight": 115,
-    "availableRooms": 15,
-    "notes": "Quiet floor preferred"
-  },
-  {
-    "roomType": "Suite Room",
-    "quantityRequested": 3,
-    "pricePerNight": 220,
-    "availableRooms": 5,
-    "notes": "VIP guests only"
-  },
-  {
-    "roomType": "Standard Twin",
-    "quantityRequested": 6,
-    "pricePerNight": 95,
-    "availableRooms": 10,
-    "notes": "For team members"
-  },
-  {
-    "roomType": "Executive King",
-    "quantityRequested": 2,
-    "pricePerNight": 170,
-    "availableRooms": 4,
-    "notes": "Late check-out required"
-  }
-]
-let rowCount = 0;
+// const roomDetails = [
+//   {
+//     "roomType": "Deluxe King",
+//     "quantityRequested": 10,
+//     "pricePerNight": 130,
+//     "availableRooms": 20,
+//     "notes": "Close to elevator"
+//   },
+//   {
+//     "roomType": "Double Queen",
+//     "quantityRequested": 8,
+//     "pricePerNight": 115,
+//     "availableRooms": 15,
+//     "notes": "Quiet floor preferred"
+//   },
+//   {
+//     "roomType": "Suite Room",
+//     "quantityRequested": 3,
+//     "pricePerNight": 220,
+//     "availableRooms": 5,
+//     "notes": "VIP guests only"
+//   },
+//   {
+//     "roomType": "Standard Twin",
+//     "quantityRequested": 6,
+//     "pricePerNight": 95,
+//     "availableRooms": 10,
+//     "notes": "For team members"
+//   },
+//   {
+//     "roomType": "Executive King",
+//     "quantityRequested": 2,
+//     "pricePerNight": 170,
+//     "availableRooms": 4,
+//     "notes": "Late check-out required"
+//   }
+// ]
+// let rowCount = 0;
 
-function displayTbody() {
-  const tbody = document.getElementById('tbody');
-  const tr = document.createElement('tr');
 
-  tr.innerHTML = `
-  <td>
-    <select onchange="handleRoomType(this.value, ${++rowCount})" name="" id="room-types-${++rowCount}">
-      <option value="">Select Room Type</option>
-      ${roomDetails.map(roomDetail => `
-        <option value="${roomDetail.roomType}">${roomDetail.roomType}</option>
-      `).join('')}
-    </select>
-  </td>
 
-  <td>
-    <input type="number" name="" id="qty-requested-${++rowCount}" />
-  </td>
 
-  <td id="price-per-night-${++rowCount}"></td>
-  <td id="available-rooms-${++rowCount}"></td>
-  <td id="notes-${++rowCount}"></td>
+// function handleAddRow() {
+//   displayTbody();
 
-  <td>
-    <button onclick="addRow()">Add</button>
-    <button onclick="removeRow(${++rowCount})">Remove</button>
-  </td>
-`;
+// }
 
-  tbody.appendChild(tr);
-}
+// function setPrice(row, roomType) {
+//   const pricePerNight = document.getElementById(`price-per-night-${row}`);
+//   const room = roomDetails.find(roomDetail => roomDetail.roomType === roomType);
+//   if (room) {
+//     pricePerNight.innerHTML = `$${room.pricePerNight}`;
+//   }
+// }
 
-function addRow(){
-  
-}
+// function setAvailableRooms(row, roomType) {
+//   const availableRooms = document.getElementById(`available-rooms-${row}`);
+//   const room = roomDetails.find(roomDetail => roomDetail.roomType === roomType);
+//   if (room) {
+//     availableRooms.innerHTML = room.availableRooms;
+//   }
+// }
 
-function handleAddRow() {
-  // displayTbody();
+// function setNotes(row, roomType) {
+//   const notesComponent = document.getElementById(`notes-${row}`);
+//   const room = roomDetails.find(roomDetail => roomDetail.roomType === roomType);
+//   if (room) {
+//     notesComponent.innerHTML = room.notes;
+//   }
+// }
 
-}
-
-function setPrice(row, roomType) {
-  const pricePerNight = document.getElementById(`price-per-night-${row}`);
-  const room = roomDetails.find(roomDetail => roomDetail.roomType === roomType);
-  if (room) {
-    pricePerNight.innerHTML = `$${room.pricePerNight}`;
-  }
-}
-
-function setAvailableRooms(row, roomType) {
-  const availableRooms = document.getElementById(`available-rooms-${row}`);
-  const room = roomDetails.find(roomDetail => roomDetail.roomType === roomType);
-  if (room) {
-    availableRooms.innerHTML = room.availableRooms;
-  }
-}
-
-function setNotes(row, roomType) {
-  const notesComponent = document.getElementById(`notes-${row}`);
-  const room = roomDetails.find(roomDetail => roomDetail.roomType === roomType);
-  if (room) {
-    notesComponent.innerHTML = room.notes;
-  }
-}
-
-function handleRoomType(roomType, row) {
-  setAvailableRooms(row, roomType);
-  setNotes(row, roomType);
-  setPrice(row, roomType);
-}
+// function handleRoomType(roomType, row) {
+//   setAvailableRooms(row, roomType);
+//   setNotes(row, roomType);
+//   setPrice(row, roomType);
+// }
 
 //call when submit
 function handleSubmit() {
@@ -143,11 +111,11 @@ function handleSubmit() {
     alert("Enter a valid Guest number");
     return false;
   }
-  if (rowCount === 0) {
-    alert("Add a row");
-    return false;
-  }
-  return false;
+  // if (rowCount === 0) {
+  //   alert("Add a row");
+  //   return false;
+  // }
+  return true;
 
 }
 

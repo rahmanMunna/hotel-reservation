@@ -39,14 +39,14 @@ if (isset($_SESSION['status'])) {
                 </div>
                 <main>
 
-                    <form onsubmit="return handleSubmit()" action="">
+                    <form method="post" onsubmit="return handleSubmit()" action="../../controller/php/group_block_tool.php">
                         <div id="guest-info-table">
                             <table>
                                 <tbody>
                                     <tr>
                                         <td>Group Name</td>
                                         <td>
-                                            <input type="text" name="" id="group-name" />
+                                            <input type="text" name="group-name" id="group-name" />
                                         </td>
                                     </tr>
 
@@ -61,7 +61,7 @@ if (isset($_SESSION['status'])) {
                                         <td>
                                             <input
                                                 type="text"
-                                                name=""
+                                                name="name"
                                                 id="name"
                                                 placeholder="Enter Your Name" />
                                         </td>
@@ -71,7 +71,7 @@ if (isset($_SESSION['status'])) {
                                         <td>
                                             <input
                                                 type="number"
-                                                name=""
+                                                name="phone"
                                                 id="phone"
                                                 placeholder="Enter your phone number" />
                                         </td>
@@ -81,7 +81,7 @@ if (isset($_SESSION['status'])) {
                                         <td>
                                             <input
                                                 type="email"
-                                                name=""
+                                                name="email"
                                                 id="email"
                                                 placeholder="Enter your email" />
                                         </td>
@@ -98,23 +98,23 @@ if (isset($_SESSION['status'])) {
                                     <tr>
                                         <td>Check-in-date</td>
                                         <td>
-                                            <input type="date" name="" id="check-in-date" />
+                                            <input type="date" name="check-in-date" id="check-in-date" />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Check-out-date</td>
                                         <td>
-                                            <input type="date" name="" id="check-out-date" />
+                                            <input type="date" name="check-out-date" id="check-out-date" />
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <td>Total Nights</td>
                                         <td id="total-nights"></td>
-                                    </tr>
+                                    </tr> -->
                                     <tr>
                                         <td>Number of Guest</td>
                                         <td>
-                                            <input type="number" name="" id="number-of-guest" />
+                                            <input type="number" name="number-of-guest" id="number-of-guest" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -122,7 +122,7 @@ if (isset($_SESSION['status'])) {
                                             <label for="">Select Payment Options :</label>
                                         </td>
                                         <td>
-                                            <select name="" id="select-payment-options">
+                                            <select name="select-payment-options" id="select-payment-options">
                                                 <option value="">Select a payment Option</option>
                                                 <option value="Pay on Arrival">Pay on Arrival</option>
                                                 <option value="Prepaid">Prepaid</option>
@@ -138,8 +138,9 @@ if (isset($_SESSION['status'])) {
                             </table>
                         </div>
                         <br>
+                        <input class="btn" name="submit" type="submit" value="Submit" />
 
-                        <div id="input-table">
+                        <!-- <div id="input-table">
                             <table border="2">
                                 <thead>
                                     <th>Room Type</th>
@@ -152,15 +153,13 @@ if (isset($_SESSION['status'])) {
                                 <tbody id="tbody">
                                 </tbody>
                             </table>
-                        </div>
+                        </div> -->
 
-                        <br />
-                        <hr />
-                        <button class="btn" onclick="handleAddRow()">Add Row</button>
-                        <br />
-                        <br />
+
+                        <!-- <button class="btn" onclick="handleAddRow()">Add Row</button> -->
+
                         <!-- Summary Table -->
-                        <div id="summary-table">
+                        <!-- <div id="summary-table">
                             <table border="2">
                                 <thead>
                                     <th>Total Room Blocked</th>
@@ -175,13 +174,13 @@ if (isset($_SESSION['status'])) {
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
+                        </div> -->
 
+                        <!-- <br />
                         <br />
-                        <br />
-                        <br />
+                        <br /> -->
 
-                        <input class="btn" type="submit" value="Submit" />
+
                     </form>
                 </main>
             </div>
@@ -189,7 +188,7 @@ if (isset($_SESSION['status'])) {
         </div>
 
 
-        <script src="../../asset/Javascript/Group bookings/group_block_tool.js"></script>
+        <!-- <script src="../../asset/Javascript/Group bookings/group_block_tool.js"></script> -->
     </body>
 
     </html>
