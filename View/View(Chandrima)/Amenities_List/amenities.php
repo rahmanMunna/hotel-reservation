@@ -1,11 +1,17 @@
-<?php session_start(); ?>
+ <?php session_start();
+  if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
+    
+} else {
+    header('Location: ../Authentication/Login/login.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Facility Explorer</title>
-
-<link rel="stylesheet" href="../../asset/Styles(Chandrima)/Amenities_List/style.css">
-
+  <link rel="stylesheet" href="style.css">
+  <script src="filter_amenities.js" defer></script>
 </head>
 <body>
 <div class="navbar">
@@ -53,6 +59,5 @@
     </div>
   </div>
 </div>
-<script src="../../asset/Javascript(Chandrima)/Amenities_List/filter_amenities.js"></script>
 </body>
 </html>

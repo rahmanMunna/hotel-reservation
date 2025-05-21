@@ -1,0 +1,135 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  padding: 20px;
+  margin: 0;
+  color: #333;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Review Display */
+.review {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+.review p {
+  margin: 5px 0;
+}
+
+.response {
+  margin-left: 20px;
+  background: #f9f9f9;
+  padding: 10px;
+  border-left: 3px solid #28a745;
+}
+
+/* Rating Stars */
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  position: relative;
+  width: 1em;
+  font-size: 3rem;
+  color: #FFD700;
+  cursor: pointer;
+}
+
+.rating label::before {
+  content: "★";
+  position: absolute;
+  opacity: 0;
+}
+
+.rating label:hover:before,
+.rating label:hover ~ label:before {
+  opacity: 1 !important;
+}
+
+.rating input:checked ~ label:before {
+  opacity: 1;
+}
+
+/* Form Styles */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Error / Success Messages */
+.error {
+  color: red;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.success {
+  color: green;
+  font-size: 1em;
+  text-align: center;
+}
+
+/* Star Display in Output */
+.stars {
+  color: #FFD700;
+  font-size: 1.2em;
+}
+
+/* Filter Dropdown */
+select {
+  padding: 5px 10px;
+  margin: 10px 0 20px 0;
+  font-size: 1rem;
+}
+
+/* Review Container for Filtered Reviews */
+#reviews {
+  margin-top: 20px;
+}
+
+/* Review Box Wrapper (for submitted reviews display) */
+.review-box {
+  margin-top: 30px;
+  background: #ffffff;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

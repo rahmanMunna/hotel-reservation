@@ -1,9 +1,17 @@
-<?php session_start(); ?>
+  <?php session_start();
+  if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
+    
+} else {
+    header('Location: ../Authentication/Login/login.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Sign Up - Hotel Reservation</title>
- <link rel="stylesheet" href="../../asset/Styles(Chandrima)/Landing_Page/style.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="validation.js"></script>
 </head>
 <body>
 <div class="navbar">
@@ -27,6 +35,5 @@
     <button type="submit">Register</button>
   </form>
 </div>
-<script src="../../asset/Javascript(Chandrima)/Landing_Page/validation.js"></script>
 </body>
 </html>

@@ -1,9 +1,17 @@
+ <?php session_start();
+  if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
+    
+} else {
+    header('Location: ../Authentication/Login/login.php');
+    exit();
+}
+?>
 <?php include('session.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Dashboard</title>
-   <link rel="stylesheet" href="../../asset/Styles(Chandrima)/Role_Based_Access/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
@@ -24,6 +32,5 @@
 
   <a href="logout.php">Logout</a>
 </div>
- <script src="../../asset/Javascript(Chandrima)/Role_Based_Access/validation.js"></script>
 </body>
 </html>

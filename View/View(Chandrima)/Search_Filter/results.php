@@ -1,4 +1,11 @@
-<?php session_start();
+  <?php session_start();
+  if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
+    
+} else {
+    header('Location: ../Authentication/Login/login.php');
+    exit();
+}
+
 
 $hotels = [
   ["name" => "Sun Hotel", "stars" => 5, "price" => 220],
