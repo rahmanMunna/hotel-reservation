@@ -19,7 +19,7 @@ function displayServices() {
             const card = document.createElement('div');
             card.innerHTML = `
             <h2>Name : ${item.name}</h2>
-            <p>${item.description} <span>${item.icon}</span></p>
+            <p>${item.description}</p>
             <h3>Price : ${item.price}</h3>
             <button class="order-book-btn">Order/Book</button>
             `
