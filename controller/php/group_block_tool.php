@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
 
     function isAllLowerCase($text)
     {
-        return strtolower($text) === $text;
+        return strtolower($text) === $text; 
     }
 
     function isFirstCharNumber($text)

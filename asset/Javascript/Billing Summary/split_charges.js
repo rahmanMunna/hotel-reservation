@@ -50,7 +50,7 @@ function loadTableData() {
             `<select class= 'split-mode' name="" onchange="handleSplitModeChange(this.value,${charge.id})">
              <option value="">Split Mode</option>
              <option value="Evenly Splitted">Evenly Splitted</option>
-             <option value="Manually Splitted">Manually Splitted</option>
+             
              
             </select>
         `
@@ -72,9 +72,7 @@ function loadTableData() {
         tbodySummary.appendChild(tr);
     })
 }
-function updateSummaryTable() {
 
-}
 
 function evenlySplitted(splittedMode, id) {
     const inputs = document.getElementsByClassName(id);
@@ -88,44 +86,7 @@ function evenlySplitted(splittedMode, id) {
         input.disabled = true;
     }
 }
-function manuallySplitted(id) {
-    const inputs = document.getElementsByClassName(id);
-    const amount = document.getElementById('amount-' + id).innerHTML.trim();
 
-    // console.log(inputs, amount);
-
-    let state = false;
-    let totalAmount = 0;
-    for (const input of inputs) {
-        input.disabled = false;
-        input.addEventListener("change", () => {
-            // console.log(amount, input.value)
-            if (parseInt(input.value) > parseInt(amount) || totalAmount > parseInt(amount)) {
-
-                alert(`${id} no invalid input amount`);
-                state = true;
-                return;
-            }
-
-            else {
-                totalAmount += parseInt(input.value);
-                console.log(totalAmount, parseInt(input.value));
-            }
-        })
-
-
-    }
-    if (state) {
-        alert('InValid input');
-    }
-    else if (totalAmount > parseInt(amount)) {
-        alert('Out of Amount');
-    }
-
-}
-function chargeOwnership() {
-
-}
 
 function handleSplitModeChange(splittedMode, id) {
     if (!isSelected(splittedMode)) {
@@ -149,44 +110,8 @@ function isSelected(splittedMode) {
 function handleConfirm() {
     const split_options = document.getElementsByClassName('split-mode');
     const inputs = document.getElementsByTagName("input");
-    // console.log(inputs)
 
-    //check is any mode is selected for all row
-    // for (const split_option of split_options) {
-
-    //     if (split_option.value === "") {
-    //         alert('Select a split mode');
-    //         return;
-    //     }
-
-    // }
-
-    // //check all input field has value
-    // for (const input of inputs) {
-
-    //     if (input.value === "" || parseInt(input.value) < 0) {
-    //         alert('Enter a valid amount');
-    //         return;
-    //     }
-    // }
-
-    //validate all charges inserted correctly
-
-    charges.forEach(charge => {
-        const inputs = document.getElementsByClassName(charge.id);
-        console.log(inputs);
-        let totalAmount = 0;
-        for (const input of inputs) {
-            totalAmount = totalAmount + parseInt(input.value);
-        }
-        console.log(charge.amount,totalAmount)
-        if (totalAmount < charge.amount) {
-            alert(`row-${charge.id} has total amount doesn't match`);
-            return false;
-        }
-    })
-
-
+    
 
 }
 

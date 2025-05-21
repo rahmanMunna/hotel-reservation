@@ -190,7 +190,7 @@ function setNight(checkInDate, checkOutDate) {
 function generateRate(checkIn, checkOut) {
     const matchesRange = getRatesInRange(checkIn, checkOut);
     const table = document.getElementById('rate-view-table');
-    table.innerHTML = '';
+    // table.innerHTML = '';
     const tbody = document.createElement('tbody');
 
     matchesRange.forEach(a_matchesRange => {
@@ -221,7 +221,7 @@ function generateAvailableRoomInfo() {
     })
 
     const table = document.getElementById('available-room');
-    table.innerHTML = '';
+    // table.innerHTML = '';
     const tbody = document.createElement('tbody');
 
     availableRooms.forEach(availableRoom => {

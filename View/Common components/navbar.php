@@ -14,9 +14,13 @@ if (isset($_SESSION['admin']) && $_SESSION['admin']) {
         <a href="<?php echo $path; ?>">
             <li>Home</li>
         </a>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Login</li>
+        <!-- <li>About</li> -->
+        <a href="../Contact_Us_Form/contact_us.php">
+            <li>Contact</li>
+        </a>
+        <a href="../Authentication/Login/login.php">
+            <li>Login</li>
+        </a>
         <!-- <li></li> -->
     </nav>
 </div>
