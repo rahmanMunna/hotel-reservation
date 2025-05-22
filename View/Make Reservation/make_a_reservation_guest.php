@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION['status'] || $_COOKIE['status']) {
+if (!$_SESSION['status'] || !$_COOKIE['status']) {
 
 ?>
 
@@ -46,14 +46,14 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
                 width: 40%;
                 gap: 10px;
                 height: 50rem;
-                
-                
+
+
             }
 
             .card {
                 border: 1px solid;
-                padding: 10px;          
-                
+                padding: 10px;
+
             }
         </style>
     </head>
@@ -149,11 +149,12 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
             </div>
 
             <!-- display Available Rooms -->
-            <div  id="room-cards">
-    
+            <div id="room-cards">
+
             </div>
 
         </div>
+        
         <script src="../../asset/Javascript/Make Reservation/generate_dynamic_calender.js"></script>
         <script src="../../asset/Javascript/Make Reservation/displayAvailableRooms.js"></script>
     </body>

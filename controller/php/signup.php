@@ -104,13 +104,7 @@ if (isset($_POST['submit'])) {
     header('../../View/Dashboard/guest_dashboard.php');
     exit();
 
-    // $firstName = trim($_POST["firstName"] ?? '');
-    // $lastName = trim($_POST["lastName"] ?? '');
-    // $email = trim($_POST["email"] ?? '');
-    // $phone = trim($_POST["phone"] ?? '');
-    // $dob = trim($_POST["dob"] ?? '');
-    // $password = $_POST["password"] ?? '';
-    // $confirmPassword = $_POST["confirmPassword"] ?? '';
+   
 
     // $con = mysqli_connect('127.0.0.1', 'root', '', 'hotel-reservation');
     // print_r($con);

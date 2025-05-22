@@ -1,60 +1,17 @@
-const rooms = [
-    {
-        room_id: "R001",
-        room_type: "Single",
-        floor: 1,
-        capacity: 1,
-        bed_type: "Twin",
-        available: true,
-        amenities: ["WiFi", "AC", "TV"],
-        price_per_night: 50,
-        room_no: "101"
-    },
-    {
-        room_id: "R002",
-        room_type: "Double",
-        floor: 2,
-        capacity: 2,
-        bed_type: "Queen",
-        available: false,
-        amenities: ["WiFi", "AC", "Mini Fridge"],
-        price_per_night: 80,
-        room_no: "202"
-    },
-    {
-        room_id: "R003",
-        room_type: "Deluxe",
-        floor: 3,
-        capacity: 3,
-        bed_type: "King",
-        available: true,
-        amenities: ["WiFi", "AC", "TV", "Mini Bar", "Balcony"],
-        price_per_night: 120,
-        room_no: "303"
-    },
-    {
-        room_id: "R004",
-        room_type: "Suite",
-        floor: 4,
-        capacity: 4,
-        bed_type: "King",
-        available: true,
-        amenities: ["WiFi", "AC", "TV", "Jacuzzi", "Kitchen"],
-        price_per_night: 200,
-        room_no: "404"
-    },
-    {
-        room_id: "R005",
-        room_type: "Single",
-        floor: 1,
-        capacity: 1,
-        bed_type: "Single",
-        available: false,
-        amenities: ["WiFi"],
-        price_per_night: 45,
-        room_no: "105"
+//making Xttp req to get data from db via php
+function getAllAvailableRoomsDataFromDb() {
+    let xttp = new XMLHttpRequest();
+    xttp.open('get', 'http://localhost/hotel-reservation/model/rooms_data.php', true);
+    xttp.send();
+    xttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let rooms = JSON.parse(this.response);
+            displayAvailableRooms(rooms);
+            console.log(rooms);
+        }
     }
-];
+}
+
 
 function getCheckInDate() {
     return document.getElementById('check-in-date').value;
@@ -132,7 +89,7 @@ function setNumberOfNights(checkInDate, checkOutDate) {
 
 //display Available room
 
-function displayAvailableRooms() {
+function displayAvailableRooms(rooms = []) {
     removeErrorMessage();
 
     const roomCards = document.getElementById('room-cards');
@@ -165,6 +122,8 @@ function displayAvailableRooms() {
 function hideAvailableRoom() {
     document.getElementById('room-cards').innerHTML = "";
 }
+
+getAllAvailableRoomsDataFromDb();
 
 
 
