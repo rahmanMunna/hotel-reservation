@@ -12,6 +12,16 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/navbar.css">
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/sidebar.css">
         <link rel="stylesheet" href="../../asset/Styles/Concierge Request/service_catalog.css">
+        <style>
+            h1 {
+                background-color: #34eba1;
+                padding: 10px;
+            }
+
+            .inner-card {
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            }
+        </style>
 
         <!-- <link rel="stylesheet" href="../../asset/Styles/Dashboard/adminDashboard.css"> -->
     </head>

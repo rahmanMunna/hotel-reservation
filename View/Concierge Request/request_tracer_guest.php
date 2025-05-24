@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['status']) || $_COOKIE['status']) {
-?>
+    ?>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -30,7 +30,7 @@ if (isset($_SESSION['status']) || $_COOKIE['status']) {
 
             #status-btn {
                 width: 10%;
-                
+
                 text-align: center;
             }
         </style>
@@ -55,12 +55,12 @@ if (isset($_SESSION['status']) || $_COOKIE['status']) {
             </div>
         </div>
 
-        <script type="module" src="../../asset/Javascript/Concierge_Request/request_tracer.js"></script>
+        <script src="../../asset/Javascript/Concierge_Request/request_tracer.js"></script>
     </body>
 
     </html>
 
-<?php
+    <?php
 } else {
     header("Location: ../Authentication/Login/login.php");
 }

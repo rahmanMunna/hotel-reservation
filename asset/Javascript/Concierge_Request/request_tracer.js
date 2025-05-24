@@ -1,27 +1,22 @@
-import servicesData from "./services_data.js";
-// alert();
+let requestedServices = [];
 
-const placedOrder = JSON.parse(localStorage.getItem('request-order'));
+let xttp = new XMLHttpRequest();
+xttp.open('get', '../../../model/requests_data.php', true);
+xttp.send();
+xttp.onreadystatechange = function () {
+  if (this.readyState == 4 && this.status == 200) {
+    requestedServices = JSON.parse(this.response);
+    console.log(requestedServices);
+    displayRequestOrders();
 
-let requestedOrders = [];
-for (const serviceData of servicesData) {
-    for (const item of serviceData.items) {
-        for (const ordered of placedOrder) {
-            if (ordered === item.id) {
-                //make an object of the item and push to requestOrder array
-                const order = {
-                    category: serviceData.category,
-                    items: item
-                }
-                requestedOrders.push(order);
-            }
-        }
-    }
+  }
 }
 
 
+
+
 function displayRequestOrders() {
-    for (const requestedOrder of requestedOrders) {
+    for (const requestedOrder of requestedServices) {
 
         // console.log(requestedOrder);
 
@@ -51,4 +46,3 @@ function displayRequestOrders() {
     }
 }
 
-displayRequestOrders();
