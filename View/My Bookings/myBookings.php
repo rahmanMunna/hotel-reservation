@@ -28,6 +28,7 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
         </div>
 
             <script src="../../asset/Javascript/My Bookings/displayAllBookings.js"></script>
+            <script src="../../asset/Javascript/My Bookings/reservation_data.js"></script>
     </body>
 
     </html>
