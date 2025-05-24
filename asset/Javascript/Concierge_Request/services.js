@@ -1,7 +1,19 @@
-import servicesData from "./services_data.js";
+// import servicesData from "./services_data.js";
 
+let servicesData = [];
 
-console.log(servicesData)
+let xttp = new XMLHttpRequest();
+xttp.open('get', '../../model/services_data.php', true);
+xttp.send();
+xttp.onreadystatechange = function () {
+  if (this.readyState == 4 && this.status == 200) {
+    servicesData = JSON.parse(this.response);
+    console.log(servicesData);
+    displayServices();
+
+  }
+}
+// console.log(servicesData)
 
 
 function displayServices() {
@@ -36,7 +48,7 @@ function displayServices() {
     }
 
 }
-displayServices();
+
 
 function addToLocalStorage() {
 
