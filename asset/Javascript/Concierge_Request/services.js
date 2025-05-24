@@ -1,6 +1,7 @@
 import servicesData from "./services_data.js";
 
-console.log(servicesData)
+
+// console.log(servicesData)
 
 
 function displayServices() {
@@ -44,7 +45,7 @@ function addToLocalStorage() {
     // console.log(placedOrders);
     let requestOrder = [...placedOrders];
     const btns = document.getElementsByClassName('order-book-btn');
-    console.log(btns);
+    // console.log(btns);
     for (const btn of btns) {
 
         btn.addEventListener('click', (e) => {

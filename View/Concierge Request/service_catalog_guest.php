@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
-?>
+if (!isset($_SESSION['status']) || !isset($_COOKIE['status'])) {
+    ?>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -30,14 +30,27 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
             </div>
 
         </div>
+        <!-- <script>
+            let servicesData = [];
+            let xttp = new XMLHttpRequest();
+            xttp.open('get', '../../model/services_data.php', true);
+            xttp.send();
+            xttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    servicesData = JSON.parse(this.response);
+                    console.log(servicesData);
+
+                }
+            }
+        </script> -->
         <script type="module" src="../../asset/Javascript/Concierge_Request/services.js"></script>
 
-        
+
     </body>
 
     </html>
 
-<?php
+    <?php
 } else {
     header('Location: ../Authentication/Login/login.php');
     exit();

@@ -1,5 +1,4 @@
 <?php
-
 $location = "127.0.0.1";
 $userName = "root";
 $password = "";
@@ -45,6 +44,4 @@ foreach ($grouped as $category => $items) {
 
 echo json_encode($servicesData);
 
-// Send as JSON
-// header('Content-Type: application/json');
-// echo json_encode($servicesData, JSON_PRETTY_PRINT);
+
