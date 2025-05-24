@@ -1,8 +1,8 @@
 <?php
 session_start();
-if ($_SESSION['status'] || (isset($_COOKIE['status']))) {
+if ($_SESSION['status'] || (isset($_COOKIE['status']) && $_COOKIE['status'])) {
 
-?>
+    ?>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -68,8 +68,7 @@ if ($_SESSION['status'] || (isset($_COOKIE['status']))) {
                 <div id="dynamic-calendar">
                     <div id="btn-month-info">
                         <button class="prev-next-btn" onclick="displayPreviousMonthCalendar()">
-                            <
-                                </button>
+                            < </button>
                                 <span class="2025-4" id="year-month">2025,May</span>
                                 <button class="prev-next-btn" onclick="displayNextMonthCalendar()">></button>
                     </div>
@@ -156,10 +155,10 @@ if ($_SESSION['status'] || (isset($_COOKIE['status']))) {
         </div>
 
         <script>
-            
-           
 
-           
+
+
+
         </script>
 
         <script src="../../asset/Javascript/Make Reservation/generate_dynamic_calender.js"></script>
@@ -168,7 +167,7 @@ if ($_SESSION['status'] || (isset($_COOKIE['status']))) {
 
     </html>
 
-<?php
+    <?php
 } else {
     header("Location: ../Authentication/Login/login.php");
 }

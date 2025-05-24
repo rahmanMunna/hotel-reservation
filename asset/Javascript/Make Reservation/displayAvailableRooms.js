@@ -8,7 +8,7 @@ xttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         rooms = JSON.parse(this.response);
         // displayAvailableRooms();
-        // console.log(rooms);
+        console.log(rooms);
     }
 }
 

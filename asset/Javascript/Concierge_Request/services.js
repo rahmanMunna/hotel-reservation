@@ -1,7 +1,7 @@
 import servicesData from "./services_data.js";
 
 
-// console.log(servicesData)
+console.log(servicesData)
 
 
 function displayServices() {
