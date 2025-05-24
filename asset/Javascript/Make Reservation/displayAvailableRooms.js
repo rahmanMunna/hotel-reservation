@@ -1,16 +1,17 @@
 //making Xttp req to get data from db via php
-function getAllAvailableRoomsDataFromDb() {
-    let xttp = new XMLHttpRequest();
-    xttp.open('get', 'http://localhost/hotel-reservation/model/rooms_data.php', true);
-    xttp.send();
-    xttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            let rooms = JSON.parse(this.response);
-            displayAvailableRooms(rooms);
-            console.log(rooms);
-        }
+// alert();
+let rooms = [];
+let xttp = new XMLHttpRequest();
+xttp.open('get', '../../model/rooms_data.php', true);
+xttp.send();
+xttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        rooms = JSON.parse(this.response);
+        // displayAvailableRooms();
+        // console.log(rooms);
     }
 }
+
 
 
 function getCheckInDate() {
@@ -89,33 +90,37 @@ function setNumberOfNights(checkInDate, checkOutDate) {
 
 //display Available room
 
-function displayAvailableRooms(rooms = []) {
+function displayAvailableRooms() {
     removeErrorMessage();
+    console.log(rooms);
 
     const roomCards = document.getElementById('room-cards');
     //when recall this function need to clear previous all card;
     roomCards.innerHTML = "";
 
     rooms.forEach(room => {
-        if (room.available) {
-            const div = document.createElement('div');
-            div.classList.add('card');
-            div.setAttribute("id", room.room_id);
+        // console.log(room);
+        
+        // const amenities = room.amenities.split(',').map(item => item.trim().replace(/^"|"$/g, ''));
+        // console.log(amenities); // ["WiFi", "AC", "TV"]
 
-            div.innerHTML =
-                `
+        const div = document.createElement('div');
+        div.classList.add('card');
+        div.setAttribute("id", room.room_id);
+        div.innerHTML =
+            `
             <p>Room No : <span>${room.room_no}</span></p>
             <p>Room Type : <span>${room.room_type}</span></p>
             <p>Bed Type : <span>${room.bed_type}</span></p>
             <p> Capacity : <span>${room.capacity}</span></p>
             <p> Floor : <span>${room.floor}</span></p>
             <p> Price per night : <span>${room.price_per_night}</span></p>
-            <p>Amenities : <span>${room.amenities.join(',')}</span></p>
+            
             <button>Book now</button>
             `
-            roomCards.appendChild(div);
-        }
-    })
+        roomCards.appendChild(div);
+    }
+    )
 
 }
 
@@ -123,7 +128,7 @@ function hideAvailableRoom() {
     document.getElementById('room-cards').innerHTML = "";
 }
 
-getAllAvailableRoomsDataFromDb();
+// getAllAvailableRoomsDataFromDb();
 
 
 
