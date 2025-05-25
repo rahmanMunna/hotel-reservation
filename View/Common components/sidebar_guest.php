@@ -22,6 +22,9 @@
             <a href="../../View/Cancellation Policy/termsDisplay_guest.php">
                 <button>Cancellation Policy</button>
             </a>
+            <a href="../View(Chandrima)/Amenities_List/inquiry.php">
+                <button>Inquiry</button>
+            </a>
             <a href="../../controller/php/logout.php">
                 <button>logout</button>
             </a>
