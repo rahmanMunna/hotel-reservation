@@ -33,6 +33,21 @@ if (isset($_SESSION['status']) || $_COOKIE['status']) {
 
                 text-align: center;
             }
+           p{
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 700;
+           }
+           #card-heading{
+            display: flex;
+            justify-content: space-between;
+           }
+           #status-btn{
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: brown;
+            color: wheat;
+           }
         </style>
 
     </head>
@@ -55,7 +70,72 @@ if (isset($_SESSION['status']) || $_COOKIE['status']) {
             </div>
         </div>
 
-        <script src="../../asset/Javascript/Concierge_Request/request_tracer.js"></script>
+        <script>
+            let requestedServices = [];
+
+            let xttp = new XMLHttpRequest();
+            xttp.open('get', '../../model/requests_data.php', true);
+            xttp.send();
+            xttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    requestedServices = JSON.parse(this.response);
+                    console.log(requestedServices);
+                    displayRequestOrders();
+                }
+            }
+
+            function displayRequestOrders() {
+                for (const requestedOrder of requestedServices) {
+
+                    console.log(requestedOrder);
+
+                    const main = document.getElementsByTagName('main');
+                    // console.log(main)
+
+                    const div = document.createElement('div');
+                    div.setAttribute('class', 'order-card');
+
+                    div.innerHTML =
+                        `
+                    <div id="card-heading">
+                        <h2>Request_id : #${requestedOrder.req_id}</h2>
+                        <h2>Request Time : ${requestedOrder.request_time}</h2>
+                        <h2>User id : ${requestedOrder.user_id}</h2>
+
+                    </div>
+                    
+                    <div class="price-status">
+                        <p>
+                            Room-id: ${requestedOrder.room_id}
+                        </p>
+                       
+                        <p>
+                            Quantity: ${requestedOrder.quantity}
+                        </p>
+                         <p>
+                            price: ${requestedOrder.price_per_service}
+                        </p>
+                       
+                       
+                    </div>
+                    <div class="">
+                        <p>
+                            Total Price: ${requestedOrder.total_price}
+                        </p>
+                        <button id="status-btn">Pending</button>
+                    </div>
+                
+                    `
+                    main[0].appendChild(div);
+
+
+                }
+            }
+
+        </script>
+
+
+        <!-- <script src="../../asset/Javascript/Concierge_Request/request_tracer.js"></script> -->
     </body>
 
     </html>

@@ -4,21 +4,19 @@ $userName = "root";
 $password = "";
 $dbName = "hotel-reservation";
 
-//connect to db
-$connection =  mysqli_connect($location, $userName, $password, $dbName); // returns an object
+// Connect to DB
+$connection = mysqli_connect($location, $userName, $password, $dbName);
 
-$query = "SELECT req_id,room_id,user_id,request_time,status,quantity,price_per_service,total_price from services_requests";
-
+$query = "SELECT req_id, room_id, user_id, request_time, status, quantity, price_per_service, total_price FROM services_requests";
 $result = mysqli_query($connection, $query);
 
-// $row = mysqli_fetch_assoc($result);
+// Prepare data array
 $data = [];
 while ($row = mysqli_fetch_assoc($result)) {
     $data[] = $row;
 }
-// print_r($data);
 
-//parse to json
+// Return JSON
 header('Content-Type: application/json');
 echo json_encode($data);
-
+?>
