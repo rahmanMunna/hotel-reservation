@@ -80,7 +80,7 @@ if (isset($_SESSION['status']) || $_COOKIE['status']) {
                 if (this.readyState == 4 && this.status == 200) {
                     requestedServices = JSON.parse(this.response);
                     console.log(requestedServices);
-                    displayRequestOrders();
+                    // displayRequestOrders();
                 }
             }
 
@@ -89,44 +89,44 @@ if (isset($_SESSION['status']) || $_COOKIE['status']) {
 
                     console.log(requestedOrder);
 
-                    const main = document.getElementsByTagName('main');
+                    // const main = document.getElementsByTagName('main');
                     // console.log(main)
 
-                    const div = document.createElement('div');
-                    div.setAttribute('class', 'order-card');
+                    // const div = document.createElement('div');
+                    // div.setAttribute('class', 'order-card');
 
-                    div.innerHTML =
-                        `
-                    <div id="card-heading">
-                        <h2>Request_id : #${requestedOrder.req_id}</h2>
-                        <h2>Request Time : ${requestedOrder.request_time}</h2>
-                        <h2>User id : ${requestedOrder.user_id}</h2>
+                    // div.innerHTML =
+                    //     `
+                    // <div id="card-heading">
+                    //     <h2>Request_id : #${requestedOrder.request_id}</h2>
+                    //     <h2>Request Time : ${requestedOrder.request_time}</h2>
+                    //     <h2>User id : ${requestedOrder.user_id}</h2>
 
-                    </div>
+                    // </div>
                     
-                    <div class="price-status">
-                        <p>
-                            Room-id: ${requestedOrder.room_id}
-                        </p>
+                    // <div class="price-status">
+                    //     <p>
+                    //         Room-id: ${requestedOrder.room_id}
+                    //     </p>
                        
-                        <p>
-                            Quantity: ${requestedOrder.quantity}
-                        </p>
-                         <p>
-                            price: ${requestedOrder.price_per_service}
-                        </p>
+                    //     <p>
+                    //         Quantity: ${requestedOrder.quantity}
+                    //     </p>
+                    //      <p>
+                    //         price: ${requestedOrder.price_per_service}
+                    //     </p>
                        
                        
-                    </div>
-                    <div class="">
-                        <p>
-                            Total Price: ${requestedOrder.total_price}
-                        </p>
-                        <button id="status-btn">Pending</button>
-                    </div>
+                    // </div>
+                    // <div class="">
+                    //     <p>
+                    //         Total Price: ${requestedOrder.total_price}
+                    //     </p>
+                    //     <button id="status-btn">Pending</button>
+                    // </div>
                 
-                    `
-                    main[0].appendChild(div);
+                    // `
+                    // main[0].appendChild(div);
 
 
                 }

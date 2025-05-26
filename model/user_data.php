@@ -26,7 +26,8 @@ $result = mysqli_query($connection,$query); // returns an object
 //TO get all the rows
 
 while($row = mysqli_fetch_assoc($result)){
-    foreach($row as $key => $value){
-        echo "<h1>$key : $value</h1><br>";
-    }
+    print_r($row);
+    // foreach($row as $key => $value){
+    //     echo "<h1>$key : $value</h1><br>";
+    // }
 }
