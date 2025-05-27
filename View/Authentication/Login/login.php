@@ -28,16 +28,16 @@ if (isset($_COOKIE['status'])) {
         <form method="post" action="../../../controller/php/loginValidation.php" onsubmit="return handleLogin()" id="login-form">
             <table>
                 <tbody>
-                    <tr>
+                    <!-- <tr>
                         <td>Email</td>
                         <td>
                             <input name="email" id="email" type="email" placeholder="enter your email" required />
                         </td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <td>User Id</td>
                         <td>
-                            <input name="userId" id="userId" type="number" placeholder="enter your User id" required />
+                            <input name="userId" id="userId" type="" placeholder="enter your User id" required />
                         </td>
                     </tr>
                     <tr>

@@ -112,6 +112,23 @@ if (isset($_POST['submit'])) {
     // echo "Password: " . $password . "<br>";
     // echo "Confirm Password: " . $confirmPassword . "<br>";
 
+    // session_start();
+    // $_SESSION['user'] = [
+    //     'user_id' => $_POST[''],
+    //     'email' => $_POST['email'],
+    //     'phone' => $_POST['phone'],
+    //     'first_name' => $_POST['firstName'],
+    //     'last_name' => $_POST['lastName'],
+    //     'dob' => $_POST['dob'],
+    //     'role' => 'user',
+    //     'password' => $_POST['password'],
+    // ];
+
+    // Redirect to insert file
+    header("Location: insert.php");
+    exit;
+
+
 
     $query = "INSERT INTO `users` 
         (`user_id`, `email`, `phone`, `first_name`, `last_name`, `dob`, `role`, `password`) 
