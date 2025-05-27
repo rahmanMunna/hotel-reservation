@@ -116,7 +116,7 @@ function displayAvailableRooms() {
             <p> Floor : <span>${room.floor}</span></p>
             <p> Price per night : <span>${room.price_per_night}</span></p>
             
-            <button>Book now</button>
+            <button class="">Book now</button>
             `
         roomCards.appendChild(div);
     }

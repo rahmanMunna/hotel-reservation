@@ -163,6 +163,8 @@ if ($_SESSION['status'] || (isset($_COOKIE['status']) && $_COOKIE['status'])) {
 
         <script src="../../asset/Javascript/Make Reservation/generate_dynamic_calender.js"></script>
         <script src="../../asset/Javascript/Make Reservation/displayAvailableRooms.js"></script>
+        <script src="../../asset/Javascript/Make Reservation/booking_operation.js"></script>
+        
     </body>
 
     </html>
