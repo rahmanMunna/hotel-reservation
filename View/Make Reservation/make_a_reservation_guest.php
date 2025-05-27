@@ -2,7 +2,7 @@
 session_start();
 if ($_SESSION['status'] || (isset($_COOKIE['status']) && $_COOKIE['status'])) {
 
-    ?>
+?>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -13,7 +13,7 @@ if ($_SESSION['status'] || (isset($_COOKIE['status']) && $_COOKIE['status'])) {
         <title>Guest Dashboard</title>
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/sidebar.css">
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/navbar.css">
-        <link rel="stylesheet" href="../../asset/Styles/Make a reservation/generate_calender.css">
+        <link rel="stylesheet" href="../../asset/Styles/Make Reservation/make_reservation.css">
 
         <style>
             #sidebar-main-content {
@@ -64,87 +64,87 @@ if ($_SESSION['status'] || (isset($_COOKIE['status']) && $_COOKIE['status'])) {
         <div onclick="" id="sidebar-main-content">
             <?php include('../Common components/sidebar_guest.php'); ?>
             <div id="main-content">
-                <!-- Dynamic Calendar -->
-                <div id="dynamic-calendar">
-                    <div id="btn-month-info">
-                        <button class="prev-next-btn" onclick="displayPreviousMonthCalendar()">
-                            < </button>
-                                <span class="2025-4" id="year-month">2025,May</span>
-                                <button class="prev-next-btn" onclick="displayNextMonthCalendar()">></button>
-                    </div>
-                    <div id="dates-day">
-                        <p id="0" class="days">Sun</p>
-                        <p id="1" class="days">Mon</p>
-                        <p id="2" class="days">Tue</p>
-                        <p id="3" class="days">Wed</p>
-                        <p id="4" class="days">Thu</p>
-                        <p id="5" class="days">Fri</p>
-                        <p id="6" class="days">Sat</p>
 
-                        <!-- p.dates{$}*30 -->
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
-                        <p class="dates"></p>
+                <form onsubmit="return handleConfirmReservation()"
+                    method="post"
+                    action="../../controller/php/make_reservation_validation.php">
+                    <table>
+                        <tbody>
 
-                    </div>
-                </div>
-                <!-- Select-check-in-out -->
-                <div id="select-check-in-out">
-                    <div>
-                        <div id="check-in-out-date">
-                            <h3>Check-in Date : <span id="">
-                                    <input onchange="handleCheckInDate()" type="date" name="" id="check-in-date">
-                                </span> </h3>
-                            <h3>Check-out Date : <span id="">
-                                    <input onchange="handleCheckOutDate()" type="date" name="" id="check-out-date">
-                                </span> </h3>
-                            <h3>Nights : <span id="night-count">0</span>
-                            </h3>
-                        </div>
-                        <p id="error-msg"></p>
+                            <tr>
+                                <td>Guest Name</td>
+                                <td>
+                                    <input type="text" name="guest-name" id="guest-name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Phone</td>
+                                <td>
+                                    <input type="number" name="phone" id="phone">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>
+                                    <input type="email" name="email" id="email">
+                                </td>
+                            </tr>
 
-
-                    </div>
-                </div>
+                            <tr>
+                                <td>Number of Guest : </td>
+                                <td>
+                                    Adults : <input type="number" name="adults" id="adults">
+                                    Children : <input type="number" name="children" id="children">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Booking Date</td>
+                                <td>
+                                    <input type="date" name="booking-date" id="booking-date">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Check-in-Date</td>
+                                <td>
+                                    <input onchange="handleCheckInDate()" type="date" name="check-in-date" id="check-in-date">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Check-out-Date</td>
+                                <td>
+                                    <input onchange="handleCheckOutDate()" type="date" name="check-out-date" id="check-out-date">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h3>Nights :
+                                </td>
+                                <td>
+                                    <h3><span id="night-count">0</span></h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Room ID:
+                                </td>
+                                <td>
+                                    <input readonly type="text" name="room-id" id="room-id">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Room NO
+                                </td>
+                                <td>
+                                    <input readonly type="text"  name="room-no" id="room-no">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p id="error-msg"></p>
+                    <input id="btn" type="submit" name="submit" value="Confirm Reservation">
+                </form>
+               
             </div>
 
             <!-- display Available Rooms -->
@@ -154,22 +154,17 @@ if ($_SESSION['status'] || (isset($_COOKIE['status']) && $_COOKIE['status'])) {
 
         </div>
 
-        <script>
 
 
-
-
-        </script>
-
-        <script src="../../asset/Javascript/Make Reservation/generate_dynamic_calender.js"></script>
         <script src="../../asset/Javascript/Make Reservation/displayAvailableRooms.js"></script>
         <script src="../../asset/Javascript/Make Reservation/booking_operation.js"></script>
-        
+        <script src="../../asset/Javascript/Make Reservation/validation_confirm_booking.js"></script>
+
     </body>
 
     </html>
 
-    <?php
+<?php
 } else {
     header("Location: ../Authentication/Login/login.php");
 }

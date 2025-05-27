@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 if (isset($_POST["submit"])) {
 
@@ -7,19 +6,6 @@ if (isset($_POST["submit"])) {
     // $email = $loginData["email"];
     $userId = $loginData["userId"];
     $password = $loginData["password"];
-
-    // guest fake data
-
-    // $guestEmail = "guest@gmail.com";
-    // $guestPassword = "Guest#1234";
-    // $guestID = '1234';
-
-    //admin fake data
-    // $adminEmail = "admin@gmail.com";
-    // $adminPassword = "Admin#1234";
-    // $adminID = '1234';
-
-
 
     $location = "127.0.0.1";
     $userName = "root";
@@ -36,6 +22,7 @@ if (isset($_POST["submit"])) {
 
         if ($dbPass == $password) {
             $_SESSION['status'] = true;
+            $_SESSION['user-id'] = $userId;
             setcookie('status', 'true', time() + 5000, '/');
             if ($role == 'admin') {
                 header('Location: ../../View/Dashboard/admin.php');
@@ -52,22 +39,6 @@ if (isset($_POST["submit"])) {
         // header('Location: ../../View/Authentication/Login/login.php');
     }
 
-
-
-
-
-    // if ($email == $adminEmail && $userId == $adminID && $password = $adminPassword) {
-    //     
-    //     $_SESSION['admin'] = true;
-    //     
-    // } else if ($email == $guestEmail && $userId == $guestID &&  $password == $guestPassword) {
-    //     $_SESSION['status'] = true;
-    //     $_SESSION['guest'] = true;
-    //     setcookie('status', 'true', time() + 5000, '/');
-    //     
-    // } else {
-    //     
-    // }
 } else {
     // echo "Invalid Credentials";
     header('location: ../../View/Authentication/Login/login.php');

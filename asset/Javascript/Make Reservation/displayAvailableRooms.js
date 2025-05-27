@@ -100,13 +100,13 @@ function displayAvailableRooms() {
 
     rooms.forEach(room => {
         // console.log(room);
-        
+
         // const amenities = room.amenities.split(',').map(item => item.trim().replace(/^"|"$/g, ''));
         // console.log(amenities); // ["WiFi", "AC", "TV"]
 
         const div = document.createElement('div');
         div.classList.add('card');
-        div.setAttribute("id", room.room_id);
+        
         div.innerHTML =
             `
             <p>Room No : <span>${room.room_no}</span></p>
@@ -115,20 +115,31 @@ function displayAvailableRooms() {
             <p> Capacity : <span>${room.capacity}</span></p>
             <p> Floor : <span>${room.floor}</span></p>
             <p> Price per night : <span>${room.price_per_night}</span></p>
-            
-            <button class="">Book now</button>
             `
+            const btn = document.createElement('button');
+            btn.innerHTML = 'Book Now';
+            btn.setAttribute('id',room.room_id);
+            btn.classList.add('book-btn');
+            div.appendChild(btn);
+            btn.addEventListener('click',()=>showBookedRoomDetails(room.room_id,room.room_no));
         roomCards.appendChild(div);
     }
     )
-
+    
 }
 
 function hideAvailableRoom() {
     document.getElementById('room-cards').innerHTML = "";
 }
 
-// getAllAvailableRoomsDataFromDb();
+function showBookedRoomDetails(roomId,roomNo){
+    const roomIdInput = document.getElementById('room-id');
+    const roomNoInput = document.getElementById('room-no');
+
+    roomIdInput.value = roomId;
+    roomNoInput.value = roomNo;
+    
+}
 
 
 

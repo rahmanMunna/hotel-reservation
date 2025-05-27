@@ -2,6 +2,7 @@
 if (isset($_POST["submit"])) {
     // Receiving and trimming form data
     $roomId = $_POST["room-id"];
+    $roomNo = $_POST["room-no"];
     $guestName = trim($_POST['guest-name']);
     $phone = trim($_POST['phone']);
     $email = trim($_POST['email']);
@@ -10,6 +11,9 @@ if (isset($_POST["submit"])) {
     $checkOutDate = trim($_POST['check-out-date']);
     $adults = trim($_POST['adults']);
     $children = trim($_POST['children']);
+
+    session_start();
+    $user_id = $_SESSION['user-id'];
 
     $formData = [$roomId, $guestName, $phone, $email, $bookingDate, $checkInDate, $checkOutDate, $adults, $children];
     // print_r($formData);
@@ -47,6 +51,29 @@ if (isset($_POST["submit"])) {
 
     $datesValid = strtotime($checkInDate) < strtotime($checkOutDate);
 
+    function insertToDb($user_id, $roomId, $roomNo, $guestName, $adults, $children, $bookingDate, $checkInDate, $checkOutDate)
+    {
+        $location = "127.0.0.1";
+        $userName = "root";
+        $password = "";
+        $dbName = "hotel-reservation";
+
+        $query = "INSERT INTO `reservations` 
+        (`reservation_id`, `user_id`, `room_id`, 
+        `booking_type`, `guest_name`, `room_no`, `num_of_guest`, `status`, `booking_date`, `check_in_date`, `check_out_date`)
+         VALUES ('', '$user_id', '$roomId', 'Single', '$guestName', '$roomNo', '$adults+$children', 'booked', '$bookingDate', '$checkInDate', '$checkOutDate');";
+
+        // Connect to DB
+        $connection = mysqli_connect($location, $userName, $password, $dbName);
+        $result = mysqli_query($connection, $query);
+        if($result){
+            header("Location: ../../View/successful_alert.php");
+        }
+        else{
+            echo "Failed to insert";
+        }
+    }
+
     // Only proceed if all validations pass
     if (
         !$hasEmpty &&
@@ -55,9 +82,9 @@ if (isset($_POST["submit"])) {
         $guestsValid &&
         $datesValid
     ) {
-        header("Location: ../../View/successful_alert.php");
-    }
-    else{
+        insertToDb($user_id, $roomId, $roomNo, $guestName, $adults, $children, $bookingDate, $checkInDate, $checkOutDate);
+        
+    } else {
         echo "Failed";
     }
 }
