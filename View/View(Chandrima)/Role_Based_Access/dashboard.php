@@ -1,17 +1,14 @@
  <?php session_start();
   if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
     
-} else {
-    header('Location: ../Authentication/Login/login.php');
-    exit();
-}
+ 
 ?>
 <?php include('session.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="../../../asset/Styles(Chandrima)/ Role_Based_Access/review_system.css"> 
 </head>
 <body>
 <div class="container">
@@ -29,8 +26,13 @@
   <?php if ($_SESSION['role'] === 'User') { ?>
     <p>You can view your reservations.</p>
   <?php } ?>
-
-  <a href="logout.php">Logout</a>
+ <script src="../../../asset/Javascript(Chandrima)/Role_Based_Access/validation.js"></script>
 </div>
 </body>
 </html>
+<?php
+} else {
+    header('Location: ../../Authentication/Login/login.php');
+    exit();
+}
+?>

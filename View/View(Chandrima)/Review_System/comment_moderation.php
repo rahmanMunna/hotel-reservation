@@ -1,15 +1,14 @@
  <?php session_start();
   if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
     
-} else {
-    header('Location: ../Authentication/Login/login.php');
-    exit();
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  
+    <link rel="stylesheet" href="../../../asset/Styles(Chandrima)/Review_System/review_system.css"> 
   <title>Comment Moderation</title>
   <style>
     body { font-family: Arial, sans-serif; background: #fffaf0; padding: 20px; }
@@ -57,6 +56,12 @@
       echo "</div>";
     }
   ?>
-
+<script src="../../../asset/Javascript(Chandrima)/Review_System/validation.js"></script>
 </body>
 </html>
+<?php
+} else {
+    header('Location: ../Authentication/Login/login.php');
+    exit();
+}
+?>

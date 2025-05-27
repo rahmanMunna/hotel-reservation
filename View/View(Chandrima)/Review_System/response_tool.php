@@ -1,10 +1,6 @@
  <?php session_start();
   if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
-    
-} else {
-    header('Location: ../Authentication/Login/login.php');
-    exit();
-}
+ 
 ?>
 <?php
 // Hardcoded reviews for demonstration
@@ -43,6 +39,7 @@ function displayStars($rating) {
 <head>
   <meta charset="UTF-8">
   <title>Response Tool</title>
+    <link rel="stylesheet" href="../../../asset/Styles(Chandrima)/Review_System/review_system.css"> 
   <style>
     body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
     h2 { color: #333; }
@@ -82,6 +79,12 @@ function displayStars($rating) {
     }
     ?>
   </div>
-
+<script src="../../../asset/Javascript(Chandrima)/Review_System/validation.js"></script>
 </body>
 </html>
+<?php
+} else {
+    header('Location: ../../Authentication/Login/login.php');
+    exit();
+}
+?>

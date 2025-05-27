@@ -1,10 +1,7 @@
  <?php session_start();
   if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
     
-} else {
-    header('Location: ../Authentication/Login/login.php');
-    exit();
-}
+ 
 ?>
 
 <?php
@@ -32,8 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 <head>
   <title>Assign Roles</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="validation.js"></script>
+ <link rel="stylesheet" href="../../../asset/Styles(Chandrima)/ Role_Based_Access/review_system.css"> 
 </head>
 <body>
 <div class="container">
@@ -54,6 +50,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <button type="submit">Assign</button>
   </form>
+  <script src="../../../asset/Javascript(Chandrima)/Role_Based_Access/validation.js"></script>
 </div>
 </body>
 </html>
+<?php
+} else {
+    header('Location: ../../Authentication/Login/login.php');
+    exit();
+}
+?>  

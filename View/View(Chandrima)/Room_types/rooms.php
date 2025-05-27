@@ -1,17 +1,12 @@
   <?php session_start();
   if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
-    
-} else {
-    header('Location: ../Authentication/Login/login.php');
-    exit();
-}
+ 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Room Gallery</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="filter.js" defer></script>
+  <link rel="stylesheet" href="../../../asset/Styles(Chandrima)/Room_types/review_system.css"> 
 </head>
 <body>
 <div class="navbar">
@@ -56,5 +51,12 @@
     </div>
   </div>
 </div>
+   <script src="../../../asset/Javascript(Chandrima)/Room_types/filter.js"></script>
 </body>
 </html>
+<?php
+} else {
+    header('Location: ../../Authentication/Login/login.php');
+    exit();
+}
+?> 

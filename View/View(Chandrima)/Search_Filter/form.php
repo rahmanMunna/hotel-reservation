@@ -1,17 +1,13 @@
   <?php session_start();
   if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
     
-} else {
-    header('Location: ../Authentication/Login/login.php');
-    exit();
-}
+ 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Inquiry Form</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="validate.js" defer></script>
+   <link rel="stylesheet" href="../../../asset/Styles(Chandrima)/Search_Filter/style.css"> 
 </head>
 <body>
 <div class="navbar">
@@ -34,5 +30,12 @@
     <button type="submit">Submit</button>
   </form>
 </div>
+ <script src="../../../asset/Javascript(Chandrima)/Search_Filter/validate.js"></script>
 </body>
 </html>
+<?php
+} else {
+    header('Location: ../../Authentication/Login/login.php');
+    exit();
+}
+?> 

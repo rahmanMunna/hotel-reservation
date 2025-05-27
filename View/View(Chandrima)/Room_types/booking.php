@@ -1,17 +1,12 @@
   <?php session_start();
   if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
-    
-} else {
-    header('Location: ../Authentication/Login/login.php');
-    exit();
-}
+ 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Book a Room</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="validate.js" defer></script>
+<title>Book a Room</title>
+<link rel="stylesheet" href="../../../asset/Styles(Chandrima)/Room_types/review_system.css"> 
 </head>
 <body>
 <div class="navbar">
@@ -46,5 +41,12 @@
     <button type="submit">Confirm Booking</button>
   </form>
 </div>
+  <script src="../../../asset/Javascript(Chandrima)/Room_types/validate.js"></script>
 </body>
 </html>
+<?php
+} else {
+    header('Location: ../../Authentication/Login/login.php');
+    exit();
+}
+?>  

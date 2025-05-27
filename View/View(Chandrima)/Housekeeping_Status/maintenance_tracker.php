@@ -5,16 +5,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 }
   if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
-    
-} else {
-    header('Location: ../Authentication/Login/login.php');
-    exit();
-}
+  
 
 ?>
-<?php session_start(); 
-  if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
- ?>
+ 
 
 <!DOCTYPE html>
 <html>
@@ -38,7 +32,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php endif; ?>
   </ul>
 
-  <script src="js/validate.js"></script>
+  <script src="../../../asset/Javascript(Chandrima)/Housekeeping_Status/validate_maintenance.js"></script>
 </body>
 </html>
+<?php
+} else {
+    header('Location: ../../Authentication/Login/login.php');
+    exit();
+}
+?>
  

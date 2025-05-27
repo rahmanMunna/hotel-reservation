@@ -2,10 +2,7 @@
   session_start();
   if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
     
-} else {
-    header('Location: ../Authentication/Login/login.php');
-    exit();
-}
+
 
 $name = $_POST['name'] ?? '';
 $email = $_POST['email'] ?? '';
@@ -18,3 +15,9 @@ if (!$name || !$email || !$message) {
     // In real use, send an email here.
 }
 ?>
+ <?php
+} else {
+    header('Location: ../../Authentication/Login/login.php');
+    exit();
+}
+?> 

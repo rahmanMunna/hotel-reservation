@@ -1,16 +1,13 @@
    <?php session_start();
   if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
     
-} else {
-    header('Location: ../Authentication/Login/login.php');
-    exit();
-}
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Preference Center</title>
-  <link rel="stylesheet" href="../../asset/Styles(Chandrima)/Guest_Profile/style.css">
+  <link rel="stylesheet" href="../../../asset/Styles(Chandrima)/Guest_Profile/style.css">
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -125,7 +122,13 @@
     <button type="submit">Save Preferences</button>
   </form>
 </div>
-<script src="../../asset/Javascript(Chandrima)/Guest_Profile/profile_validate.js"></script>
+<script src="../../../asset/Javascript(Chandrima)/Guest_Profile/profile_validate.js"></script>
 </body>
 </html>
+<?php
+} else {
+    header('Location: ../..Authentication/Login/login.php');
+    exit();
+}
+?>
  

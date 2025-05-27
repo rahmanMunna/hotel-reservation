@@ -1,16 +1,13 @@
    <?php session_start();
   if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
     
-} else {
-    header('Location: ../Authentication/Login/login.php');
-    exit();
-}
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>About - Hotel Reservation</title>
-  <link rel="stylesheet" href="../../asset/Styles(Chandrima)/Landing_Page/style.css">
+  <link rel="stylesheet" href="../../../asset/Styles(Chandrima)/Landing_Page/style.css">
   <style>
     body {
       margin: 0;
@@ -76,9 +73,14 @@
   <p>This hotel reservation system helps you find and book hotels with ease. It is designed to prioritize user experience, comfort, and accessibility. Whether you're planning a quick getaway or a luxury stay, our system makes the booking process seamless and intuitive.</p>
 </div>
 
-<script src="../../asset/Javascript(Chandrima)/Landing_Page/validation.js"></script>
+<script src="../../../asset/Javascript(Chandrima)/Landing_Page/validation.js"></script>
 </body>
 </html>
- 
+ <?php
+ } else {
+    header('Location: ../../Authentication/Login/login.php');
+    exit();
+}
+?>
 
  

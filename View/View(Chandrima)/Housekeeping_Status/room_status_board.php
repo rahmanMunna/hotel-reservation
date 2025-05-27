@@ -9,10 +9,6 @@ $_SESSION['rooms'] = [
   
   if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
     
-} else {
-    header('Location: ../Authentication/Login/login.php');
-    exit();
-}
 ?>
 
 <!DOCTYPE html>
@@ -34,4 +30,10 @@ $_SESSION['rooms'] = [
   </table>
 </body>
 </html>
+<?php
+} else {
+    header('Location: ../../Authentication/Login/login.php');
+    exit();
+}
+?>
  

@@ -1,17 +1,14 @@
   <?php session_start();
   if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
     
-} else {
-    header('Location: ../Authentication/Login/login.php');
-    exit();
-}
+ 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     
     <title>Edit Profile</title>
-    <link rel="stylesheet" href="../../asset/Styles(Chandrima)/Profile_Management/style.css">
+    <link rel="stylesheet" href="../../../asset/Styles(Chandrima)/Profile_Management/style.css">
 </head>
 <body>
     <div class="container">
@@ -24,7 +21,13 @@
             <button type="submit">Save Changes</button>
         </form>
     </div>
-    <script src="../../asset/Javascript(Chandrima)/Profile_Management/validation.js"></script>
+    <script src="../../../asset/Javascript(Chandrima)/Profile_Management/validation.js"></script>
 </body>
 </html>
+<?php
+} else {
+    header('Location: ../../Authentication/Login/login.php');
+    exit();
+}
+?>
  

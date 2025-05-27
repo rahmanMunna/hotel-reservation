@@ -1,3 +1,9 @@
+ <?php session_start();
+  if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
+    
+ 
+?>
+
 <?php include('session.php'); ?>
 <?php
 // Example session data
@@ -9,7 +15,7 @@ $_SESSION['avatar'] = 'uploads/avatar1.jpg';
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="../../../asset/Styles(Chandrima)/Profile_Management/style.css">
     <title>View Profile</title>
 </head>
 <body>
@@ -22,6 +28,13 @@ $_SESSION['avatar'] = 'uploads/avatar1.jpg';
         <a href="update_password.php">Change Password</a> |
         <a href="change_avatar.php">Change Avatar</a>
     </div>
+     <script src="../../../asset/Javascript(Chandrima)/Profile_Management/validation.js"></script>
 </body>
 </html>
+<?php
+} else {
+    header('Location: ../../Authentication/Login/login.php');
+    exit();
+}
+?>
  

@@ -1,10 +1,5 @@
  <?php session_start();
   if (isset($_SESSION['status']) || isset($_COOKIE['status'])){
-    
-} else {
-    header('Location: ../Authentication/Login/login.php');
-    exit();
-}
 ?>
 <?php
 $rating = $comment = "";
@@ -47,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
   <meta charset="UTF-8">
   <title>Rating Interface</title>
+    <link rel="stylesheet" href="../../../asset/Styles(Chandrima)/Review_System/review_system.css"> 
   <style>
     body { font-family: Arial, sans-serif; background: #f0f8ff; padding: 20px; }
     h2 { color: #333; }
@@ -118,6 +114,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     ?>
   </div>
-
+<script src="../../../asset/Javascript(Chandrima)/Review_System/validation.js"></script>
 </body>
 </html>
+<?php
+} else {
+    header('Location: ../../Authentication/Login/login.php');
+    exit();
+}
+?>
