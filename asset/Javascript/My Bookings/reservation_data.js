@@ -1,6 +1,6 @@
 let reservations = [];
 let xttp = new XMLHttpRequest();
-xttp.open('get', 'http://localhost/hotel-reservation/model/reservations_data.php', true);
+xttp.open('get', '../../../model/reservations_data.php', true);
 xttp.send();
 xttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
