@@ -44,7 +44,7 @@ if (!isset($_SESSION['status']) || !isset($_COOKIE['status'])) {
     <body>
         <main>
             <h1>Success!!!!!!!!</h1>
-            <a href="./Dashboard/admin.php"><button>Home</button></a>
+            <!-- <a href="./Dashboard/admin.php"><button>Home</button></a> -->
         </main>
 
     </body>

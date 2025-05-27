@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION['status'] || $_COOKIE['status']) {
-    ?>
+?>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -13,6 +13,8 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/sidebar.css">
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/navbar.css">
         <link rel="stylesheet" href="../../asset/Styles/My Bookings/show_bookings_cards.css">
+        <style>
+        </style>
     </head>
 
     <body>
@@ -30,11 +32,11 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
             let xttp = new XMLHttpRequest();
             xttp.open('get', '../../model/reservations_data.php', true);
             xttp.send();
-            xttp.onreadystatechange = function () {
+            xttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     reservations = JSON.parse(this.response);
-                     console.log(reservations);
-                     displayBookingsHistory();
+                    console.log(reservations);
+                    displayBookingsHistory();
 
                 }
             }
@@ -63,18 +65,19 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
                             <p>Room No: <span>#${reservation.room_no}</span></p>
                             <p>Guest name: <span>${reservation.guest_name}</span></p>
                         </div>
-                        <button>Cancel</button>
+                        ${reservation.status === "cancelled" 
+                        ? '<button style="pointer-events: none;" disabled>Cancelled</button>' 
+                        : `<a href="../Cancellation Policy/calculate_penalty_guest.php?reservation_id=${reservation.reservation_id}"
+                         class="cancel-button">Cancel</a>`
+}
+
+                       
                         `
                     parentBookingsDiv.appendChild(div);
 
                 })
 
             }
-
-           
-
-
-
         </script>
 
         <!-- <script src="../../asset/Javascript/My Bookings/displayAllBookings.js"></script> -->
@@ -83,9 +86,8 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
 
     </html>
 
-    <?php
-} 
-else {
+<?php
+} else {
     header("Location: ../Authentication/Login/login.php");
 }
 ?>

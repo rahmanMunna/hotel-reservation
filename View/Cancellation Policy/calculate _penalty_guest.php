@@ -1,6 +1,9 @@
 <?php
 session_start();
 if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
+    if (isset($_GET['reservation_id'])) {
+        $reservationId = $_GET['reservation_id'];
+    }
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -27,11 +30,11 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
         <div id="sidebar-main-content">
             <?php include('../Common components/sidebar_guest.php'); ?>
             <main>
-                <div id="guest-information">
+                <!-- <div id="guest-information">
                     <h3>Booking Id : <span>#8768879</span></h3>
                     <h3>Total Amount paid : <span>800</span></h3>
                     <h3>Cancellation Policy Applied : <span>Flexible Rate</span></h3>
-                </div>
+                </div> -->
                 <!-- Select date and note -->
                 <div>
                     <table>
@@ -58,6 +61,7 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                                             id="reason-for-cancellation"></textarea>
                                     </td>
                                 </tr>
+                                <input type="hidden" name="reservation-id" value="<?php echo htmlspecialchars($reservationId); ?>" />
                                 <tr>
                                     <td></td>
                                     <td>
@@ -69,7 +73,7 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                     </table>
                 </div>
                 <!-- Show penalty Details table -->
-                <div>
+                <!-- <div>
                     <table border="2">
                         <thead>
                             <tr>
@@ -88,7 +92,7 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </div> -->
                 <p style="text-align: center">
                     <!-- <a href="">
                         <button>Confirm Cancellation</button>
