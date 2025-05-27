@@ -25,8 +25,25 @@
             <a href="../View(Chandrima)/Amenities_List/inquiry.php">
                 <button>Inquiry</button>
             </a>
+             <a href="../View(Chandrima)/Landing_Page/landing.php">
+                <button>Landing_Page</button>
+            </a>
+             <a href="../View(Chandrima)/Role_Based_Access/dashboard.php">
+                <button>Dashboard</button>
+            </a>
+             <a href="../View(Chandrima)/Room_types/booking.php">
+                <button>Room_Type</button>
+            </a>
+             <a href="../View(Chandrima)/Search_Filter/search.php">
+                <button>Search</button>
+            </a>
+             <a href="../View(Chandrima)/Review_System/rating_interface.php">
+                <button>Rating</button>
+            </a>
             <a href="../../controller/php/logout.php">
                 <button>logout</button>
             </a>
+            <!......!>
+            
         </div>
     </div>
