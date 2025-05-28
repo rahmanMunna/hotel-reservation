@@ -32,11 +32,11 @@ if (isset($_POST["submit"])) {
                 exit();
             }
         } else {
-            echo "not matched";
+            header('Location: ../../View/Authentication/Login/login.php');
         }
     } else {
-        echo "INvalid User id";
-        // header('Location: ../../View/Authentication/Login/login.php');
+        
+        header('Location: ../../View/Authentication/Login/login.php');
     }
 
 } else {
