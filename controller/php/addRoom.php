@@ -10,7 +10,7 @@ if (isset($_POST["submit"])) {
 
     //move to permanent destination
     $src = $_FILES['room-img']['tmp_name'];
-    $des = "../../controller/php" . $_FILES['room-img']['name'];
+    $des = "../../asset/uploaded_file" . $_FILES['room-img']['name'];
 
     if (move_uploaded_file($src, $des)) {
         echo "Success";
@@ -72,6 +72,7 @@ if (isset($_POST["submit"])) {
         $valid = false;
     }
 
+
     if ($valid) {
         $available = 0;
         if ($availability == 'available') {
@@ -82,8 +83,8 @@ if (isset($_POST["submit"])) {
             $amenitiesAre = $amenities . "," . $amenitiesAre;
         }
         $query = "INSERT INTO `rooms`
-        (`id`, `room_id`, `room_no`, `room_type`, `bed_type`, `capacity`, `price_per_night`, `is_available`, `floor`, `amenties`) 
-        VALUES ('1', 'rm-116', '$roomNo', '$roomType', '$bedType', '$capacity', '$price', '$available', '$floor', '$amenitiesAre')";
+        (`id`, `room_no`, `room_type`, `bed_type`, `capacity`, `price_per_night`, `is_available`, `floor`, `amenties`) 
+        VALUES (null, '$roomNo', '$roomType', '$bedType', '$capacity', '$price', '$available', '$floor', '$amenitiesAre')";
 
         $location = "127.0.0.1";
         $userName = "root";
