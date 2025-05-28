@@ -84,7 +84,7 @@ function setNumberOfNights(checkInDate, checkOutDate) {
     const oneDay = 1000 * 60 * 60 * 24; // milliseconds in a day
     const nights = Math.round((checkOutDate - checkInDate) / oneDay);
 
-    nightCount.textContent = nights + (nights === 1 ? " night" : " nights");
+    nightCount.innerHTML = nights + (nights === 1 ? " night" : " nights");
 
 }
 
@@ -121,7 +121,7 @@ function displayAvailableRooms() {
             btn.setAttribute('id',room.room_id);
             btn.classList.add('book-btn');
             div.appendChild(btn);
-            btn.addEventListener('click',()=>showBookedRoomDetails(room.room_id,room.room_no));
+            btn.addEventListener('click',()=>showBookedRoomDetails(room.id,room.room_no));
         roomCards.appendChild(div);
     }
     )
