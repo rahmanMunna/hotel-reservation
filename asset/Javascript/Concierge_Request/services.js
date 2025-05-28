@@ -6,16 +6,13 @@ let xttp = new XMLHttpRequest();
 xttp.open('get', '../../model/services_data.php', true);
 xttp.send();
 xttp.onreadystatechange = function () {
-  if (this.readyState == 4 && this.status == 200) {
-    servicesData = JSON.parse(this.response);
-    console.log(servicesData);
-    displayServices();
+    if (this.readyState == 4 && this.status == 200) {
+        servicesData = JSON.parse(this.response);
+        console.log(servicesData);
+        displayServices();
 
-  }
+    }
 }
-// console.log(servicesData)
-
-
 function displayServices() {
     const services = document.getElementById('services');
     // console.log(services);
@@ -34,8 +31,15 @@ function displayServices() {
             <h2>Name : ${item.name}</h2>
             <p>${item.description}</p>
             <h3>Price : ${item.price}</h3>
-            <button class="order-book-btn">Order/Book</button>
             `
+            const btn = document.createElement('button');
+            btn.classList.add("order-book-btn");
+            btn.innerHTML = "Order";
+            btn.addEventListener('click', () => handleOrder(item.id, item.price))
+            card.appendChild(btn);
+
+
+
             card.setAttribute('class', 'inner-card');
             card.setAttribute('id', item.id);
             allCardDiv.appendChild(card);
@@ -49,35 +53,23 @@ function displayServices() {
 
 }
 
+function handleOrder(service_id, price) {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const onlyDate = `${year}-${month}-${day}`;
+    xttp.open('post', '../../model/addToServiceRequest.php', true);
+    xttp.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+    xttp.send("service_id="+service_id+"%price="+price+"%onlyDate"+onlyDate);
 
-function addToLocalStorage() {
-
-    //Add to localStorage
-    let placedOrders = JSON.parse(localStorage.getItem('request-order')) || []
-    // console.log(placedOrders);
-    let requestOrder = [...placedOrders];
-    const btns = document.getElementsByClassName('order-book-btn');
-    // console.log(btns);
-    for (const btn of btns) {
-
-        btn.addEventListener('click', (e) => {
-            const card = e.target.parentElement;
-            checkForDuplicate(requestOrder, card.id);
-            localStorage.setItem('request-order', JSON.stringify(requestOrder));
-        })
-    }
-
-
-}
-function checkForDuplicate(itemList, itemWishToAdd) {
-    for (const item of itemList) {
-        if (item === itemWishToAdd) {
-            alert("❌ Failed to place order! Item already in ordered");
-            return;
+    xttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            alert(this.response);
         }
     }
-    itemList.push(itemWishToAdd);
-    alert("✅ Order placed successfully!");
 }
-addToLocalStorage();
+
+
+
 

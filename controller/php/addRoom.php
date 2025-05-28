@@ -8,15 +8,25 @@ if (isset($_POST["submit"])) {
     $price = trim($_POST['price-per-night']);
     $availability = trim($_POST['availability']);
 
+    //move to permanent destination
+    $src = $_FILES['room-img']['tmp_name'];
+    $des = "../../controller/php" . $_FILES['room-img']['name'];
+
+    if (move_uploaded_file($src, $des)) {
+        echo "Success";
+    } else {
+        echo "Error!";
+    }
+
     $selectedAmenities = [];
 
     // Check each checkbox by name
     if (isset($_POST['wifi'])) {
-        $selectedAmenities[] = $_POST['wifi']; 
+        $selectedAmenities[] = $_POST['wifi'];
     }
 
     if (isset($_POST['ac'])) {
-        $selectedAmenities[] = $_POST['ac']; 
+        $selectedAmenities[] = $_POST['ac'];
     }
 
     if (isset($_POST['tv'])) {
@@ -63,9 +73,35 @@ if (isset($_POST["submit"])) {
     }
 
     if ($valid) {
+        $available = 0;
+        if ($availability == 'available') {
+            $available = 1;
+        }
+        $amenitiesAre = "";
+        foreach ($selectedAmenities as $amenities) {
+            $amenitiesAre = $amenities . "," . $amenitiesAre;
+        }
+        $query = "INSERT INTO `rooms`
+        (`id`, `room_id`, `room_no`, `room_type`, `bed_type`, `capacity`, `price_per_night`, `is_available`, `floor`, `amenties`) 
+        VALUES ('1', 'rm-116', '$roomNo', '$roomType', '$bedType', '$capacity', '$price', '$available', '$floor', '$amenitiesAre')";
+
+        $location = "127.0.0.1";
+        $userName = "root";
+        $password = "";
+        $dbName = "hotel-reservation";
+
+        // Connect to DB
+        $connection = mysqli_connect($location, $userName, $password, $dbName);
+        $result = mysqli_query($connection, $query);
+
+        if ($result) {
+            echo "Successful";
+        } else {
+            echo "Failed";
+        }
+
         header('Location: ../../View/successful_alert.php');
     } else {
         echo "Failed";
-        
     }
 }

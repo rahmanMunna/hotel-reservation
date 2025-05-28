@@ -129,12 +129,6 @@ if (isset($_POST['submit'])) {
         echo "Unsuccessful";
     }
 
-
-
-
-    
-
-    // function insertToDb() {}
 } else {
     header("Location: ../../View/Authentication/SignUp/signup.html");
     exit;

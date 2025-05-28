@@ -3,6 +3,7 @@ function handleConfirmReservation() {
     const phone = document.getElementById('phone').value;
     const email = document.getElementById('email').value;
     const roomId = document.getElementById('room-id').value;
+    const roomNo = document.getElementById('room-no').value;
     // const roomType = document.getElementById('room-type').value;
 
 
@@ -20,6 +21,7 @@ function handleConfirmReservation() {
 
 
     const formData = [
+        roomNo,
         guestName,
         phone,
         email,

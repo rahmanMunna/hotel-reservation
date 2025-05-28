@@ -68,8 +68,7 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
                         ${reservation.status === "cancelled" 
                         ? '<button style="pointer-events: none;" disabled>Cancelled</button>' 
                         : `<a href="../Cancellation Policy/calculate_penalty_guest.php?reservation_id=${reservation.reservation_id}"
-                         class="cancel-button">Cancel</a>`
-}
+                         class="cancel-button">Cancel</a>`}
 
                        
                         `

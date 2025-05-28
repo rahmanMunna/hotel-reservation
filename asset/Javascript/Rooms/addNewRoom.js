@@ -6,6 +6,7 @@ function handleAddRoom() {
     const capacity = document.getElementById('capacity').value.trim();
     const price = document.getElementById('price-per-night').value.trim();
     const availability = document.getElementById('availability').value.trim();
+    const img = document.getElementById('room-img').value;
     let amenities = [];
 
     const roomInfo = [
@@ -29,7 +30,10 @@ function handleAddRoom() {
         showErrorMessage("Please fill in all required fields.");
         return false;
     }
-
+    if (!imgInput.files || imgInput.files.length === 0) {
+        showErrorMessage("Please upload an image.");
+        return false;
+    }
     if (amenities.length === 0) {
         showErrorMessage("Please select at least one amenity.");
         return false;

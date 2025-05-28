@@ -44,7 +44,10 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
             <!-- Add Room -->
             <div id="add-room">
                 <table>
-                    <form action="../../controller/php/addRoom.php" method="post" onsubmit="return handleAddRoom()" action="">
+                    <form action="../../controller/php/addRoom.php"
+                        method="post"
+                        onsubmit="return handleAddRoom()"
+                        enctype="multipart/form-data">
                         <tbody>
                             <tr>
                                 <td>Room Type</td>
@@ -97,12 +100,13 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
                                 </td>
                             </tr>
 
-                            <!-- <tr>
+                            <tr>
                                 <td>Select Image : </td>
                                 <td>
-                                    <input type="file" name="" id="">
+                                    <input type="file" name="room-img" id="room-img">
                                 </td>
-                            </tr> -->
+
+                            </tr>
 
                             <tr>
                                 <!-- <td>Select Amenities</td> -->

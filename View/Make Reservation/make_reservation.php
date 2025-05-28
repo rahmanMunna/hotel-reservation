@@ -28,6 +28,12 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                             <tr>
                                 <td>Room ID</td>
                                 <td>
+                                    <input type="number" name="room-no" id="room-no">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Room No</td>
+                                <td>
                                     <input type="text" name="room-id" id="room-id">
                                 </td>
                             </tr>
