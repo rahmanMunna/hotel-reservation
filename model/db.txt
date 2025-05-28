@@ -1,1 +1,0 @@
-INSERT INTO `rooms` (`id`, `room_id`, `room_no`, `room_type`, `amnities`, `capacity`, `bed_type`, `price_per_night`, `is_available`, `floor`) VALUES (NULL, 'R001', '101', 'Single', '\"WiFi\", \"AC\", \"TV\"', '1', 'Twin', '50', '1', '1');
