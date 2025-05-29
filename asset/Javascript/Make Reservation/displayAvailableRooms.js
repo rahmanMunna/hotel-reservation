@@ -46,7 +46,7 @@ function IsValidDate() {
 
         if (checkInDate < checkOutDate) {
             //set night count
-            setNumberOfNights(checkInDate, checkOutDate)
+            // setNumberOfNights(checkInDate, checkOutDate)
             return true;
         }
         showErrorMessage("Invalid Date: Check-in must be before Check-out");
@@ -78,15 +78,15 @@ function removeErrorMessage() {
 
 //SetNightCount
 
-function setNumberOfNights(checkInDate, checkOutDate) {
-    const nightCount = document.getElementById('night-count');
+// function setNumberOfNights(checkInDate, checkOutDate) {
+//     const nightCount = document.getElementById('night-count');
 
-    const oneDay = 1000 * 60 * 60 * 24; // milliseconds in a day
-    const nights = Math.round((checkOutDate - checkInDate) / oneDay);
+//     const oneDay = 1000 * 60 * 60 * 24; // milliseconds in a day
+//     const nights = Math.round((checkOutDate - checkInDate) / oneDay);
 
-    nightCount.innerHTML = nights + (nights === 1 ? " night" : " nights");
+//     nightCount.innerHTML = nights + (nights === 1 ? " night" : " nights");
 
-}
+// }
 
 //display Available room
 
