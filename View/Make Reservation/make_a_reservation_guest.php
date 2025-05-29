@@ -115,14 +115,14 @@ if ($_SESSION['status'] || (isset($_COOKIE['status']) && $_COOKIE['status'])) {
                                     <input onchange="handleCheckOutDate()" type="date" name="check-out-date" id="check-out-date">
                                 </td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td>
                                     <h3>Nights :
                                 </td>
                                 <td>
                                     <h3><span id="night-count">0</span></h3>
                                 </td>
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <td>
                                     Room ID:
@@ -136,7 +136,7 @@ if ($_SESSION['status'] || (isset($_COOKIE['status']) && $_COOKIE['status'])) {
                                     Room NO
                                 </td>
                                 <td>
-                                    <input readonly type="text"  name="room-no" id="room-no">
+                                    <input readonly type="text" name="room-no" id="room-no">
                                 </td>
                             </tr>
                         </tbody>
@@ -144,7 +144,7 @@ if ($_SESSION['status'] || (isset($_COOKIE['status']) && $_COOKIE['status'])) {
                     <p id="error-msg"></p>
                     <input id="btn" type="submit" name="submit" value="Confirm Reservation">
                 </form>
-               
+
             </div>
 
             <!-- display Available Rooms -->
@@ -155,10 +155,10 @@ if ($_SESSION['status'] || (isset($_COOKIE['status']) && $_COOKIE['status'])) {
         </div>
 
 
-
+        <script src="../../asset/Javascript/Make Reservation/validation_confirm_booking.js"></script>
         <script src="../../asset/Javascript/Make Reservation/displayAvailableRooms.js"></script>
         <!-- <script src="../../asset/Javascript/Make Reservation/booking_operation.js"></script> -->
-        <script src="../../asset/Javascript/Make Reservation/validation_confirm_booking.js"></script>
+
 
     </body>
 

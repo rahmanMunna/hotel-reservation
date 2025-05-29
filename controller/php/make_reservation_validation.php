@@ -105,6 +105,6 @@ if (isset($_POST["submit"])) {
     ) {
         insertToDb($user_id, $roomId, $roomNo, $guestName, $adults, $children, $bookingDate, $checkInDate, $checkOutDate);
     } else {
-        echo "Invalid input";
+        echo "fill the data";
     }
 }

@@ -1,7 +1,9 @@
 function handleConfirmReservation() {
     const guestName = document.getElementById('guest-name').value;
-    const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email').value;
+    const check_in_date = document.getElementById('check-in-date').value;
+    const check_out_date = document.getElementById('check-out-date').value;
+    // const phone = document.getElementById('phone').value;
+    // const email = document.getElementById('email').value;
 
     const adults = document.getElementById('adults').value;
     const children = document.getElementById('children').value;
@@ -13,8 +15,10 @@ function handleConfirmReservation() {
 
     const formData = [
         guestName,
-        phone, 
-        email,
+        check_in_date,
+        check_out_date,
+        // phone, 
+        // email,
         adults,
         children,
         
@@ -28,12 +32,16 @@ function handleConfirmReservation() {
     if (!isEmailValid(email)) {
         return false;
     }
-
-    if (phone.length !== 11) {
-        errorMsg.innerHTML = "Phone number must be 11 character";
-        // alert('Phone number must be 11 character');
+    if(!checkValidDate(check_in_date,check_out_date)){
+        errorMsg.innerHTML = 'Date are invalid';
         return false;
     }
+
+    // if (phone.length !== 11) {
+    //     errorMsg.innerHTML = "Phone number must be 11 character";
+    //     // alert('Phone number must be 11 character');
+    //     return false;
+    // }
 
     if (children < 0 || adults <= 0) {
         errorMsg.innerHTML = "Invalid Guest number";

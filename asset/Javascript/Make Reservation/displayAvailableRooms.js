@@ -76,7 +76,7 @@ function removeErrorMessage() {
     document.getElementById('error-msg').innerHTML = "";
 }
 
-//SetNightCount
+// SetNightCount
 
 // function setNumberOfNights(checkInDate, checkOutDate) {
 //     const nightCount = document.getElementById('night-count');
