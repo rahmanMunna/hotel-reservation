@@ -12,7 +12,7 @@ if (isset($_POST["submit"])) {
     $DbPassword = "";
     $dbName = "hotel-reservation";
 
-    $query = "SELECT password,role from users WHERE user_id = '$userId'";
+    $query = "SELECT password,role,id from users WHERE user_id = '$userId'";
     // Connect to DB
     $connection = mysqli_connect($location, $userName, $DbPassword, $dbName);
     $result = mysqli_query($connection, $query);
@@ -23,6 +23,7 @@ if (isset($_POST["submit"])) {
         if ($dbPass == $password) {
             $_SESSION['status'] = true;
             $_SESSION['user-id'] = $userId;
+            $_SESSION['id'] = $row['id'];
             setcookie('status', 'true', time() + 5000, '/');
             if ($role == 'admin') {
                 header('Location: ../../View/Dashboard/admin.php');
@@ -35,10 +36,9 @@ if (isset($_POST["submit"])) {
             header('Location: ../../View/Authentication/Login/login.php');
         }
     } else {
-        
+
         header('Location: ../../View/Authentication/Login/login.php');
     }
-
 } else {
     // echo "Invalid Credentials";
     header('location: ../../View/Authentication/Login/login.php');

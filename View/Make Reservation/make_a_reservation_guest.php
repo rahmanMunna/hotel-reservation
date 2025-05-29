@@ -77,7 +77,7 @@ if ($_SESSION['status'] || (isset($_COOKIE['status']) && $_COOKIE['status'])) {
                                     <input type="text" name="guest-name" id="guest-name">
                                 </td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td>Phone</td>
                                 <td>
                                     <input type="number" name="phone" id="phone">
@@ -88,7 +88,7 @@ if ($_SESSION['status'] || (isset($_COOKIE['status']) && $_COOKIE['status'])) {
                                 <td>
                                     <input type="email" name="email" id="email">
                                 </td>
-                            </tr>
+                            </tr> -->
 
                             <tr>
                                 <td>Number of Guest : </td>
