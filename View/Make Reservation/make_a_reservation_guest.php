@@ -157,7 +157,7 @@ if ($_SESSION['status'] || (isset($_COOKIE['status']) && $_COOKIE['status'])) {
 
 
         <script src="../../asset/Javascript/Make Reservation/displayAvailableRooms.js"></script>
-        <script src="../../asset/Javascript/Make Reservation/booking_operation.js"></script>
+        <!-- <script src="../../asset/Javascript/Make Reservation/booking_operation.js"></script> -->
         <script src="../../asset/Javascript/Make Reservation/validation_confirm_booking.js"></script>
 
     </body>
