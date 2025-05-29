@@ -14,48 +14,6 @@ if ($_SESSION['status'] || (isset($_COOKIE['status']) && $_COOKIE['status'])) {
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/sidebar.css">
         <link rel="stylesheet" href="../../asset/Styles/Common Styles/navbar.css">
         <link rel="stylesheet" href="../../asset/Styles/Make Reservation/make_reservation.css">
-
-        <style>
-            #sidebar-main-content {
-                width: 100%;
-                display: flex;
-                gap: 10px;
-                /* border: 1px solid; */
-            }
-
-            #main-content {
-                width: 40%;
-            }
-
-            #check-in-out-date {
-                display: flex;
-                gap: 10px;
-            }
-
-            #error-msg {
-                text-align: center;
-                font-size: 22px;
-                /* background-color: wheat; */
-                padding: 5px;
-                /* border: 1px solid; */
-            }
-
-            #room-cards {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                width: 40%;
-                gap: 10px;
-                height: 50rem;
-
-
-            }
-
-            .card {
-                border: 1px solid;
-                padding: 10px;
-
-            }
-        </style>
     </head>
 
     <body>

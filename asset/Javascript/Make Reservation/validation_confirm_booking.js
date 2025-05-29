@@ -2,6 +2,8 @@ function handleConfirmReservation() {
     const guestName = document.getElementById('guest-name').value;
     const check_in_date = document.getElementById('check-in-date').value;
     const check_out_date = document.getElementById('check-out-date').value;
+    const roomId = document.getElementById('room-id').value;
+    const roomNo = document.getElementById('room-no').value;
     // const phone = document.getElementById('phone').value;
     // const email = document.getElementById('email').value;
 
@@ -17,6 +19,8 @@ function handleConfirmReservation() {
         guestName,
         check_in_date,
         check_out_date,
+        roomId,
+        roomNo,
         // phone, 
         // email,
         adults,
