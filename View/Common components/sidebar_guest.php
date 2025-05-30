@@ -40,6 +40,9 @@
              <a href="../View(Chandrima)/Review_System/rating_interface.php">
                 <button>Rating</button>
             </a>
+            <a href="../Delete Account/delete_account.php">
+                <button>Delete Account</button>
+            </a>
             <a href="../../controller/php/logout.php">
                 <button>logout</button>
             </a>
