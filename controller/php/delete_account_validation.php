@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
 
         return $row['password'];
     }
-    
+
 
     if ($user_password == "" || $retype_password == "" || ($user_password != $retype_password)) {
         header('Location: ../../View/Delete Account/delete_account.php');
@@ -32,6 +32,12 @@ if (isset($_POST['submit'])) {
         $existPassword = existingPassword($connection, $id);
 
         if ($existPassword == $user_password) {
+            $query = "delete from reservations where `user_id` = '$id' ";
+            $result = mysqli_query($connection, $query);
+
+            $query = "delete from services_requests where `user_id` = '$id' ";
+            $result = mysqli_query($connection, $query);
+
             $query = "delete from users where `id` = '$id' ";
             $result = mysqli_query($connection, $query);
 
