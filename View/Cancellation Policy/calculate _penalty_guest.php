@@ -20,6 +20,15 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
             #sidebar-main-content {
                 display: flex;
             }
+            #cancellation-policy-div{
+               width: 80%;
+               margin: auto;
+               border: 1px solid;
+               padding: 10px;
+            }
+            h1{
+                text-align: center;
+            }
         </style>
 
     </head>
@@ -30,16 +39,18 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
         <div id="sidebar-main-content">
             <?php include('../Common components/sidebar_guest.php'); ?>
             <main>
-                <!-- <div id="guest-information">
-                    <h3>Booking Id : <span>#8768879</span></h3>
-                    <h3>Total Amount paid : <span>800</span></h3>
-                    <h3>Cancellation Policy Applied : <span>Flexible Rate</span></h3>
-                </div> -->
                 <!-- Select date and note -->
                 <div>
+                    <div id="cancellation-policy-div">
+                        <h1>Cancellation Policy</h1>
+                        <h2>1.If booking Cancelled Before Check-in-Date, then you will get full refund.</h2>
+                        <h2>2.If booking Cancelled After Check-in-Date, then you will get 1000 Tk penalty for each night.</h2>
+                    </div>
                     <table>
                         <tbody>
-                            <form method="post" onsubmit="return handleSaveButton()" action="../../controller/php/cancellation_validation.php">
+                            <form method="post"
+                                onsubmit="return handleSaveButton()"
+                                action="../../controller/php/cancellation_validation.php">
                                 <tr>
                                     <td>
                                         <label for="">Cancellation date</label>
@@ -73,37 +84,37 @@ if (isset($_SESSION['status']) || isset($_COOKIE['status'])) {
                     </table>
                 </div>
                 <!-- Show penalty Details table -->
-                <!-- <div>
+                <div>
                     <table border="2">
                         <thead>
                             <tr>
                                 <th>Cancellation date</th>
-                                <th>Penalty Fee</th>
-                                <th>Refundable Amount</th>
+                                <!-- <th>Penalty Fee</th>
+                                <th>Refundable Amount</th> -->
                                 <th>Notes</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td id="set-cancellation-date">May 1,20</td>
-                                <td id="panelaty-fee">1 night(2000)</td>
-                                <td id="refundable-amount">600</td>
-                                <td id="notes">After free period, penalty applies</td>
+                                <td id="set-cancellation-date">0</td>
+                                <!-- <td id="panelaty-fee">1 night(2000)</td>
+                                <td id="refundable-amount">600</td> -->
+                                <td id="notes">0</td>
                             </tr>
                         </tbody>
                     </table>
-                </div> -->
-                <p style="text-align: center">
+                </div>
+                <!-- <p style="text-align: center">
                     <!-- <a href="">
                         <button>Confirm Cancellation</button>
                     </a> -->
-                    <a href="./modification_flow_guest.php">
+                    <!-- <a href="./modification_flow_guest.php">
                         <button>Modify Stay instead</button>
-                    </a>
-                    <a href="./termsDisplay_guest.php">
+                    </a> -->
+                    <!-- <a href="./termsDisplay_guest.php">
                         <button>Back to Terms</button>
-                    </a>
-                </p>
+                    </a> -->
+        <!-- </p> -->
             </main>
 
         </div>

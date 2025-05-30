@@ -83,8 +83,8 @@ if (isset($_POST["submit"])) {
         $number_of_guest = (int)$adults + (int)$children;
 
         $query = "INSERT INTO 
-                    `reservations` (`id`, `reservation_id`, `user_id`, `room_id`, `booking_type`, `guest_name`, `room_no`, `num_of_guest`, `status`, `booking_date`, `check_in_date`, `check_out_date`) 
-                    VALUES (NULL, '$reservation_id', '$user_id', '$roomId', 'Single', '$guestName', '$roomNo', '$number_of_guest', 'booked', '$bookingDate', '$checkInDate', '$checkOutDate');";
+                    `reservations` (`id`, `reservation_id`, `user_id`, `room_id`, `booking_type`, `guest_name`, `room_no`, `num_of_guest`, `status`, `booking_date`, `check_in_date`, `check_out_date`,`penalty`,`refund`) 
+                    VALUES (NULL, '$reservation_id', '$user_id', '$roomId', 'Single', '$guestName', '$roomNo', '$number_of_guest', 'booked', '$bookingDate', '$checkInDate', '$checkOutDate','0','0');";
 
 
         $result = mysqli_query($connection, $query);

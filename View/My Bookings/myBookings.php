@@ -59,16 +59,18 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
                         </div>
                         <div>
                             <p>Status <span>${reservation.status}</span></p>
+                            <p><span style="color:green;">${reservation.refund}%</span> Refundable</p>
                             <p>Number of Guests: <span>${reservation.num_of_guest}</span></p>
                         </div>
                         <div>
-                            <p>Room No: <span>#${reservation.room_no}</span></p>
+                            <p>Room No: <span>${reservation.room_no}</span></p>
+                            <p>Penalty: <span style="color:red;">${reservation.penalty}</span></p>
                             <p>Guest name: <span>${reservation.guest_name}</span></p>
                         </div>
                         ${reservation.status === "cancelled" 
                         ? '<button style="pointer-events: none;" disabled>Cancelled</button>' 
-                        : `<a href="../Cancellation Policy/calculate_penalty_guest.php?reservation_id=${reservation.reservation_id}"
-                         class="cancel-button">Cancel</a>`}
+                        : `<a href="../Cancellation Policy/calculate _penalty_guest.php?reservation_id=${reservation.reservation_id}"
+                         class="cancel-button"><button>Cancel</button></a>`}
 
                        
                         `

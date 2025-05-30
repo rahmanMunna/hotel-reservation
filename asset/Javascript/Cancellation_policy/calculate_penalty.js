@@ -22,7 +22,7 @@ function handleSaveButton() {
     const cancellationDate = document.getElementById('cancellation-date').value;
     const reasonForCancellation = document.getElementById('reason-for-cancellation').value;
 
-    console.log(cancellationDate, reasonForCancellation);
+    // console.log(cancellationDate, reasonForCancellation);
 
     if (cancellationDate.length === 0 || reasonForCancellation.length === 0) {
         alert('Fill all the field');
@@ -31,6 +31,6 @@ function handleSaveButton() {
     setCancellationDate(cancellationDate);
     setNotes(reasonForCancellation);
 
-    return false;
+    return true;
 
 } 

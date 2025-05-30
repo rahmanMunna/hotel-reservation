@@ -20,6 +20,7 @@ function displayBookingsHistory() {
         <div>
             <p>Number of Nights: <span>${booking.nights}</span></p>
             <p>Total Price: <span>${booking.totalPrice}</span></p>
+            <p>Total Price: <span>${booking.penalty}</span></p>
         </div>
         <button>Cancel</button>
         `
