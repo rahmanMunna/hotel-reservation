@@ -40,6 +40,9 @@
             <a href="../Rooms/addNewRooms.php">
                 <button>Add New Room</button>
             </a>
+            <a href="../Delete a room/delete_a_room.php">
+                <button>Delete a room</button>
+            </a>
             <!-- <a href="">
                 <button>Manage Guests</button>
             </a> -->
