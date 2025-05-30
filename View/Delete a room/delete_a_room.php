@@ -42,7 +42,7 @@ if ($_SESSION['status'] || $_COOKIE['status']) {
         <?php include('../Common components/navbar.php'); ?>
 
         <div onclick="" id="sidebar-main-content">
-            <?php include('../Common components/sidebar_guest.php'); ?>
+            <?php include('../Common components/sidebar.php'); ?>
             <div id="delete-room-div">
                 <table border=2>
                     <thead id="tbody">

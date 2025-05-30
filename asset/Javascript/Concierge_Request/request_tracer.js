@@ -1,16 +1,15 @@
-// let requestedServices = [];
+let requestedServices = [];
 
-// let xttp = new XMLHttpRequest();
-// xttp.open('get', '../model/requests_data.php', true);
-// xttp.send();
-// xttp.onreadystatechange = function () {
-//     if (this.readyState == 4 && this.status == 200) {
-//         requestedServices = JSON.parse(this.response);
-//         console.log(requestedServices);
-//     }
-// }
-
-
+let xttp = new XMLHttpRequest();
+xttp.open('get', '../../model/requests_data.php', true);
+xttp.send();
+xttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        requestedServices = JSON.parse(this.response);
+        displayRequestOrders();
+        // console.log(requestedServices);
+    }
+}
 
 
 function displayRequestOrders() {
@@ -18,27 +17,29 @@ function displayRequestOrders() {
 
         console.log(requestedOrder);
 
-        // const main = document.getElementsByTagName('main');
-        // // console.log(main)
+        const main = document.getElementsByTagName('main');
+        console.log(main)
 
-        // const div = document.createElement('div');
-        // div.setAttribute('class', 'order-card');
+        const div = document.createElement('div');
+        div.setAttribute('class', 'order-card');
 
-        // div.innerHTML =
-        //     `
-        //     <h1>Category : ${requestedOrder.category}</h1>
-        //     <h2>Service Name : ${requestedOrder.items.name}</h2>
-        //     <p>
-        //         ${requestedOrder.items.description}
-        //     </p>
-        //     <div class="price-status">
-        //         <p>
-        //             price: ${requestedOrder.items.price}
-        //         </p>
-        //         <button id="status-btn">Pending</button>
-        //     </div>
-        //     `
-        // main[0].appendChild(div);
+        div.innerHTML =
+            `
+                    <div id="card-heading">
+                        <h2>Request_id : #${requestedOrder.request_id}</h2>
+                        <h2>Request Time : ${requestedOrder.request_time}</h2>
+                        <h2>User id : ${requestedOrder.user_id}</h2>
+
+                    </div>
+                
+                    <div >
+                        <p>
+                            Total Price: ${requestedOrder.total_price}
+                        </p>
+                        <button id="status-btn">Pending</button>
+                    </div>
+                    `
+        main[0].appendChild(div);
 
 
     }
