@@ -19,9 +19,7 @@ if (isset($_POST["submit"])) {
     } else {
         echo "Error!";
     }
-    $imagePath = "asset/uploaded_file/" . $filename;
-
-    echo $imagePath;
+    
 
     $selectedAmenities = [];
 
@@ -115,8 +113,8 @@ if (isset($_POST["submit"])) {
 
         // insert query to add room
         $query = "INSERT INTO `rooms` 
-                    (`id`, `room_id`, `room_no`, `room_type`, `bed_type`, `capacity`, `price_per_night`, `is_available`, `floor`, `amenties`, `image_path`) 
-                    VALUES (NULL, '$room_id', '$roomNo', '$roomType', '$bedType', '$capacity', '$price', '$availability', '$floor', '$amenitiesAre', '$imagePath');";
+                    (`id`, `room_id`, `room_no`, `room_type`, `bed_type`, `capacity`, `price_per_night`, `is_available`, `floor`, `amenties`) 
+                    VALUES (NULL, '$room_id', '$roomNo', '$roomType', '$bedType', '$capacity', '$price', '$availability', '$floor', '$amenitiesAre', );";
         //execute query
         $result = mysqli_query($connection, $query);
 
