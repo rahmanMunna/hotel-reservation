@@ -20,7 +20,6 @@ if (isset($_POST['submit'])) {
         $venue === '' ||
         $setupType === '' ||
         $guests === '' ||
-        !is_numeric($guests) ||
         $guests <=0
     ) {
         $isValid = false;

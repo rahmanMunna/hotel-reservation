@@ -27,10 +27,10 @@ if (isset($_POST["submit"])) {
             setcookie('status', 'true', time() + 5000, '/');
             if ($role == 'admin') {
                 header('Location: ../../View/Dashboard/admin.php');
-                exit();
+                
             } else if ($role == 'guest') {
                 header('Location: ../../View/Dashboard/guest_dashboard.php');
-                exit();
+                
             }
         } else {
             header('Location: ../../View/Authentication/Login/login.php');
@@ -42,5 +42,5 @@ if (isset($_POST["submit"])) {
 } else {
     // echo "Invalid Credentials";
     header('location: ../../View/Authentication/Login/login.php');
-    exit();
+   
 }

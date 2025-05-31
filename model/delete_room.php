@@ -8,10 +8,10 @@ $dbName = "hotel-reservation";
 
 $connection = mysqli_connect("127.0.0.1", "root", "", "hotel-reservation");
 
-// First, delete dependent reservations
+//delete room_id from reservations table
 mysqli_query($connection, "DELETE FROM reservations WHERE room_id = '$roomId'");
 
-// Then, delete the room
+//delete the room
 $result = mysqli_query($connection, "DELETE FROM rooms WHERE id = '$roomId'");
 
 if ($result) {

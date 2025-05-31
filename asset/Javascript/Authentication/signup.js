@@ -41,7 +41,7 @@ const handleSubmit = () => {
     //     // alert('Enter a valid phone Number');
     //     return false;
     // }
-    alert('Successful');
+    // alert('Successful');
     return true;
 };
 
@@ -102,7 +102,7 @@ const isValidPassword = (password) => {
     let hasSpecial = false;
     let hasNumber = false;
 
-    const specialChars = "!@#$%&*()_+[]{}|<>?/";
+    const specialChars = "!@#$%&";
 
     for (let i = 0; i < password.length; i++) {
         const char = password[i];
@@ -113,9 +113,8 @@ const isValidPassword = (password) => {
         else if (specialChars.includes(char)) hasSpecial = true;
         else if (char >= '0' && char <= '9') hasNumber = true;
 
-        // Short-circuit if all conditions are met
-        if (hasUpper && hasLower && hasSpecial) return true;
+        if (hasUpper && hasLower && hasSpecial && hasNumber) return true;
     }
 
-    return hasUpper && hasLower && hasSpecial;
+    return false;
 };

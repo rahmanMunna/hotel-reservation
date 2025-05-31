@@ -60,7 +60,7 @@ if (isset($_POST["submit"])) {
     //decision
     if ($isValid) {
         header('Location: ../../View/successful_alert.php');
-        exit();
+        
     }else{
         echo "failed";
     } 

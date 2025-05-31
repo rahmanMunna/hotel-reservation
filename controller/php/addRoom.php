@@ -8,6 +8,7 @@ if (isset($_POST["submit"])) {
     $price = trim($_POST['price-per-night']);
     $availability = trim($_POST['availability']);
 
+    
     //move to permanent destination
     $src = $_FILES['room-img']['tmp_name'];
     $filename = $_FILES['room-img']['name'];
@@ -19,7 +20,7 @@ if (isset($_POST["submit"])) {
     } else {
         echo "Error!";
     }
-    
+
 
     $selectedAmenities = [];
 
@@ -57,6 +58,7 @@ if (isset($_POST["submit"])) {
     }
 
 
+    //check validity
     $valid = true;
 
     // Check required fields
@@ -65,13 +67,13 @@ if (isset($_POST["submit"])) {
     }
 
     // Check numeric values positive
-    if (!is_numeric($floor) || (int)$floor <= 0) {
+    if ((int)$floor <= 0) {
         $valid = false;
     }
-    if (!is_numeric($capacity) || (int)$capacity <= 0) {
+    if ((int)$capacity <= 0) {
         $valid = false;
     }
-    if (!is_numeric($price) || (int)$price <= 0) {
+    if ((int)$price <= 0) {
         $valid = false;
     }
 
@@ -85,6 +87,8 @@ if (isset($_POST["submit"])) {
             $last_room_id = $row['room_id'];
             // Explode and increment
             $new_room_id = "rm-" . ((int)explode('-', $last_room_id)[1] + 1);
+        } else {
+            $new_room_id = -1;
         }
         return $new_room_id;
     }
@@ -95,6 +99,7 @@ if (isset($_POST["submit"])) {
         if ($availability == 'available') {
             $available = 1;
         }
+
         $amenitiesAre = "";
         foreach ($selectedAmenities as $amenities) {
             $amenitiesAre = $amenities . "," . $amenitiesAre;
@@ -114,18 +119,18 @@ if (isset($_POST["submit"])) {
         // insert query to add room
         $query = "INSERT INTO `rooms` 
                     (`id`, `room_id`, `room_no`, `room_type`, `bed_type`, `capacity`, `price_per_night`, `is_available`, `floor`, `amenties`) 
-                    VALUES (NULL, '$room_id', '$roomNo', '$roomType', '$bedType', '$capacity', '$price', '$availability', '$floor', '$amenitiesAre', );";
+                    VALUES (NULL, '$room_id', '$roomNo', '$roomType', '$bedType', '$capacity', '$price', '$availability', '$floor', '$amenitiesAre' );";
         //execute query
         $result = mysqli_query($connection, $query);
 
         //check if row affected successfully
         if ($result) {
-            echo "Successful";
+            header('Location: ../../View/successful_alert.php');
         } else {
             echo "Failed";
         }
 
-        header('Location: ../../View/successful_alert.php');
+        
     } else {
         echo "Failed";
     }

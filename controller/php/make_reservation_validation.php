@@ -66,6 +66,9 @@ if (isset($_POST["submit"])) {
             // Explode and increment
             $new_reservation_id = "res-" . ((int)explode('-', $last_reservation_id)[1] + 1);
         }
+        else{
+            $new_reservation_id = "res-1";
+        }
         return $new_reservation_id;
     }
 

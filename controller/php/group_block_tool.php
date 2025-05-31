@@ -34,7 +34,6 @@ if (isset($_POST['submit'])) {
         $checkOutDate === '' ||
         $paymentOption === '' ||
         $numberOfGuest === '' ||
-        !is_numeric($numberOfGuest) ||
         $numberOfGuest <= 0
     ) {
         $isValid = false;
@@ -45,7 +44,9 @@ if (isset($_POST['submit'])) {
         if (!str_contains($groupContactEmail, '@')) {
             $isValid = false;
         } else {
-            [$localPart, $domain] = explode('@', $groupContactEmail);
+                $emails = explode('@', $groupContactEmail);
+                $localPart = $emails[0];
+                $domain = $emails[1];
             if (
                 $domain !== 'gmail.com' ||
                 !isAllLowerCase($localPart) ||

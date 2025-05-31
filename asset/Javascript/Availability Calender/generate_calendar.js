@@ -24,7 +24,7 @@ const [currentYear, currentMonth] = currentMonthAndYear();
 const dates = generateDate(currentYear, currentMonth);
 displayDates(dates, currentMonth, currentYear);
 
-function displayDates(dates, currentDate, currentYear) {
+function displayDates(dates, currentMonth, currentYear) {
     const boxes = document.getElementsByClassName("dates");
     const calenderDiv = document.getElementById('dates-day');
     let startingIndex = dates.day[0];
@@ -40,15 +40,15 @@ function displayDates(dates, currentDate, currentYear) {
 }
 function markBookedDate(boxes, currentMonth, currentYear) {
     // Pad month to 2 digits
-    const paddedMonth = String(currentMonth).padStart(2, '0');
+    const paddedMonth = (currentMonth).toString().padStart(2, '0'); // pad with 0 upto reaches 2 digit
 
     for (const box of boxes) {
         const day = box.innerText.trim();
-        const paddedDay = String(day).padStart(2, '0');
+        const paddedDay = (day).toString().padStart(2, '0');
 
         const date = `${currentYear}-${paddedMonth}-${paddedDay}`;
 
-        if (bookedDates.includes(date)) {
+        if (bookedDates.includes(date)) { // array.includes(searchElement, fromIndex)
             box.style.backgroundColor = "red";
             box.style.color = "white";
         }

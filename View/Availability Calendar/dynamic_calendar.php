@@ -81,53 +81,10 @@ if (isset($_SESSION['status'])) {
                 </div>
             </div>
 
-            <!-- Select-check-in-out -->
-            <div id="select-check-in-out">
-                <div>
-                    <div>
-                        <h3>Check-in Date : <span id="">
-                                <input type="date" name="" id="check-in-date">
-                            </span> </h3>
-                        <h3>Check-out Date : <span id="">
-                                <input onchange="handleCheckOutDate()" type="date" name="" id="check-out-date">
-                            </span> </h3>
-                    </div>
-                    <h3>Nights : <span id="night-count">0</span>
-                        <!-- <button onclick="setNightCount('-')" class="plus-or-minus">-</button>
-                    <button onclick="setNightCount('+')" class="plus-or-minus">+</button> -->
-                    </h3>
-                    <!-- <h3>Total : <span id="total"></span>0</h3> -->
-                </div>
-            </div>
-            <!-- Rate Viewer -->
-            <div id="rate-viewer">
-                <div hidden id="summary-table">
-                    <h2>Stay Dates:
-                        <span id="stay-date"></span>
-                    </h2>
-                    <h2>Rate</h2>
-                    <table border="2" id="rate-view-table">
-
-                    </table>
-                    <h2>Available Room</h2>
-                    <table border="2" id="available-room">
-                        <thead>
-                            <tr>
-                                <th>Room No</th>
-                                <th>Category</th>
-                                <th>Price/night</th>
-                                <th>Amenities</th>
-                                <th>Capacity</th>
-                                <th>Smoking Allowed</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-            </div>
-
+        
         </main>
         <script src="../../asset/Javascript/Availability Calender/generate_calendar.js"></script>
-        <script src="../../asset/Javascript/Availability Calender/rate_viewer.js"></script>
+        <!-- <script src="../../asset/Javascript/Availability Calender/rate_viewer.js"></script> -->
     </body>
 
     </html>

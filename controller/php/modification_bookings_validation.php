@@ -41,10 +41,10 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    // Final decision
+    // if all valid
     if ($isValid) {
         header('Location: ../../View/successful_alert.php');
-        exit;
+        
     }
 }
 ?>

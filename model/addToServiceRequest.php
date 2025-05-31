@@ -2,7 +2,7 @@
 session_start();
 
 // print_r($_POST);
-$user_id = $_SESSION['user-id'];
+$user_id = $_SESSION['id'];
 $service_id = $_POST['service_id'];
 $price = $_POST["price"];
 $time = $_POST["onlyDate"];
@@ -36,7 +36,7 @@ function generateRequestId($connection)
         $new_request_id = "req-" . ((int)explode('-', $last_request_id)[1] + 1);
     } else {
         // If no previous ID, start from 1
-        $new_request_id = "req-1";
+        $new_request_id = "-1";
     }
 
     return $new_request_id;

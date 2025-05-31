@@ -59,9 +59,9 @@ if (isset($_POST['submit'])) {
 
     //Check-in date must be before check-out date
     if ($isValid) {
-        $checkInTimestamp = strtotime($checkInDate);
-        $checkOutTimestamp = strtotime($checkOutDate);
-        if (!$checkInTimestamp || !$checkOutTimestamp || $checkInTimestamp >= $checkOutTimestamp) {
+        $checkInTimes = strtotime($checkInDate);
+        $checkOutTime = strtotime($checkOutDate);
+        if (!$checkInTime || !$checkOutTime || $checkInTime >= $checkOutTime) {
             $isValid = false;
         }
     }
