@@ -33,11 +33,11 @@
   <header>
     <h1>Welcome to Hotel Cymon</h1>
     <nav>
-      <a href="../View(Chandrima)/Room_types/booking.php">Room_Type</a>
-      <a href="../View(Chandrima)/Search_Filter/search.php">Search</a>
-      <a href="../../controller/php/logout.php">Logout</a>
-      <a href="../View(Chandrima)/Amenities_List/inquiry.php">Inquiry</a>
-      <a href="../View(Chandrima)/Review_System/rating_interface.php">Rating</a>
+      <a href="../Room_types/booking.php">Room_Type</a>
+      <a href="../Search_Filter/search.php">Search</a>
+      <a href="../../../controller/php/logout.php">Logout</a>
+      <a href="../Amenities_List/inquiry.php">Inquiry</a>
+      <a href="../Review_System/response_tool.php">Rating</a>
     </nav>
   </header>
 
@@ -46,7 +46,7 @@
     <p>Book rooms in top-rated hotels at the best price.</p>
 
     <!-- This button redirects to login -->
-    <a href="../SignUp/login.php" class="cta">Get Started</a>
+    <a href="../../Authentication/Login/login.php" class="cta">Get Started</a>
   </section>
 
   <section id="signup">

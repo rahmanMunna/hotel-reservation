@@ -2,16 +2,7 @@ function setCancellationDate(date) {
     const cancellationDate = document.getElementById('set-cancellation-date');
     cancellationDate.innerHTML = date;
 }
-function setPenaltyFee() {
 
-}
-function calculatePenaltyFee() {
-
-}
-function setRefundableAmount(amount) {
-    const refundableAmount = document.getElementById('refundable-amount');
-    refundableAmount.innerHTML = amount;
-}
 function setNotes(notes) {
     const notesTd = document.getElementById('notes');
     notesTd.innerHTML = notes;

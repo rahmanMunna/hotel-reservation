@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
 
     function isAllLowerCase($text)
     {
-        return strtolower($text) === $text; 
+        return strtolower($text) === $text;
     }
 
     function isFirstCharNumber($text)
@@ -44,9 +44,9 @@ if (isset($_POST['submit'])) {
         if (!str_contains($groupContactEmail, '@')) {
             $isValid = false;
         } else {
-                $emails = explode('@', $groupContactEmail);
-                $localPart = $emails[0];
-                $domain = $emails[1];
+            $emails = explode('@', $groupContactEmail);
+            $localPart = $emails[0];
+            $domain = $emails[1];
             if (
                 $domain !== 'gmail.com' ||
                 !isAllLowerCase($localPart) ||

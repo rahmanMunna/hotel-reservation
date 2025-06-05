@@ -1,18 +1,3 @@
-<?php
-session_start();
-// Check if 'status' cookie is set
-if (isset($_COOKIE['status'])) {
-    // Redirect based on session role
-    if (isset($_SESSION['admin'])) {
-        header('Location: ../../Dashboard/admin.php');
-        exit(); 
-    } else if (isset($_SESSION['guest'])) {
-        header('Location: ../../Dashboard/guest_dashboard.php');
-        exit();
-    }
-}
-?>
-
 <!-- Only shows the login form if the cookie is NOT set -->
 <!DOCTYPE html>
 <html lang="en">

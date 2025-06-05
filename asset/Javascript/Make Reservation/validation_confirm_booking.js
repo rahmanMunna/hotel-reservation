@@ -40,12 +40,7 @@ function handleConfirmReservation() {
         return false;
     }
 
-    // if (phone.length !== 11) {
-    //     errorMsg.innerHTML = "Phone number must be 11 character";
-    //     // alert('Phone number must be 11 character');
-    //     return false;
-    // }
-
+    
     if (children < 0 || adults <= 0) {
         errorMsg.innerHTML = "Invalid Guest number";
         return false;

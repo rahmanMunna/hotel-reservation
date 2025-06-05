@@ -19,7 +19,6 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 // print_r($data);
 
-//parse to json
-header('Content-Type: application/json');
+
 echo json_encode($data);
 

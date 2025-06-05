@@ -107,7 +107,7 @@ function isGuestCountSelected() {
     const children = parseInt(childrenInput);
 
     // Check for valid numbers
-    if (isNaN(adults) || adults < 0 || isNaN(children) || children < 0) {
+    if (adults < 0 || children < 0) {
         alert("Please enter valid non-negative numbers for guests.");
         return false;
     }

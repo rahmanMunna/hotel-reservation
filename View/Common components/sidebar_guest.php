@@ -19,9 +19,6 @@
             <a href="../../View/Billing Summary/folioViewer_guest.php">
                 <button>Billing Summary</button>
             </a>
-            <a href="../../View/Cancellation Policy/termsDisplay_guest.php">
-                <button>Cancellation Policy</button>
-            </a>
             <a href="../View(Chandrima)/Amenities_List/inquiry.php">
                 <button>Inquiry</button>
             </a>
