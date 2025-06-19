@@ -22,12 +22,10 @@
             <a href="../View(Chandrima)/Amenities_List/inquiry.php">
                 <button>Inquiry</button>
             </a>
-             <a href="../View(Chandrima)/Landing_Page/landing.php">
-                <button>Landing_Page</button>
+             <a href="../View(Chandrima)/Guest_Profile/index.php">
+                <button>Guest_Profile</button>
             </a>
-             <a href="../View(Chandrima)/Role_Based_Access/dashboard.php">
-                <button>Dashboard</button>
-            </a>
+            
              <a href="../View(Chandrima)/Room_types/booking.php">
                 <button>Room_Type</button>
             </a>

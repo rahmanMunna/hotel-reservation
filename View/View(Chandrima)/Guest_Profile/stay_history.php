@@ -6,7 +6,7 @@
 <html>
 <head>
   <title>Stay History</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../../asset/Styles(Chandrima)/Guest_Profile/style.css">
 </head>
 <body>
 <div class="navbar">
@@ -30,6 +30,7 @@
     </tr>
   </table>
 </div>
+<script src="../../../asset/Javascript(Chandrima)/Guest_Profile/profile_validate.js"></script>
 </body>
 </html>
 <?php
